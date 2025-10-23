@@ -1,0 +1,28 @@
+# Robots.txt for Banlieuwood
+# Allow all crawlers to index all content
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://banlieuwood.com/sitemap.xml
+
+# Specific crawlers optimization
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow admin areas (when implemented)
+User-agent: *
+Disallow: /admin
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 0
