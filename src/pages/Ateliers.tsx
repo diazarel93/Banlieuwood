@@ -1,10 +1,7 @@
-import { Film, Clapperboard, Camera, Users, Sparkles, Video, Target, Zap, Lightbulb, Pencil, Eye, BookOpen, Tablet, ArrowRight, Award, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { Film, Clapperboard, Camera, Users, Sparkles, Video, Target, Zap, Lightbulb, Pencil, Eye, BookOpen, Tablet, ArrowRight, Award, Mail, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Ateliers() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   const modules = [
     { icon: Eye, number: 1, title: 'Observer', subtitle: 'Apprendre à regarder', desc: 'Découvrir que chaque regard raconte une histoire différente.', color: 'from-blue-500 to-cyan-500' },
     { icon: Clapperboard, number: 2, title: 'Comprendre', subtitle: 'La mécanique d\'une scène', desc: 'Personnage + intention + obstacle + changement.', color: 'from-amber-500 to-orange-500' },
@@ -135,9 +132,6 @@ export default function Ateliers() {
                 <p>
                   Chaque élève utilise une <span className="text-white font-semibold">tablette</span> avec notre outil interactif dédié.
                 </p>
-                <p>
-                  L'outil <span className="text-white font-semibold">structure les exercices</span>, collecte les idées et organise les votes collectifs.
-                </p>
 
                 <div className="glass-strong border-l-4 border-amber-500 p-6 rounded-r-xl">
                   <p className="text-2xl font-bold text-white mb-3">30% numérique, 70% humain</p>
@@ -147,26 +141,53 @@ export default function Ateliers() {
                 </div>
 
                 <p>
-                  Entre les séances, l'outil <span className="text-amber-500 font-semibold">génère automatiquement</span> les contenus pour la séance suivante : scénarios, cartes narratives, storyboards.
+                  Entre les séances, l'outil <span className="text-amber-500 font-semibold">génère automatiquement</span> les contenus pour la séance suivante.
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: BookOpen, title: 'Exercices structurés', desc: 'Activités guidées module par module' },
-                { icon: Users, title: 'Votes collectifs', desc: 'Décisions démocratiques en groupe' },
-                { icon: Lightbulb, title: 'Génération auto', desc: 'Contenus créés entre les séances' },
-                { icon: Video, title: 'Résultat concret', desc: 'Un film créé par le groupe' },
-              ].map((feature, i) => (
-                <div key={i} className="glass-card rounded-2xl p-6 text-center hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
-                    <feature.icon className="w-6 h-6 text-white" strokeWidth={1.5} />
+            {/* Mockup tablette */}
+            <div className="relative">
+              <div className="bg-gray-800 rounded-[2rem] p-3 shadow-2xl border border-gray-700">
+                <div className="bg-gray-950 rounded-[1.5rem] overflow-hidden">
+                  {/* Barre d'app */}
+                  <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-5 py-3 flex items-center justify-between">
+                    <span className="text-black font-bold text-sm">Module 3 — Imaginer</span>
+                    <span className="text-black/60 text-xs">Séance 2/4</span>
                   </div>
-                  <h4 className="font-bold text-sm mb-1">{feature.title}</h4>
-                  <p className="text-gray-400 text-xs">{feature.desc}</p>
+                  {/* Contenu simulé */}
+                  <div className="p-5 space-y-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+                        <Lightbulb className="w-4 h-4 text-amber-500" />
+                      </div>
+                      <p className="text-white font-bold text-sm">Et si cette image racontait...</p>
+                    </div>
+                    <div className="bg-gray-800 rounded-xl p-4 border border-gray-700">
+                      <div className="h-20 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg mb-3 flex items-center justify-center">
+                        <Camera className="w-8 h-8 text-gray-600" />
+                      </div>
+                      <div className="h-2 bg-gray-700 rounded w-3/4 mb-2"></div>
+                      <div className="h-2 bg-gray-700 rounded w-1/2"></div>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex-1 bg-amber-500/10 border border-amber-500/30 rounded-lg p-3 text-center">
+                        <Pencil className="w-4 h-4 text-amber-500 mx-auto mb-1" />
+                        <span className="text-amber-400 text-xs font-bold">Écrire</span>
+                      </div>
+                      <div className="flex-1 bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 text-center">
+                        <Users className="w-4 h-4 text-blue-400 mx-auto mb-1" />
+                        <span className="text-blue-400 text-xs font-bold">Voter</span>
+                      </div>
+                      <div className="flex-1 bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
+                        <MessageSquare className="w-4 h-4 text-green-400 mx-auto mb-1" />
+                        <span className="text-green-400 text-xs font-bold">Discuter</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-1 bg-gray-700 rounded-full"></div>
             </div>
           </div>
         </div>
@@ -300,31 +321,52 @@ export default function Ateliers() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* COMMENT S'INSCRIRE */}
       <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-5xl mx-auto">
-          <div className="glass-strong rounded-3xl p-12 md:p-16 text-center border-2 border-amber-500/30">
-            <Clapperboard className="w-16 h-16 text-amber-500 mx-auto mb-6 animate-float" />
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Prêt à <span className="gradient-text">Commencer</span> ?
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Comment <span className="gradient-text">S'inscrire</span> ?
             </h2>
-            <p className="text-2xl text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Contacte-nous pour rejoindre le prochain atelier ou pour organiser un programme dans ton établissement.
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              { icon: Mail, number: '1', title: 'Contacte-nous', desc: 'Par le formulaire ou par email. Dis-nous ton âge et ta ville.' },
+              { icon: MessageSquare, number: '2', title: 'On te rappelle', desc: 'Sous 48h, on discute de tes disponibilités et du prochain atelier.' },
+              { icon: Clapperboard, number: '3', title: 'Tu crées ton film', desc: 'Tu rejoins un groupe et tu commences le parcours. C\'est tout.' },
+            ].map((step, i) => (
+              <div key={i} className="text-center animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-glow">
+                  <span className="text-black font-bold text-2xl">{step.number}</span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="glass-strong rounded-2xl p-8 md:p-12 border-2 border-amber-500/30 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Prêt à commencer ?
+            </h3>
+            <p className="text-lg text-gray-300 mb-8">
+              100% gratuit. Matériel fourni. Aucun prérequis.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
-                className="btn-primary text-xl py-5 px-8 shadow-glow-primary flex items-center gap-3"
+                className="btn-primary text-lg py-4 px-8 shadow-glow-primary flex items-center gap-3"
               >
-                Nous Contacter
-                <ArrowRight className="w-6 h-6" />
+                Demander les prochaines dates
+                <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 to="/etablissements"
-                className="glass-card text-white font-bold text-xl py-5 px-8 rounded-xl border-2 border-white/20 hover:border-amber-500 transition-all hover-lift flex items-center gap-3"
+                className="glass-card text-white font-bold text-lg py-4 px-8 rounded-xl border-2 border-white/20 hover:border-amber-500 transition-all hover-lift flex items-center gap-3"
               >
-                Pour les Établissements
+                Pour les établissements
               </Link>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { Building2, Shield, Users, BookOpen, ArrowRight, CheckCircle, Lightbulb, Award, ChevronDown, Tablet, Camera, MessageSquare, Target, Heart, Mic, Eye, Puzzle } from 'lucide-react';
+import { Building2, Shield, Users, ArrowRight, CheckCircle, Lightbulb, Award, ChevronDown, Tablet, Camera, MessageSquare, Heart, Mic, Eye, Puzzle } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -277,36 +277,6 @@ export default function Institutions() {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ARGUMENTAIRE */}
-      <section className="py-24 px-4 bg-gray-900/50 border-y border-gray-800">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-16">
-            <p className="text-blue-400 font-bold text-sm uppercase tracking-wider mb-3">Argumentaire</p>
-            <h2 className="text-4xl md:text-5xl font-bold">Pourquoi ce programme ?</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { title: 'Éducation Artistique et Culturelle', desc: 'S\'inscrit dans les programmes EAC reconnus par le ministère.' },
-              { title: 'Projets interdisciplinaires', desc: 'Compatible avec les semaines thématiques et projets de classe.' },
-              { title: 'Financements accessibles', desc: 'Finançable par les collectivités territoriales et appels à projets culturels.' },
-              { title: 'Compétences transversales', desc: 'Les enseignants l\'utilisent pour travailler l\'oral, l\'écrit et le collectif.' },
-            ].map((point, i) => (
-              <div key={i} className="border border-gray-800 rounded-xl p-6 hover:border-blue-500/20 transition-colors">
-                <h4 className="font-bold text-white mb-2">{point.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{point.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-gray-500 italic text-lg">
-              "La créativité n'est pas réservée à une élite."
-            </p>
           </div>
         </div>
       </section>

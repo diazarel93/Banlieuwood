@@ -1,4 +1,4 @@
-import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight, Eye, Clapperboard, Lightbulb, Target, Pencil, Camera, BookOpen, Building2 } from 'lucide-react';
+import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight, Clapperboard, BookOpen, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import VideoPlayer from '../components/VideoPlayer';
@@ -36,17 +36,6 @@ export default function Home() {
       vimeoId: '1161231299',
       thumbnail: 'http://banlieuwood.fr/wp-content/uploads/2021/03/TEASER.png'
     }
-  ];
-
-  const parcours = [
-    { icon: Eye, title: 'Observer', desc: 'Apprendre à regarder' },
-    { icon: Clapperboard, title: 'Comprendre', desc: 'La mécanique d\'une scène' },
-    { icon: Lightbulb, title: 'Imaginer', desc: 'Le "Et si..."' },
-    { icon: Target, title: 'Clarifier', desc: 'Du flou au pitch' },
-    { icon: Users, title: 'Construire', desc: 'L\'histoire collective' },
-    { icon: Pencil, title: 'Écrire', desc: 'Le scénario' },
-    { icon: Camera, title: 'Visualiser', desc: 'La mise en scène' },
-    { icon: Film, title: 'Produire', desc: 'L\'équipe de tournage' },
   ];
 
   return (
@@ -183,100 +172,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LE PARCOURS — 8 modules */}
+      {/* LE PROGRAMME — accroche cinématique */}
       <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Le <span className="gradient-text">Parcours</span>
-            </h2>
-            <p className="text-xl text-gray-400">8 modules pour passer de spectateur à créateur</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {parcours.map((step, i) => (
-              <div
-                key={i}
-                className="glass-card rounded-2xl p-6 text-center hover-lift group animate-scale-in relative"
-                style={{ animationDelay: `${i * 0.05}s` }}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                De spectateur<br />à <span className="gradient-text">créateur</span>
+              </h2>
+              <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                8 modules progressifs. De l'observation à la réalisation d'un film. Chaque étape construit sur la précédente.
+              </p>
+              <p className="text-lg text-gray-400 mb-8">
+                Les élèves ne regardent pas un cours — ils créent, proposent, votent, tournent. Et repartent avec un film et une Carte Talent.
+              </p>
+              <Link
+                to="/programme"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-10 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow"
               >
-                <div className="text-4xl font-bold text-white/10 absolute top-2 right-3">{String(i + 1).padStart(2, '0')}</div>
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform">
-                  <step.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-lg font-bold mb-1 text-white">{step.title}</h3>
-                <p className="text-gray-400 text-sm">{step.desc}</p>
+                Découvrir le programme
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            <div className="glass-card rounded-2xl p-8 border border-amber-500/20">
+              <div className="space-y-4">
+                {['Observer', 'Comprendre', 'Imaginer', 'Clarifier', 'Construire', 'Écrire', 'Visualiser', 'Produire'].map((step, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <span className="text-amber-500 font-bold text-sm w-6">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="flex-1 h-px bg-gradient-to-r from-amber-500/30 to-transparent"></div>
+                    <span className="text-white font-medium">{step}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/programme"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-10 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow"
-            >
-              Découvrir le programme complet
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* POUR QUI ? */}
-      <section className="py-24 px-4 bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Pour <span className="gradient-text">Qui</span> ?
-            </h2>
-          </div>
+      <section className="py-20 px-4 bg-gray-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/programme" className="glass-strong rounded-2xl p-8 border-2 border-amber-500/20 hover:border-amber-500 transition-all hover-lift group">
+              <Users className="w-10 h-10 text-amber-500 mb-4" strokeWidth={1.5} />
+              <h3 className="text-2xl font-bold mb-2">Tu as 12-25 ans ?</h3>
+              <p className="text-gray-400 mb-4">Crée ton premier film. 100% gratuit.</p>
+              <span className="text-amber-500 font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                Voir le programme <ArrowRight className="w-5 h-5" />
+              </span>
+            </Link>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-strong rounded-2xl p-10 border-2 border-amber-500/30 hover:border-amber-500 transition-all hover-lift">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-6 shadow-glow">
-                <Users className="w-8 h-8 text-white" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Tu as 12-25 ans ?</h3>
-              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                Rejoins un atelier et crée ton premier film. 100% gratuit, matériel fourni.
-              </p>
-              <Link
-                to="/programme"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-8 py-4 rounded-xl transition-all hover-lift shadow-glow"
-              >
-                Voir les ateliers
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-
-            <div className="glass-strong rounded-2xl p-10 border-2 border-blue-500/30 hover:border-blue-500 transition-all hover-lift">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6 shadow-glow">
-                <Building2 className="w-8 h-8 text-white" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Vous êtes un établissement ?</h3>
-              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                Organisez un programme cinéma dans votre école. 8 modules clé en main.
-              </p>
-              <Link
-                to="/etablissements"
-                className="inline-flex items-center gap-2 glass-card text-white font-bold px-8 py-4 rounded-xl border-2 border-blue-500/30 hover:border-blue-500 transition-all hover-lift"
-              >
-                En savoir plus
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CITATION */}
-      <section className="py-20 px-4 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="glass-card rounded-2xl p-12 border border-amber-500/20">
-            <p className="text-2xl md:text-3xl font-light italic text-gray-200 leading-relaxed mb-4">
-              "Tout le monde peut apprendre à raconter une histoire."
-            </p>
-            <p className="text-amber-500 font-bold">— Manifeste Banlieuwood</p>
+            <Link to="/etablissements" className="glass-strong rounded-2xl p-8 border-2 border-blue-500/20 hover:border-blue-500 transition-all hover-lift group">
+              <Building2 className="w-10 h-10 text-blue-400 mb-4" strokeWidth={1.5} />
+              <h3 className="text-2xl font-bold mb-2">Vous êtes un établissement ?</h3>
+              <p className="text-gray-400 mb-4">Un programme cinéma clé en main pour vos élèves.</p>
+              <span className="text-blue-400 font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all">
+                En savoir plus <ArrowRight className="w-5 h-5" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
@@ -374,18 +327,18 @@ export default function Home() {
               Prêt à <span className="gradient-text">Commencer</span> ?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Rejoins le programme et crée ton premier film.
+              Contacte-nous pour rejoindre le prochain atelier.
             </p>
 
             <Link
-              to="/programme"
+              to="/contact"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 hover-lift shadow-glow"
             >
-              <span>Voir les ateliers disponibles</span>
+              <span>Nous contacter</span>
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
             <p className="text-gray-400 text-sm mt-6">
-              Vous êtes un établissement ? <Link to="/etablissements" className="text-amber-500 hover:text-amber-400 underline transition-colors">Contactez-nous</Link>
+              Vous êtes un établissement ? <Link to="/etablissements" className="text-amber-500 hover:text-amber-400 underline transition-colors">Découvrez nos formules</Link>
             </p>
           </div>
         </div>

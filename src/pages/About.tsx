@@ -1,10 +1,9 @@
-import { Film, MapPin, Users, Heart, Target, Award, Clapperboard, TrendingUp, Play, ArrowRight, Sparkles, Shield, CheckCircle, ChevronDown, BookOpen, Layers, Lightbulb, Zap } from 'lucide-react';
+import { Film, MapPin, Users, Heart, Target, Award, Clapperboard, TrendingUp, Play, ArrowRight, Sparkles, Shield, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function About() {
   const [playVideo, setPlayVideo] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const impactNumbers = [
     { number: '500+', label: 'Jeunes formés', sublabel: 'depuis 2015', icon: Users, color: 'from-blue-500 to-cyan-500' },
@@ -28,14 +27,6 @@ export default function About() {
     { year: '2023', title: '11 films', desc: '11 films réalisés, plus de 200 jeunes formés depuis 2015' },
     { year: '2024', title: 'Programme 8 modules', desc: 'Développement du parcours pédagogique structuré et de l\'outil numérique' },
     { year: '2025', title: 'Plateforme EdTech', desc: 'Lancement de la plateforme interactive sur tablettes pour les établissements scolaires' },
-  ];
-
-  const principes = [
-    { icon: Zap, title: 'Apprendre par l\'expérience', desc: 'Les élèves ne sont pas spectateurs. Ils observent, imaginent, proposent et construisent ensemble.' },
-    { icon: Sparkles, title: 'Le jeu comme moteur', desc: 'Les modules sont conçus comme des défis créatifs, pas comme des exercices scolaires.' },
-    { icon: Heart, title: 'L\'implication plutôt que la performance', desc: 'Pas de notes, pas de compétition. Ce qui compte : participer, proposer, s\'engager.' },
-    { icon: Shield, title: 'Un espace bienveillant', desc: 'Les erreurs font partie du processus créatif. Aucune idée n\'est mauvaise.' },
-    { icon: Target, title: 'Le processus compte autant que le résultat', desc: 'Les étapes de création sont aussi importantes que le film final.' },
   ];
 
   return (
@@ -95,30 +86,6 @@ export default function About() {
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-8 h-12 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
             <div className="w-1 h-3 bg-white/50 rounded-full animate-pulse"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* NOTRE VISION */}
-      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Notre <span className="gradient-text">Vision</span>
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            <div className="glass-card rounded-2xl p-8 border border-amber-500/20">
-              <p className="text-xl text-gray-200 leading-relaxed italic">
-                "Nous croyons que tout le monde peut apprendre à raconter une histoire. La narration n'est pas réservée à quelques spécialistes."
-              </p>
-            </div>
-            <div className="glass-card rounded-2xl p-8 border border-white/10">
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Banlieuwood est né d'un constat : les jeunes des quartiers ont du talent, mais zéro accès aux métiers de l'audiovisuel. Notre mission : <span className="text-white font-semibold">démocratiser la création artistique</span>.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -273,38 +240,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* NOS PRINCIPES */}
-      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Nos <span className="gradient-text">Principes</span>
-            </h2>
-            <p className="text-xl text-gray-400">Ce qui guide notre pédagogie</p>
-          </div>
-
-          <div className="space-y-4">
-            {principes.map((principe, i) => (
-              <div key={i} className="glass-card rounded-xl p-6 flex items-start gap-5 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-glow">
-                  <principe.icon className="w-6 h-6 text-white" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white mb-2">{principe.title}</h4>
-                  <p className="text-gray-400 leading-relaxed">{principe.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-400 italic text-lg">
-              "Il suffit parfois d'un moment, d'un groupe et d'un cadre pour que les idées apparaissent."
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* PARCOURS / TIMELINE */}
       <section className="py-24 px-4 bg-gray-900">
         <div className="max-w-7xl mx-auto">
@@ -337,75 +272,6 @@ export default function About() {
                     </div>
                     <p className="text-gray-300 text-lg leading-relaxed">{milestone.desc}</p>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* L'ÉCOSYSTÈME */}
-      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              L'<span className="gradient-text">Écosystème</span>
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              { icon: Layers, title: 'Plateforme technologique', desc: 'L\'outil numérique qui structure les ateliers sur tablettes', color: 'from-blue-500 to-cyan-500' },
-              { icon: Users, title: 'Partenaires pédagogiques', desc: 'Banlieuwood et les structures qui créent les parcours', color: 'from-amber-500 to-orange-500' },
-              { icon: BookOpen, title: 'Utilisateurs', desc: 'Écoles, enseignants, élèves', color: 'from-green-500 to-emerald-500' },
-            ].map((layer, i) => (
-              <div key={i} className="glass-strong rounded-2xl p-8 flex items-center gap-6 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${layer.color} flex items-center justify-center flex-shrink-0 shadow-glow`}>
-                  <layer.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-1">{layer.title}</h3>
-                  <p className="text-gray-400">{layer.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <p className="text-gray-400 italic">
-              "L'association Banlieuwood est le premier partenaire pédagogique de la plateforme, spécialisé en narration audiovisuelle."
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* EN IMAGES */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">En Images</h2>
-            <p className="text-xl text-gray-400">Nos ateliers en action</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { src: "https://images.pexels.com/photos/7234403/pexels-photo-7234403.jpeg", title: "Prise de vue", desc: "Jeune réalisatrice au cadrage" },
-              { src: "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg", title: "Travail d'équipe", desc: "Coordination sur le plateau" },
-              { src: "https://images.pexels.com/photos/8613314/pexels-photo-8613314.jpeg", title: "Le bon angle", desc: "Recherche du cadre parfait" },
-              { src: "https://images.pexels.com/photos/7234399/pexels-photo-7234399.jpeg", title: "Concentration", desc: "Direction d'acteurs" },
-              { src: "https://images.pexels.com/photos/7234257/pexels-photo-7234257.jpeg", title: "Formation", desc: "Atelier technique pro" },
-              { src: "https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg", title: "Action", desc: "En plein tournage" }
-            ].map((photo, index) => (
-              <div
-                key={index}
-                className="relative group overflow-hidden rounded-2xl aspect-[4/3] animate-scale-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <img src={photo.src} alt={photo.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                  <p className="text-xl font-bold mb-1">{photo.title}</p>
-                  <p className="text-gray-300 text-sm">{photo.desc}</p>
                 </div>
               </div>
             ))}
@@ -469,43 +335,6 @@ export default function About() {
                 <h3 className="text-xl font-bold mb-2">{agrement.title}</h3>
                 <p className="text-amber-500 font-mono text-sm mb-2">{agrement.numero}</p>
                 <p className="text-gray-400 text-sm">{agrement.delivrePar}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Questions <span className="gradient-text">Fréquentes</span>
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {[
-              { q: "C'est payant ?", a: "Non. 100% gratuit pour les jeunes. Matériel fourni. Formation offerte. Zéro frais cachés." },
-              { q: "Qui peut participer ?", a: "Les jeunes de 12 à 25 ans, sans aucun prérequis. Motivation > Expérience." },
-              { q: "Comment s'inscrire ?", a: "Rendez-vous sur la page Programme, contactez-nous. On vous rappelle sous 48h." },
-              { q: "J'ai besoin de matériel ?", a: "Non, tout est fourni : tablettes, caméras, micros, ordinateurs, logiciels." },
-              { q: "Il y a un diplôme ?", a: "Tu reçois une Carte Talent personnalisée et une attestation de participation." },
-              { q: "85% continuent dans l'audiovisuel ?", a: "Oui, étude interne 2023 (n=47). Écoles, stages, emplois, projets perso." },
-            ].map((faq, i) => (
-              <div key={i} className="glass-card rounded-xl overflow-hidden border border-white/10">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
-                >
-                  <span className="text-lg font-bold pr-4">{faq.q}</span>
-                  <ChevronDown className={`w-5 h-5 text-amber-500 flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} />
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-6 animate-fade-in">
-                    <p className="text-gray-300 leading-relaxed">{faq.a}</p>
-                  </div>
-                )}
               </div>
             ))}
           </div>
