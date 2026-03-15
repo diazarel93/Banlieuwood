@@ -22,8 +22,8 @@ const films: FilmData[] = [
     vimeoId: '1161233515',
     thumbnail: 'https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us',
     category: 'Fiction',
-    description: 'Court-metrage realise au college Grands Champs, Poissy',
-    crew: 'College Grands Champs',
+    description: 'Court-métrage réalisé au collège Grands Champs, Poissy',
+    crew: 'Collège Grands Champs',
     location: 'Poissy'
   },
   {
@@ -31,9 +31,9 @@ const films: FilmData[] = [
     vimeoId: '1161235634',
     thumbnail: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us',
     category: 'Fiction',
-    description: 'Court-metrage prime 3 fois en festivals',
+    description: 'Court-métrage primé 3 fois en festivals',
     crew: 'Rosny-sous-Bois',
-    award: 'Prime 3 fois',
+    award: 'Primé 3 fois',
     location: 'Rosny-sous-Bois'
   },
   {
@@ -41,17 +41,17 @@ const films: FilmData[] = [
     vimeoId: '1161233669',
     thumbnail: 'https://i.vimeocdn.com/video/2116519921-796ca26347a7fa7710da6ab1310491e707849f9d89bfc4cd00ceef3bbc5dd3d4-d_1280?region=us',
     category: 'Fiction',
-    description: 'Realise pour le Nikon Film Festival',
+    description: 'Réalisé pour le Nikon Film Festival',
     crew: 'Saint-Denis',
     location: 'Saint-Denis'
   },
   {
-    title: 'Delegue des Tas',
+    title: 'Délégué des Tas',
     vimeoId: '1161234751',
     thumbnail: 'https://i.vimeocdn.com/video/2116521958-735964467320283972471ad91e8c89f589c25560834a04e65960d6f8925cafee-d_1280?region=us',
     category: 'Fiction',
-    description: 'Court-metrage au college Blaise Pascal',
-    crew: 'College Blaise Pascal',
+    description: 'Court-métrage au collège Blaise Pascal',
+    crew: 'Collège Blaise Pascal',
     location: 'Plaisir'
   },
   {
@@ -59,7 +59,7 @@ const films: FilmData[] = [
     vimeoId: '1161231322',
     thumbnail: 'https://i.vimeocdn.com/video/2116516973-cfb43c14c607375cdf6b6affb594a3c73e1dad808cf204d1b616bab81093da52-d_1280?region=us',
     category: 'Fiction',
-    description: 'Realise avec 15 jeunes',
+    description: 'Réalisé avec 15 jeunes',
     crew: '15 jeunes',
     location: 'Roissy-en-Brie'
   },
@@ -68,17 +68,17 @@ const films: FilmData[] = [
     vimeoId: '1161234053',
     thumbnail: 'https://i.vimeocdn.com/video/2116521612-e85659aaed322b96282e7645b11f02d215acc4f2200760c5f61e4c07658922d7-d_1280?region=us',
     category: 'Fiction',
-    description: 'Realise avec 18 jeunes a Creteil',
+    description: 'Réalisé avec 18 jeunes à Créteil',
     crew: '18 jeunes',
-    location: 'Creteil'
+    location: 'Créteil'
   },
   {
-    title: 'Snap peut nuire a votre sante',
+    title: 'Snap peut nuire à votre santé',
     vimeoId: '1161231894',
     thumbnail: 'https://i.vimeocdn.com/video/2116517155-3fd5d47899ca88918810fff00f7c39cf6e0a14fb987d07678fe8d6d690a8095a-d_1280?region=us',
     category: 'Fiction',
-    description: 'Court-metrage realise avec 30 eleves',
-    crew: '30 eleves',
+    description: 'Court-métrage réalisé avec 30 élèves',
+    crew: '30 élèves',
     location: 'Aubervilliers'
   },
   {
@@ -86,7 +86,7 @@ const films: FilmData[] = [
     youtubeId: 'eo_qVvsWRwM',
     thumbnail: 'https://img.youtube.com/vi/eo_qVvsWRwM/hqdefault.jpg',
     category: 'Fiction',
-    description: 'Sur le theme du harcelement scolaire',
+    description: 'Sur le thème du harcèlement scolaire',
     crew: 'Poissy',
     location: 'Poissy'
   },
@@ -95,7 +95,7 @@ const films: FilmData[] = [
     vimeoId: '1161235536',
     thumbnail: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us',
     category: 'Fiction',
-    description: 'Long-metrage realise avec 22 jeunes. Disponible sur Amazon Prime Video.',
+    description: 'Long-métrage réalisé avec 22 jeunes. Disponible sur Amazon Prime Video.',
     crew: '22 jeunes',
     award: 'Amazon Prime'
   },
@@ -104,7 +104,7 @@ const films: FilmData[] = [
     vimeoId: '1160858372',
     thumbnail: 'https://i.vimeocdn.com/video/2116005228-afff924899569cad1567ca9a9867ad510c4082ae51f1a4c44510c3c4179c0e51-d_1280?region=us',
     category: 'Fiction',
-    description: 'Court-metrage de fiction'
+    description: 'Court-métrage de fiction'
   },
   // MAKING-OF
   {
@@ -122,11 +122,11 @@ const films: FilmData[] = [
     description: 'Les coulisses du tournage avec les CM2'
   },
   {
-    title: 'Making Of Delegue des Tas',
+    title: 'Making Of Délégué des Tas',
     vimeoId: '1161234440',
     thumbnail: 'https://i.vimeocdn.com/video/2116520904-5e3353b05fab87db8e5abcb07c99f9f10f8515949107668c990d10bb9a1e6f29-d_1280?region=us',
     category: 'Making-of',
-    description: 'En coulisses au college Blaise Pascal'
+    description: 'En coulisses au collège Blaise Pascal'
   },
   {
     title: 'Making Of Perdue',
@@ -140,7 +140,7 @@ const films: FilmData[] = [
     vimeoId: '1161234232',
     thumbnail: 'https://i.vimeocdn.com/video/2116520146-9109d1f6fd8e73d5b9531879f7d8b01192a0d6f4485c391c9136a335d3799d8b-d_1280?region=us',
     category: 'Making-of',
-    description: 'Les coulisses du long-metrage Tic Tac'
+    description: 'Les coulisses du long-métrage Tic Tac'
   },
   // DOCUMENTAIRES
   {
@@ -148,7 +148,7 @@ const films: FilmData[] = [
     vimeoId: '1161231299',
     thumbnail: 'https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us',
     category: 'Documentaire',
-    description: 'Decouvre qui on est et ce qu\'on fait'
+    description: 'Découvre qui on est et ce qu\'on fait'
   },
   {
     title: 'Grand Pari Citoyen',
@@ -162,7 +162,7 @@ const films: FilmData[] = [
     youtubeId: 'Ep1LQcSP57Y',
     thumbnail: 'https://img.youtube.com/vi/Ep1LQcSP57Y/hqdefault.jpg',
     category: 'Documentaire',
-    description: 'Reportage au college Blaise Pascal'
+    description: 'Reportage au collège Blaise Pascal'
   }
 ];
 
@@ -177,10 +177,10 @@ export default function Films() {
   });
 
   const stats = [
-    { icon: Film, number: '10', label: 'Films Fiction', description: 'Courts et longs metrages' },
-    { icon: Users, number: '200+', label: 'Jeunes Acteurs', description: 'Ont participe aux productions' },
-    { icon: Award, number: '3', label: 'Prix Gagnes', description: '"Voir la Mer" prime 3 fois' },
-    { icon: Eye, number: '18', label: 'Videos', description: 'Films, making-of et documentaires' }
+    { icon: Film, number: '10', label: 'Films Fiction', description: 'Courts et longs métrages' },
+    { icon: Users, number: '200+', label: 'Jeunes Acteurs', description: 'Ont participé aux productions' },
+    { icon: Award, number: '3', label: 'Prix Gagnés', description: '"Voir la Mer" primé 3 fois' },
+    { icon: Eye, number: '18', label: 'Vidéos', description: 'Films, making-of et documentaires' }
   ];
 
   return (
@@ -219,7 +219,7 @@ export default function Films() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Ce Qu'On A <span className="gradient-text">Cree</span>
+              Ce Qu'On A <span className="gradient-text">Créé</span>
             </h2>
             <p className="text-xl text-gray-400">Les chiffres de notre production collective</p>
           </div>
@@ -248,7 +248,7 @@ export default function Films() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Tic Tac sur <span className="gradient-text">Amazon Prime</span>
             </h2>
-            <p className="text-xl text-gray-400">Notre long-metrage, accessible mondialement</p>
+            <p className="text-xl text-gray-400">Notre long-métrage, accessible mondialement</p>
           </div>
 
           <div className="glass-strong rounded-3xl overflow-hidden border-2 border-amber-500/30 max-w-5xl mx-auto">
@@ -259,7 +259,7 @@ export default function Films() {
               }}>
                 <img
                   src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
-                  alt="Tic Tac - Long metrage"
+                  alt="Tic Tac - Long métrage"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/80 lg:to-black"></div>
@@ -283,7 +283,7 @@ export default function Films() {
 
                 <h3 className="text-3xl font-bold mb-4">Tic Tac</h3>
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  Long-metrage realise avec 22 jeunes. De l'ecriture a la diffusion mondiale sur Amazon Prime Video.
+                  Long-métrage réalisé avec 22 jeunes. De l'écriture à la diffusion mondiale sur Amazon Prime Video.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
@@ -294,7 +294,7 @@ export default function Films() {
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-8 py-4 rounded-xl transition-all hover-lift shadow-glow text-lg"
                   >
                     <ExternalLink className="w-6 h-6" />
-                    Voir sur Allocine
+                    Voir sur Allociné
                   </a>
                   <button
                     onClick={() => {
@@ -467,7 +467,7 @@ export default function Films() {
           <div className="glass-strong rounded-3xl p-12 md:p-16 text-center border-2 border-amber-500/30">
             <Sparkles className="w-16 h-16 text-amber-500 mx-auto mb-6 animate-float" />
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Crée Ton <span className="gradient-text">Film</span>
+              Crée ton <span className="gradient-text">Film</span>
             </h2>
             <p className="text-2xl text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto">
               Tous ces films ont été créés par des jeunes comme toi. Rejoins un atelier et fais le prochain.
