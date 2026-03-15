@@ -128,7 +128,7 @@ export default function Home() {
                 title: 'Jeunes formés',
                 desc: 'De 12 à 25 ans, tous niveaux',
                 color: 'from-blue-500 to-cyan-500',
-                bgImage: 'https://images.pexels.com/photos/7234403/pexels-photo-7234403.jpeg'
+                bgImage: 'https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us'
               },
               {
                 icon: TrendingUp,
@@ -136,7 +136,7 @@ export default function Home() {
                 title: 'Continuent dans l\'audiovisuel',
                 desc: 'Écoles, stages, emplois',
                 color: 'from-amber-500 to-orange-500',
-                bgImage: 'https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg'
+                bgImage: 'https://i.vimeocdn.com/video/2116521612-e85659aaed322b96282e7645b11f02d215acc4f2200760c5f61e4c07658922d7-d_1280?region=us'
               },
               {
                 icon: Award,
@@ -144,7 +144,7 @@ export default function Home() {
                 title: 'Prix en festivals',
                 desc: 'Reconnaissance nationale',
                 color: 'from-amber-500 to-orange-500',
-                bgImage: 'https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg'
+                bgImage: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us'
               },
             ].map((stat, index) => (
               <div
@@ -237,9 +237,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'VOIR LA MER', image: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg', color: 'from-blue-500' },
-              { title: 'TIC-TAC', image: 'https://images.pexels.com/photos/1174746/pexels-photo-1174746.jpeg', color: 'from-amber-500' },
-              { title: "L'INTERROGATOIRE", image: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg', color: 'from-red-500' }
+              { title: 'VOIR LA MER', image: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us', color: 'from-blue-500' },
+              { title: 'TIC-TAC', image: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us', color: 'from-amber-500' },
+              { title: "L'INTERROGATOIRE", image: 'https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us', color: 'from-red-500' }
             ].map((project, index) => (
               <Link
                 key={index}

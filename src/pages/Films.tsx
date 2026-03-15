@@ -20,7 +20,7 @@ const films: FilmData[] = [
   {
     title: "L'Interrogatoire",
     vimeoId: '1161233515',
-    thumbnail: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us',
     category: 'Fiction',
     description: 'Court-metrage realise au college Grands Champs, Poissy',
     crew: 'College Grands Champs',
@@ -29,7 +29,7 @@ const films: FilmData[] = [
   {
     title: 'Voir la Mer',
     vimeoId: '1161235634',
-    thumbnail: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us',
     category: 'Fiction',
     description: 'Court-metrage prime 3 fois en festivals',
     crew: 'Rosny-sous-Bois',
@@ -39,7 +39,7 @@ const films: FilmData[] = [
   {
     title: "L'Homme de Famille",
     vimeoId: '1161233669',
-    thumbnail: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116519921-796ca26347a7fa7710da6ab1310491e707849f9d89bfc4cd00ceef3bbc5dd3d4-d_1280?region=us',
     category: 'Fiction',
     description: 'Realise pour le Nikon Film Festival',
     crew: 'Saint-Denis',
@@ -48,7 +48,7 @@ const films: FilmData[] = [
   {
     title: 'Delegue des Tas',
     vimeoId: '1161234751',
-    thumbnail: 'https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116521958-735964467320283972471ad91e8c89f589c25560834a04e65960d6f8925cafee-d_1280?region=us',
     category: 'Fiction',
     description: 'Court-metrage au college Blaise Pascal',
     crew: 'College Blaise Pascal',
@@ -57,7 +57,7 @@ const films: FilmData[] = [
   {
     title: 'ODEULC',
     vimeoId: '1161231322',
-    thumbnail: 'https://images.pexels.com/photos/1174746/pexels-photo-1174746.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116516973-cfb43c14c607375cdf6b6affb594a3c73e1dad808cf204d1b616bab81093da52-d_1280?region=us',
     category: 'Fiction',
     description: 'Realise avec 15 jeunes',
     crew: '15 jeunes',
@@ -66,7 +66,7 @@ const films: FilmData[] = [
   {
     title: 'La Belle Saison',
     vimeoId: '1161234053',
-    thumbnail: 'https://images.pexels.com/photos/3585088/pexels-photo-3585088.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116521612-e85659aaed322b96282e7645b11f02d215acc4f2200760c5f61e4c07658922d7-d_1280?region=us',
     category: 'Fiction',
     description: 'Realise avec 18 jeunes a Creteil',
     crew: '18 jeunes',
@@ -75,7 +75,7 @@ const films: FilmData[] = [
   {
     title: 'Snap peut nuire a votre sante',
     vimeoId: '1161231894',
-    thumbnail: 'https://images.pexels.com/photos/7234344/pexels-photo-7234344.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116517155-3fd5d47899ca88918810fff00f7c39cf6e0a14fb987d07678fe8d6d690a8095a-d_1280?region=us',
     category: 'Fiction',
     description: 'Court-metrage realise avec 30 eleves',
     crew: '30 eleves',
@@ -84,95 +84,85 @@ const films: FilmData[] = [
   {
     title: 'Silence, Moteur, Action',
     youtubeId: 'eo_qVvsWRwM',
-    thumbnail: 'https://images.pexels.com/photos/7234401/pexels-photo-7234401.jpeg',
+    thumbnail: 'https://img.youtube.com/vi/eo_qVvsWRwM/hqdefault.jpg',
     category: 'Fiction',
     description: 'Sur le theme du harcelement scolaire',
     crew: 'Poissy',
     location: 'Poissy'
   },
   {
-    title: 'Le Passage',
-    vimeoId: '1161235536',
-    thumbnail: 'https://images.pexels.com/photos/7991319/pexels-photo-7991319.jpeg',
-    category: 'Fiction',
-    description: 'Realise avec une classe de CM2',
-    crew: 'Classe CM2',
-    location: 'Poissy'
-  },
-  {
     title: 'Tic Tac',
-    vimeoId: '1161235598',
-    thumbnail: 'https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg',
+    vimeoId: '1161235536',
+    thumbnail: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us',
     category: 'Fiction',
     description: 'Long-metrage realise avec 22 jeunes. Disponible sur Amazon Prime Video.',
     crew: '22 jeunes',
     award: 'Amazon Prime'
   },
   {
-    title: 'Perdue',
-    vimeoId: '1161234232',
-    thumbnail: 'https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg',
+    title: 'La Petite Princesse',
+    vimeoId: '1160858372',
+    thumbnail: 'https://i.vimeocdn.com/video/2116005228-afff924899569cad1567ca9a9867ad510c4082ae51f1a4c44510c3c4179c0e51-d_1280?region=us',
     category: 'Fiction',
-    description: 'Realise avec 8 jeunes',
-    crew: '8 jeunes',
-    location: 'Roissy-en-Brie'
+    description: 'Court-metrage de fiction'
   },
-  // MAKING-OF & DOCS
-  {
-    title: 'Teaser Banlieuwood',
-    vimeoId: '1161231299',
-    thumbnail: 'https://images.pexels.com/photos/7234403/pexels-photo-7234403.jpeg',
-    category: 'Documentaire',
-    description: 'Decouvre qui on est et ce qu\'on fait'
-  },
+  // MAKING-OF
   {
     title: "Making Of L'Interrogatoire",
     vimeoId: '1161232067',
-    thumbnail: 'https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116519419-d83037aaf8c61f2523f1c8f7cb552e9a6bfd7be13175e404fcb6cd918e5c58dc-d_1280?region=us',
     category: 'Making-of',
     description: 'Les coulisses du tournage'
   },
   {
     title: 'Making Of Le Passage',
     youtubeId: 'a0Px84_uZnQ',
-    thumbnail: 'https://images.pexels.com/photos/8613314/pexels-photo-8613314.jpeg',
+    thumbnail: 'https://img.youtube.com/vi/a0Px84_uZnQ/hqdefault.jpg',
     category: 'Making-of',
     description: 'Les coulisses du tournage avec les CM2'
   },
   {
     title: 'Making Of Delegue des Tas',
     vimeoId: '1161234440',
-    thumbnail: 'https://images.pexels.com/photos/7234399/pexels-photo-7234399.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116520904-5e3353b05fab87db8e5abcb07c99f9f10f8515949107668c990d10bb9a1e6f29-d_1280?region=us',
     category: 'Making-of',
     description: 'En coulisses au college Blaise Pascal'
   },
   {
     title: 'Making Of Perdue',
     vimeoId: '1161234268',
-    thumbnail: 'https://images.pexels.com/photos/7234257/pexels-photo-7234257.jpeg',
+    thumbnail: 'https://i.vimeocdn.com/video/2116520406-2e129c5503261820b0c95915d8fee6cc5ccb20bb7fb11984c2b9bd0780b0ba7b-d_1280?region=us',
     category: 'Making-of',
     description: 'Les coulisses du film Perdue'
   },
   {
+    title: 'Making Of Tic Tac',
+    vimeoId: '1161234232',
+    thumbnail: 'https://i.vimeocdn.com/video/2116520146-9109d1f6fd8e73d5b9531879f7d8b01192a0d6f4485c391c9136a335d3799d8b-d_1280?region=us',
+    category: 'Making-of',
+    description: 'Les coulisses du long-metrage Tic Tac'
+  },
+  // DOCUMENTAIRES
+  {
+    title: 'Teaser Banlieuwood',
+    vimeoId: '1161231299',
+    thumbnail: 'https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us',
+    category: 'Documentaire',
+    description: 'Decouvre qui on est et ce qu\'on fait'
+  },
+  {
     title: 'Grand Pari Citoyen',
     youtubeId: 'k2t-cjl4Fgg',
-    thumbnail: 'https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg',
+    thumbnail: 'https://img.youtube.com/vi/k2t-cjl4Fgg/hqdefault.jpg',
     category: 'Documentaire',
     description: 'Documentaire sur l\'engagement citoyen'
   },
   {
     title: 'Reportage Blaise Pascal',
     youtubeId: 'Ep1LQcSP57Y',
-    thumbnail: 'https://images.pexels.com/photos/5699519/pexels-photo-5699519.jpeg',
+    thumbnail: 'https://img.youtube.com/vi/Ep1LQcSP57Y/hqdefault.jpg',
     category: 'Documentaire',
     description: 'Reportage au college Blaise Pascal'
-  },
-  {
-    title: 'Rencontre Police',
-    vimeoId: '1160858372',
-    thumbnail: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg',
-    category: 'Documentaire',
-    description: 'Documentaire sur la rencontre avec la police'
   }
 ];
 
@@ -187,10 +177,10 @@ export default function Films() {
   });
 
   const stats = [
-    { icon: Film, number: '11', label: 'Films Fiction', description: 'Courts et longs metrages' },
+    { icon: Film, number: '10', label: 'Films Fiction', description: 'Courts et longs metrages' },
     { icon: Users, number: '200+', label: 'Jeunes Acteurs', description: 'Ont participe aux productions' },
     { icon: Award, number: '3', label: 'Prix Gagnes', description: '"Voir la Mer" prime 3 fois' },
-    { icon: Eye, number: '19', label: 'Videos', description: 'Films, making-of et documentaires' }
+    { icon: Eye, number: '18', label: 'Videos', description: 'Films, making-of et documentaires' }
   ];
 
   return (
@@ -198,8 +188,8 @@ export default function Films() {
       <section className="relative py-32 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/7234403/pexels-photo-7234403.jpeg"
-            alt="Tournage"
+            src="https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us"
+            alt="Tournage Banlieuwood"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70"></div>
@@ -208,7 +198,7 @@ export default function Films() {
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6 animate-fade-in">
             <Video className="w-5 h-5 text-amber-500" />
-            <span className="text-amber-400 font-bold">19 Productions</span>
+            <span className="text-amber-400 font-bold">18 Productions</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight animate-fade-in stagger-delay-1">
@@ -268,7 +258,7 @@ export default function Films() {
                 if (ticTacIndex !== -1) setSelectedFilmIndex(ticTacIndex);
               }}>
                 <img
-                  src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg"
+                  src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
                   alt="Tic Tac - Long metrage"
                   className="w-full h-full object-cover"
                 />
