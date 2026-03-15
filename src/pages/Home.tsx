@@ -1,4 +1,4 @@
-import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight, Clapperboard, BookOpen, Building2 } from 'lucide-react';
+import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import VideoPlayer from '../components/VideoPlayer';
@@ -95,18 +95,18 @@ export default function Home() {
       </VideoHeroBackground>
 
       {/* STATS */}
-      <section className="py-32 px-4 bg-gradient-to-b from-black via-black to-black relative overflow-hidden">
+      <section className="py-24 px-4 bg-gradient-to-b from-black via-black to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial from-amber-500/5 via-transparent to-transparent"></div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-            C'est Quoi Banlieuwood ?
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            C'est Quoi <span className="gradient-text">Banlieuwood</span> ?
           </h2>
           <p className="text-xl md:text-2xl leading-relaxed text-gray-300 font-light mb-16 max-w-3xl mx-auto">
             Un <span className="text-white font-semibold">programme pédagogique</span> pour apprendre le cinéma en faisant. <span className="gradient-text font-semibold">8 modules, de l'observation à la réalisation.</span>
           </p>
 
-          <div className="grid md:grid-cols-4 gap-6 mt-20">
+          <div className="grid md:grid-cols-4 gap-6">
             {[
               {
                 icon: Users,
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* POUR QUI ? */}
-      <section className="py-20 px-4 bg-gray-900">
+      <section className="py-24 px-4 bg-gray-900">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
             <Link to="/programme" className="glass-strong rounded-2xl p-8 border-2 border-amber-500/20 hover:border-amber-500 transition-all hover-lift group">
@@ -235,7 +235,7 @@ export default function Home() {
       </section>
 
       {/* FILMS PREVIEW */}
-      <section className="py-32 px-4 bg-gray-900 relative overflow-hidden">
+      <section className="py-24 px-4 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"></div>
@@ -243,7 +243,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-4">Nos Films</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Nos <span className="gradient-text">Films</span></h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Ce que les jeunes créent : courts-métrages, clips, documentaires.
             </p>
@@ -298,7 +298,8 @@ export default function Home() {
       {/* TEASER */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">Teaser</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center gradient-text">Teaser</h2>
+          <p className="text-xl text-gray-400 text-center mb-12">Banlieuwood en images</p>
           <div
             className="relative aspect-video glass rounded-2xl overflow-hidden group cursor-pointer shadow-2xl hover:shadow-glow-strong transition-all duration-500"
             onClick={() => setShowTeaser(true)}
@@ -327,7 +328,7 @@ export default function Home() {
               Prêt à <span className="gradient-text">Commencer</span> ?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Contacte-nous pour rejoindre le prochain atelier.
+              Contactez-nous pour rejoindre le prochain atelier.
             </p>
 
             <Link

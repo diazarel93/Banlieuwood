@@ -1,4 +1,4 @@
-import { Film, Clapperboard, Camera, Users, Sparkles, Video, Target, Zap, Lightbulb, Pencil, Eye, BookOpen, Tablet, ArrowRight, Award, Mail, MessageSquare } from 'lucide-react';
+import { Film, Clapperboard, Camera, Users, Sparkles, Target, Zap, Lightbulb, Pencil, Eye, Tablet, ArrowRight, Award, Mail, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Ateliers() {
@@ -309,7 +309,7 @@ export default function Ateliers() {
                 color: 'from-amber-500 to-orange-500'
               }
             ].map((reason, i) => (
-              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift border-t-4 border-amber-500 animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${reason.color} flex items-center justify-center mb-6 shadow-glow`}>
                   <reason.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>

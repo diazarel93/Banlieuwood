@@ -170,7 +170,7 @@ export default function Contact() {
                 </span>
               </div>
 
-              <form onSubmit={handleSubmit} className="bg-gray-900 p-8 md:p-12 space-y-6 rounded-lg animate-scale-in">
+              <form onSubmit={handleSubmit} className="bg-gray-900 p-8 md:p-12 space-y-6 rounded-2xl animate-scale-in">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2 text-gray-300">
                     <User className="w-4 h-4 inline mr-2" />
@@ -318,7 +318,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-4 text-lg rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold px-8 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
                   </button>
@@ -327,7 +327,7 @@ export default function Contact() {
             </>
           )}
 
-          <div className="mt-12 bg-gray-900 p-8 text-center rounded-lg">
+          <div className="mt-12 bg-gray-900 p-8 text-center rounded-2xl">
             <div className="mb-4">
               <Film className="w-10 h-10 text-amber-500 mx-auto mb-2" strokeWidth={1.5} />
             </div>

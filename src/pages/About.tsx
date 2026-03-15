@@ -32,7 +32,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       {/* HERO */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative py-32 flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg"
@@ -83,11 +83,6 @@ export default function About() {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-8 h-12 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full animate-pulse"></div>
-          </div>
-        </div>
       </section>
 
       {/* STATS */}
@@ -157,8 +152,8 @@ export default function About() {
             <div className="order-1 lg:order-2">
               <div className="relative rounded-2xl overflow-hidden group">
                 <img
-                  src="https://images.pexels.com/photos/7234257/pexels-photo-7234257.jpeg"
-                  alt="Atelier de formation Banlieuwood"
+                  src="https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us"
+                  alt="Tournage d'un court-métrage Banlieuwood"
                   className="w-full h-[600px] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -174,8 +169,8 @@ export default function About() {
             {!playVideo ? (
               <div className="relative group cursor-pointer" onClick={() => setPlayVideo(true)}>
                 <img
-                  src="https://images.pexels.com/photos/7234399/pexels-photo-7234399.jpeg"
-                  alt="Tournage en cours"
+                  src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
+                  alt="Tournage Banlieuwood"
                   className="w-full h-[500px] object-cover rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all flex items-center justify-center rounded-2xl">
