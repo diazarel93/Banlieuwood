@@ -2,27 +2,12 @@ import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight } from 'luci
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import VideoPlayer from '../components/VideoPlayer';
-import Testimonials from '../components/Testimonials';
-import TrustBadges from '../components/TrustBadges';
-import MediaGallery from '../components/MediaGallery';
-import LiveCounter from '../components/LiveCounter';
-// CountdownTimer removed — using static CTA instead
-import SocialProofNotification from '../components/SocialProofNotification';
 import VideoHeroBackground from '../components/VideoHeroBackground';
-import BeforeAfterStories from '../components/BeforeAfterStories';
-import VideoTestimonials from '../components/VideoTestimonials';
 import { supabase } from '../lib/supabase';
 
 export default function Home() {
   const [showTeaser, setShowTeaser] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const [heroBackground, setHeroBackground] = useState('');
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     fetchHeroBackground();
@@ -55,6 +40,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* HERO */}
       <VideoHeroBackground
         vimeoId="1161231299"
         posterImage={heroBackground || "http://banlieuwood.fr/wp-content/uploads/2021/03/vintage-film-projector-and-film-screening-1.jpg"}
@@ -105,10 +91,7 @@ export default function Home() {
         </div>
       </VideoHeroBackground>
 
-      {/* Social Proof Notifications */}
-      <SocialProofNotification />
-
-      {/* BLOC 2 : C'EST QUOI EXACTEMENT ? */}
+      {/* STATS */}
       <section className="py-32 px-4 bg-gradient-to-b from-black via-black to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial from-amber-500/5 via-transparent to-transparent"></div>
 
@@ -175,52 +158,10 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          <div className="mt-16">
-            <Link
-              to="/reussites"
-              className="group inline-flex items-center gap-3 glass-card text-amber-400 hover:text-amber-300 font-bold px-12 py-5 text-lg rounded-xl transition-all duration-300 border-2 border-amber-500/30 hover:border-amber-500 hover-lift"
-            >
-              <span>Voir nos réussites</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* BLOC 3 : ATELIERS EN IMAGES */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-              Les Ateliers
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Caméra, micro, montage : tu apprends en faisant, pas en regardant des tutos.
-            </p>
-          </div>
-
-          <MediaGallery pageLocation="home" category="gallery" columns={3} />
-
-          <div className="text-center mt-12">
-            <Link
-              to="/ateliers"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-10 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow"
-            >
-              Voir tous les ateliers
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* BLOC 4 : AVANT/APRÈS STORIES */}
-      <BeforeAfterStories />
-
-      {/* BLOC 5 : TÉMOIGNAGES VIDÉO */}
-      <VideoTestimonials />
-
-      {/* BLOC 6 : NOS FILMS */}
+      {/* FILMS PREVIEW */}
       <section className="py-32 px-4 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
@@ -281,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BLOC 7 : TEASER */}
+      {/* TEASER */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">Teaser</h2>
@@ -305,27 +246,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BLOC 8 : CHIFFRES DÉTAILLÉS */}
+      {/* CTA FINAL */}
       <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Les <span className="gradient-text">Chiffres</span>
-            </h2>
-            <p className="text-gray-400 text-lg">Depuis 2015</p>
-          </div>
-          <LiveCounter />
-        </div>
-      </section>
-
-      {/* BLOC 9 : TRUST BADGES */}
-      <TrustBadges />
-
-      {/* BLOC 10 : TÉMOIGNAGES TEXTE */}
-      <Testimonials />
-
-      {/* BLOC 11 : CTA INSCRIPTION */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto">
           <div className="glass-strong rounded-2xl p-8 md:p-12 border-2 border-amber-500/30 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -349,63 +271,6 @@ export default function Home() {
               <span className="text-amber-500">•</span>
               <span className="flex items-center gap-2">12-25 ans</span>
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* BLOC 12 : CTA FINAL */}
-      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-amber-500/10 via-transparent to-transparent"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="glass-strong p-12 md:p-20 rounded-3xl text-center relative overflow-hidden shadow-2xl border-2 border-amber-500/30">
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 via-transparent to-orange-500/20"></div>
-
-            <div className="relative z-10">
-              <div className="inline-block mb-6 glass px-6 py-2 rounded-full">
-                <p className="text-amber-500 font-bold text-sm uppercase tracking-wide">Places Limitées</p>
-              </div>
-
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Inscris-toi Maintenant !
-              </h2>
-
-              <p className="text-xl md:text-2xl text-gray-300 font-semibold mb-10 flex flex-wrap items-center justify-center gap-4">
-                <span className="flex items-center gap-2">
-                  <Users className="w-6 h-6 text-amber-500" />
-                  15 places par atelier
-                </span>
-                <span className="text-amber-500">•</span>
-                <span className="flex items-center gap-2">
-                  <Sparkles className="w-6 h-6 text-amber-500" />
-                  100% gratuit
-                </span>
-                <span className="text-amber-500">•</span>
-                <span>Sans prérequis</span>
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/ateliers"
-                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-12 py-5 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow-strong"
-                >
-                  Réserver ma place
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  to="/faq"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-12 py-5 text-lg rounded-xl transition-all duration-300 backdrop-blur-xl border border-white/20"
-                >
-                  J'ai des questions
-                </Link>
-              </div>
-
-              <p className="text-gray-400 text-sm mt-8">
-                Aucun pré-requis. Juste ta motivation.
-              </p>
-            </div>
           </div>
         </div>
       </section>

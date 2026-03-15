@@ -8,22 +8,10 @@ export default function Navigation() {
 
   const links = [
     { path: '/', label: 'Accueil' },
-    { path: '/about', label: 'Le Projet' },
-    { path: '/deroulement', label: 'Notre Méthode' },
     { path: '/ateliers', label: 'Ateliers' },
     { path: '/films', label: 'Films' },
-    { path: '/reussites', label: 'Impact' },
     { path: '/institutions', label: 'Institutions' },
-    { path: '/partenaires', label: 'Partenaires' },
-    { path: '/faq', label: 'FAQ' },
-    { path: '/soutenir', label: 'Soutenir', highlight: true },
-  ];
-
-  const mobileLinks = [
-    ...links,
-    { path: '/gouvernance', label: 'Gouvernance' },
-    { path: '/labels', label: 'Labels & Agréments' },
-    { path: '/documentation', label: 'Documentation' },
+    { path: '/about', label: 'A Propos' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -55,19 +43,15 @@ export default function Navigation() {
                   key={link.path}
                   to={link.path}
                   className={`font-semibold transition-all whitespace-nowrap relative group ${
-                    link.highlight
-                      ? 'btn-primary px-6 py-3 rounded-xl'
-                      : isActive(link.path)
+                    isActive(link.path)
                       ? 'text-amber-400'
                       : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {link.label}
-                  {!link.highlight && (
-                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 transform origin-left transition-transform duration-300 ${
-                      isActive(link.path) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                    }`}></span>
-                  )}
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 transform origin-left transition-transform duration-300 ${
+                    isActive(link.path) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}></span>
                 </Link>
               ))}
             </div>
@@ -83,15 +67,13 @@ export default function Navigation() {
 
           {isMenuOpen && (
             <div className="lg:hidden mt-6 pb-2 space-y-2 animate-slide-up">
-              {mobileLinks.map((link) => (
+              {links.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMenuOpen(false)}
                   className={`block w-full text-left font-semibold transition-all py-4 px-5 rounded-xl ${
-                    link.highlight
-                      ? 'btn-primary text-center'
-                      : isActive(link.path)
+                    isActive(link.path)
                       ? 'text-amber-400 glass-card'
                       : 'text-gray-300 hover:text-white glass hover:glass-strong'
                   }`}

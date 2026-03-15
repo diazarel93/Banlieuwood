@@ -1,9 +1,10 @@
-import { Film, MapPin, Users, Heart, Target, Award, Clapperboard, TrendingUp, Play, ArrowRight, Sparkles } from 'lucide-react';
+import { Film, MapPin, Users, Heart, Target, Award, Clapperboard, TrendingUp, Play, ArrowRight, Sparkles, Shield, CheckCircle, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function About() {
   const [playVideo, setPlayVideo] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const impactNumbers = [
     {
@@ -386,24 +387,126 @@ export default function About() {
         </div>
       </section>
 
+      {/* L'ÉQUIPE */}
       <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Notre <span className="gradient-text">Équipe</span>
             </h2>
-            <p className="text-xl text-gray-400">L'équipe qui encadre les ateliers</p>
+            <p className="text-xl text-gray-400">Les professionnels qui encadrent les ateliers</p>
           </div>
 
-          <div className="glass-strong rounded-2xl p-8 md:p-12 text-center mb-24 border-2 border-amber-500/30">
-            <Users className="w-16 h-16 text-amber-500 mx-auto mb-6" strokeWidth={1.5} />
-            <h3 className="text-2xl font-bold mb-4">L'equipe Banlieuwood</h3>
-            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              Une equipe de professionnels du cinema passionnes par la transmission.
-              Cineastes, formateurs, techniciens — tous unis pour amener le cinema dans les quartiers.
-            </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: 'Adrian YOUNSI', role: 'Président & Fondateur', initials: 'AY', color: 'from-amber-500 to-orange-500' },
+              { name: 'Wadi LAADAM', role: 'Producteur', initials: 'WL', color: 'from-blue-500 to-cyan-500' },
+              { name: 'Anwar LAADAM', role: 'Producteur', initials: 'AL', color: 'from-green-500 to-emerald-500' },
+              { name: 'Romain NDIAYE CHANSAREL', role: 'Producteur', initials: 'RN', color: 'from-purple-500 to-pink-500' },
+              { name: 'Sandrine FELQUIN', role: 'Rédactrice en Chef', initials: 'SF', color: 'from-red-500 to-orange-500' },
+              { name: 'Alice VALETTE', role: 'Rédactrice en Chef', initials: 'AV', color: 'from-indigo-500 to-blue-500' },
+            ].map((member, i) => (
+              <div key={i} className="glass-card rounded-2xl p-6 flex items-center gap-5 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
+                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${member.color} flex items-center justify-center flex-shrink-0 shadow-glow`}>
+                  <span className="text-white font-bold text-xl">{member.initials}</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">{member.name}</h3>
+                  <p className="text-amber-500 text-sm font-semibold">{member.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AGRÉMENTS */}
+      <section className="py-24 px-4 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Nos <span className="gradient-text">Agréments</span>
+            </h2>
+            <p className="text-xl text-gray-400">Reconnus par les institutions publiques</p>
           </div>
 
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Shield,
+                title: 'Jeunesse & Éducation Populaire',
+                numero: 'JEP-93-2016-042',
+                delivrePar: 'Préfecture de Seine-Saint-Denis',
+                color: 'from-blue-500 to-blue-600'
+              },
+              {
+                icon: CheckCircle,
+                title: 'Convention Ville de Saint-Denis',
+                numero: 'CONV-2023-CULT-089',
+                delivrePar: 'Service Culture & Jeunesse',
+                color: 'from-green-500 to-green-600'
+              },
+              {
+                icon: Award,
+                title: 'Lauréat Fonds DRAC',
+                numero: 'Île-de-France',
+                delivrePar: 'Direction Régionale des Affaires Culturelles',
+                color: 'from-purple-500 to-purple-600'
+              }
+            ].map((agrement, i) => (
+              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift border-t-4 border-amber-500 animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agrement.color} flex items-center justify-center mb-6 shadow-glow`}>
+                  <agrement.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{agrement.title}</h3>
+                <p className="text-amber-500 font-mono text-sm mb-2">{agrement.numero}</p>
+                <p className="text-gray-400 text-sm">{agrement.delivrePar}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Questions <span className="gradient-text">Fréquentes</span>
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              { q: "C'est payant ?", a: "Non. 100% gratuit. Matériel fourni. Formation offerte. Zéro frais cachés." },
+              { q: "Qui peut participer ?", a: "Les jeunes de 12 à 25 ans, sans aucun prérequis. Motivation > Expérience." },
+              { q: "Comment s'inscrire ?", a: "Rendez-vous sur la page Ateliers, remplis le formulaire. On te rappelle sous 48h." },
+              { q: "J'ai besoin de matériel ?", a: "Non, tout est fourni : caméras, micros, ordinateurs, logiciels. Tu viens juste avec ta motivation." },
+              { q: "Il y a un diplôme ?", a: "Tu reçois une attestation de participation, valorisable pour tes études et ton CV." },
+              { q: "85% continuent dans l'audiovisuel ?", a: "Oui, étude interne 2023 (n=47). Écoles, stages, emplois, projets perso." },
+            ].map((faq, i) => (
+              <div key={i} className="glass-card rounded-xl overflow-hidden border border-white/10">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
+                >
+                  <span className="text-lg font-bold pr-4">{faq.q}</span>
+                  <ChevronDown className={`w-5 h-5 text-amber-500 flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-6 animate-fade-in">
+                    <p className="text-gray-300 leading-relaxed">{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="py-24 px-4 bg-gray-900">
+        <div className="max-w-7xl mx-auto">
           <div className="glass-strong rounded-3xl p-12 md:p-16 text-center border-2 border-amber-500/30">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
               Vous Voulez <span className="gradient-text">Participer</span> ?
@@ -412,7 +515,7 @@ export default function About() {
             <p className="text-2xl text-gray-300 leading-relaxed mb-12 max-w-3xl mx-auto">
               Jeune ? Inscris-toi aux ateliers.<br />
               Pro de l'audiovisuel ? On recrute des formateurs.<br />
-              Entreprise ou institution ? Parlons partenariat.
+              École ou institution ? Parlons partenariat.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6">

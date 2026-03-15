@@ -1,4 +1,4 @@
-import { Film, Clapperboard, Camera, Calendar, Users, Clock, MapPin, Sparkles, GraduationCap, Video, Heart, TrendingUp, Target, Zap, Award, Lightbulb } from 'lucide-react';
+import { Film, Clapperboard, Camera, Calendar, Users, Clock, MapPin, Sparkles, GraduationCap, Video, Heart, TrendingUp, Target, Zap, Award, Lightbulb, Pencil, Scissors } from 'lucide-react';
 import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { Link } from 'react-router-dom';
@@ -395,6 +395,65 @@ export default function Ateliers() {
                 Aucun prérequis. Aucun frais. On te prête le matériel. Tu viens juste avec ta motivation.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NOTRE MÉTHODE — 4 étapes */}
+      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Notre <span className="gradient-text">Méthode</span>
+            </h2>
+            <p className="text-xl text-gray-400">Du scénario à la projection, en 4 étapes</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Pencil,
+                number: '01',
+                title: 'Masterclass & Écriture',
+                duration: '2-3 semaines',
+                desc: 'Masterclass pros, écriture collective du scénario, répétitions et distribution des rôles.',
+                color: 'from-blue-500 to-cyan-500'
+              },
+              {
+                icon: Camera,
+                number: '02',
+                title: 'Jeu d\'acteur & Répétitions',
+                duration: '1-2 semaines',
+                desc: 'Direction d\'acteurs, mise en scène, rotation sur tous les postes techniques du plateau.',
+                color: 'from-amber-500 to-orange-500'
+              },
+              {
+                icon: Video,
+                number: '03',
+                title: 'Tournage',
+                duration: '3-5 jours',
+                desc: 'Immersion totale en conditions pro : caméra, son, lumière, réalisation.',
+                color: 'from-purple-500 to-pink-500'
+              },
+              {
+                icon: Scissors,
+                number: '04',
+                title: 'Post-prod & Diffusion',
+                duration: '2-4 semaines',
+                desc: 'Montage, mixage son, étalonnage. Projection en salle et envoi en festivals.',
+                color: 'from-green-500 to-emerald-500'
+              }
+            ].map((step, i) => (
+              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift border-t-4 border-amber-500 animate-scale-in relative" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="text-6xl font-bold text-white/10 absolute top-4 right-4">{step.number}</div>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-6 shadow-glow`}>
+                  <step.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <span className="text-amber-500 text-sm font-bold">{step.duration}</span>
+                <p className="text-gray-400 mt-3 leading-relaxed text-sm">{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

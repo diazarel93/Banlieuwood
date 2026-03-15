@@ -1,4 +1,4 @@
-import { Film, Home, ArrowLeft } from 'lucide-react';
+import { Film, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function NotFound() {
@@ -44,12 +44,12 @@ export default function NotFound() {
               Nos Films
             </Link>
             <span className="text-gray-700">•</span>
-            <Link to="/reussites" className="text-amber-500 hover:text-amber-400 transition-colors">
-              Réussites
+            <Link to="/about" className="text-amber-500 hover:text-amber-400 transition-colors">
+              A Propos
             </Link>
             <span className="text-gray-700">•</span>
-            <Link to="/faq" className="text-amber-500 hover:text-amber-400 transition-colors">
-              FAQ
+            <Link to="/institutions" className="text-amber-500 hover:text-amber-400 transition-colors">
+              Institutions
             </Link>
             <span className="text-gray-700">•</span>
             <Link to="/contact" className="text-amber-500 hover:text-amber-400 transition-colors">

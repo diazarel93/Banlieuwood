@@ -1,4 +1,4 @@
-import { Film, Play, Award, Users, Clapperboard, Sparkles, Video, Eye, ExternalLink } from 'lucide-react';
+import { Film, Play, Award, Users, Clapperboard, Sparkles, Video, Eye, ExternalLink, Star } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import VideoPlayer from '../components/VideoPlayer';
@@ -408,33 +408,78 @@ export default function Films() {
         </div>
       </section>
 
+      {/* TALENTS REPÉRÉS */}
+      <section className="py-24 px-4 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6">
+              <Star className="w-5 h-5 text-purple-500" />
+              <span className="text-purple-400 font-bold">Opportunités Créées</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Talents <span className="gradient-text">Repérés</span>
+            </h2>
+            <p className="text-xl text-gray-400">Certains jeunes ont trouvé des agents artistiques après nos films</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Sofiane L.',
+                achievement: 'Agent Artistique Trouvé',
+                story: 'Après avoir joué dans 3 de nos courts-métrages, Sofiane a été repéré et a maintenant un agent qui lui trouve des castings.',
+              },
+              {
+                name: 'Inès M.',
+                achievement: 'Agent Artistique Trouvé',
+                story: 'Son talent naturel devant la caméra lui a ouvert les portes. Elle enchaîne maintenant les auditions professionnelles.',
+              },
+              {
+                name: 'Karim B.',
+                achievement: 'Book Professionnel',
+                story: 'Grâce aux films réalisés, Karim a constitué un book professionnel qu\'il présente en castings.',
+              }
+            ].map((talent, i) => (
+              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6 shadow-glow">
+                  <span className="text-white font-bold text-xl">{talent.name.charAt(0)}</span>
+                </div>
+                <div className="glass-card px-3 py-1 rounded-full inline-block mb-4 border border-purple-500/30">
+                  <p className="text-purple-400 font-bold text-xs">{talent.achievement}</p>
+                </div>
+                <h3 className="text-xl font-bold mb-3">{talent.name}</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">{talent.story}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-400 text-lg">
+              <span className="text-white font-bold">On ne promet pas Hollywood</span>, mais on crée de vraies opportunités pour ceux qui s'investissent.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-5xl mx-auto">
           <div className="glass-strong rounded-3xl p-12 md:p-16 text-center border-2 border-amber-500/30">
             <Sparkles className="w-16 h-16 text-amber-500 mx-auto mb-6 animate-float" />
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Cree Ton <span className="gradient-text">Film</span>
+              Crée Ton <span className="gradient-text">Film</span>
             </h2>
             <p className="text-2xl text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Tous ces films ont ete crees par des jeunes comme toi. Rejoins un atelier et fais le prochain.
+              Tous ces films ont été créés par des jeunes comme toi. Rejoins un atelier et fais le prochain.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link
-                to="/ateliers"
-                className="btn-primary text-xl py-5 px-8 shadow-glow-primary flex items-center gap-3"
-              >
-                <Clapperboard className="w-6 h-6" />
-                Rejoindre un Atelier
-              </Link>
-              <Link
-                to="/reussites"
-                className="glass-card text-white font-bold text-xl py-5 px-8 rounded-xl border-2 border-white/20 hover:border-amber-500 transition-all hover-lift flex items-center gap-3"
-              >
-                <Award className="w-6 h-6" />
-                Voir Nos Reussites
-              </Link>
-            </div>
+            <Link
+              to="/ateliers"
+              className="btn-primary text-xl py-5 px-8 shadow-glow-primary inline-flex items-center gap-3"
+            >
+              <Clapperboard className="w-6 h-6" />
+              Rejoindre un Atelier
+            </Link>
           </div>
         </div>
       </section>

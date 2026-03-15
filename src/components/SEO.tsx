@@ -18,45 +18,25 @@ const PAGE_SEO_DATA: Record<string, SEOProps> = {
     description: 'Formation cinéma 100% gratuite pour jeunes de 12 à 25 ans. Ateliers audiovisuels, réalisation de films, montage vidéo. Devenez réalisateur sans diplôme. Saint-Denis (93).',
     keywords: 'atelier cinéma gratuit, formation audiovisuelle gratuite, école cinéma banlieue, apprendre le cinéma, Saint-Denis',
   },
-  '/about': {
-    title: 'Le Projet Banlieuwood | École de Cinéma Gratuite pour Jeunes des Quartiers',
-    description: 'Découvrez Banlieuwood, association qui forme gratuitement les jeunes de 12 à 25 ans au cinéma. Notre mission : démocratiser l\'accès à la culture audiovisuelle.',
-    keywords: 'association cinéma, école gratuite, quartiers populaires, culture audiovisuelle, égalité des chances',
-  },
   '/ateliers': {
     title: 'Ateliers Cinéma Gratuits | Inscription Formation Audiovisuelle Jeunes',
     description: 'Rejoignez nos ateliers cinéma 100% gratuits : écriture, réalisation, tournage, montage. Ouvert aux 12-25 ans, tous niveaux. Inscrivez-vous maintenant !',
     keywords: 'inscription atelier cinéma, cours vidéo gratuit, formation réalisation, atelier montage, rejoindre formation audiovisuelle',
   },
-  '/deroulement': {
-    title: 'Notre Méthode | La Méthode Pédagogique Banlieuwood Cinéma',
-    description: 'Découvrez notre méthode pédagogique unique en 4 étapes : masterclass & écriture, tournage professionnel, post-production complète, diffusion en salle. Formation du scénario à la projection.',
-    keywords: 'méthode formation cinéma, pédagogie audiovisuelle, apprendre réalisation, processus création film, masterclass cinéma',
-  },
   '/films': {
     title: 'Films Réalisés | Court-Métrages des Jeunes de Banlieuwood',
-    description: 'Regardez les court-métrages réalisés par nos jeunes talents : fictions, documentaires, clips. Plus de 150 films créés depuis 2012.',
+    description: 'Regardez les court-métrages réalisés par nos jeunes talents : fictions, documentaires, clips. Plus de 18 films créés depuis 2015.',
     keywords: 'court métrage jeunes, films banlieue, documentaire quartiers, création audiovisuelle',
   },
-  '/reussites': {
-    title: 'Impact et Réussites | Témoignages des Anciens de Banlieuwood',
-    description: '87% d\'insertion professionnelle, 250+ jeunes formés. Découvrez les parcours inspirants de nos anciens devenus professionnels du cinéma.',
-    keywords: 'témoignages formation cinéma, réussite jeunes banlieue, insertion professionnelle audiovisuel, devenir réalisateur',
+  '/about': {
+    title: 'À Propos | Banlieuwood — École de Cinéma Gratuite',
+    description: 'Découvrez Banlieuwood : notre mission, notre équipe, nos agréments. Association loi 1901 à Saint-Denis formant les jeunes au cinéma depuis 2015.',
+    keywords: 'association cinéma, école gratuite, quartiers populaires, culture audiovisuelle, égalité des chances',
   },
-  '/partenaires': {
-    title: 'Nos Partenaires | Institutions et Entreprises qui Soutiennent Banlieuwood',
-    description: 'Ville de Saint-Denis, DRAC Île-de-France, Canal+, France Télévisions... Découvrez nos partenaires qui croient en notre mission.',
-    keywords: 'partenaires cinéma, soutiens institutionnels, sponsors formation audiovisuelle',
-  },
-  '/faq': {
-    title: 'FAQ | Questions Fréquentes sur les Ateliers Cinéma Banlieuwood',
-    description: 'Comment s\'inscrire ? C\'est vraiment gratuit ? Quel matériel ? Réponses à toutes vos questions sur nos formations cinéma gratuites.',
-    keywords: 'inscription gratuite cinéma, comment participer atelier, questions formation audiovisuelle',
-  },
-  '/dons': {
-    title: 'Soutenir Banlieuwood | Dons, Bénévolat, Partenariats',
-    description: 'Soutenez notre mission : don financier, bénévolat, don de matériel, prêt de salles, co-création. Toutes les formes de soutien comptent !',
-    keywords: 'don association cinéma, bénévolat audiovisuel, soutenir jeunes quartiers, partenariat culturel',
+  '/institutions': {
+    title: 'Institutions & Partenaires | Banlieuwood',
+    description: 'Écoles, mairies, collectivités : découvrez nos interventions en milieu scolaire et nos partenariats institutionnels. Agréé Jeunesse & Éducation Populaire.',
+    keywords: 'partenariat scolaire, intervention cinéma école, éducation artistique culturelle, collectivité locale',
   },
   '/contact': {
     title: 'Contact | Nous Joindre | Banlieuwood',

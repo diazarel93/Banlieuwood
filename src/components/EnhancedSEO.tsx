@@ -36,18 +36,18 @@ const pageMetadata: Record<string, { title: string; description: string; keyword
   },
   '/about': {
     title: 'À Propos - Banlieuwood',
-    description: "L'histoire de Banlieuwood : notre mission, nos valeurs et notre engagement pour démocratiser le cinéma dans les quartiers.",
+    description: "L'histoire de Banlieuwood : notre mission, nos valeurs, notre équipe et nos agréments.",
     keywords: 'association cinéma, action culturelle, banlieue Paris, inclusion sociale cinéma'
+  },
+  '/institutions': {
+    title: 'Institutions - Banlieuwood',
+    description: 'Écoles, mairies, collectivités : nos interventions cinéma en milieu scolaire et nos partenariats institutionnels.',
+    keywords: 'partenariat scolaire, éducation artistique, intervention cinéma école'
   },
   '/contact': {
     title: 'Contact - Banlieuwood',
     description: 'Contacte-nous pour rejoindre nos ateliers, poser tes questions ou devenir partenaire. Réponse rapide garantie !',
     keywords: 'contact banlieuwood, inscription atelier, devenir partenaire, questions formation'
-  },
-  '/dons': {
-    title: 'Faire un Don - Banlieuwood',
-    description: 'Soutiens Banlieuwood et aide-nous à former plus de jeunes aux métiers du cinéma. Chaque don compte !',
-    keywords: 'don association, soutenir banlieuwood, mécénat cinéma, financement participatif'
   }
 };
 
