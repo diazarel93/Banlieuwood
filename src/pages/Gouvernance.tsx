@@ -168,16 +168,14 @@ export default function Gouvernance() {
             </div>
 
             <div className="glass-strong rounded-2xl p-8 border-l-4 border-green-500">
-              <h3 className="text-xl font-bold mb-4 text-green-500">Identifiants Officiels</h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-gray-400 text-sm">N° RNA (Répertoire National)</p>
-                  <p className="font-mono text-lg font-bold text-white">W931234567</p>
-                </div>
-                <div>
-                  <p className="text-gray-400 text-sm">N° SIRET</p>
-                  <p className="font-mono text-lg font-bold text-white">123 456 789 00012</p>
-                </div>
+              <h3 className="text-xl font-bold mb-4 text-green-500">Coordonnees</h3>
+              <div className="space-y-3 text-gray-300">
+                <p>10 rue Frazier, Saint-Denis</p>
+                <p>
+                  <a href="mailto:contact@banlieuwood.fr" className="text-green-400 hover:underline">
+                    contact@banlieuwood.fr
+                  </a>
+                </p>
               </div>
             </div>
 
@@ -203,10 +201,9 @@ export default function Gouvernance() {
               <h3 className="text-xl font-bold mb-4 text-green-500">Siège Social</h3>
               <div className="text-gray-300">
                 <p className="font-semibold text-white mb-2">Banlieuwood</p>
-                <p>15 rue du Landy</p>
+                <p>10 rue Frazier</p>
                 <p>93200 Saint-Denis</p>
-                <p className="mt-3 text-sm text-gray-400">contact@banlieuwood.com</p>
-                <p className="text-sm text-gray-400">06 12 34 56 78</p>
+                <p className="mt-3 text-sm text-gray-400">contact@banlieuwood.fr</p>
               </div>
             </div>
           </div>

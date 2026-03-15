@@ -222,8 +222,14 @@ export default function Contact() {
               </p>
               <p className="text-sm mt-4">
                 Banlieuwood<br />
-                Saint-Denis, France
+                10 rue Frazier, Saint-Denis<br />
+                Association loi 1901
               </p>
+              <div className="flex gap-4 mt-4 justify-center">
+                <a href="https://vimeo.com/user95348584" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500 transition-colors text-sm">Vimeo</a>
+                <a href="https://www.instagram.com/banlieuwood/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500 transition-colors text-sm">Instagram</a>
+                <a href="https://www.facebook.com/banlieuwood" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500 transition-colors text-sm">Facebook</a>
+              </div>
             </div>
           </div>
         </div>

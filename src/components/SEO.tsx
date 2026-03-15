@@ -9,7 +9,7 @@ interface SEOProps {
   canonicalPath?: string;
 }
 
-const BASE_URL = 'https://banlieuwood.com';
+const BASE_URL = 'https://banlieuwood.fr';
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const PAGE_SEO_DATA: Record<string, SEOProps> = {

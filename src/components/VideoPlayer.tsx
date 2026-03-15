@@ -1,9 +1,10 @@
-import { X, Play, Pause, Volume2, VolumeX, Maximize, SkipBack, SkipForward } from 'lucide-react';
+import { X, Play, SkipBack, SkipForward } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 interface Video {
   title: string;
-  vimeoId: string;
+  vimeoId?: string;
+  youtubeId?: string;
   thumbnail: string;
 }
 
@@ -14,9 +15,14 @@ interface VideoPlayerProps {
   onVideoChange: (index: number) => void;
 }
 
+function getEmbedUrl(video: Video): string {
+  if (video.youtubeId) {
+    return `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&rel=0`;
+  }
+  return `https://player.vimeo.com/video/${video.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`;
+}
+
 export default function VideoPlayer({ videos, currentIndex, onClose, onVideoChange }: VideoPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const currentVideo = videos[currentIndex];
@@ -24,37 +30,26 @@ export default function VideoPlayer({ videos, currentIndex, onClose, onVideoChan
   const hasPrevious = currentIndex > 0;
 
   const handleNext = () => {
-    if (hasNext) {
-      onVideoChange(currentIndex + 1);
-    }
+    if (hasNext) onVideoChange(currentIndex + 1);
   };
 
   const handlePrevious = () => {
-    if (hasPrevious) {
-      onVideoChange(currentIndex - 1);
-    }
-  };
-
-  const handleKeyPress = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose();
-    } else if (e.key === 'ArrowRight' && hasNext) {
-      handleNext();
-    } else if (e.key === 'ArrowLeft' && hasPrevious) {
-      handlePrevious();
-    }
+    if (hasPrevious) onVideoChange(currentIndex - 1);
   };
 
   useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      else if (e.key === 'ArrowRight' && hasNext) handleNext();
+      else if (e.key === 'ArrowLeft' && hasPrevious) handlePrevious();
+    };
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [currentIndex]);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    return () => { document.body.style.overflow = 'unset'; };
   }, []);
 
   return (
@@ -73,7 +68,7 @@ export default function VideoPlayer({ videos, currentIndex, onClose, onVideoChan
         <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-4">
           <iframe
             ref={iframeRef}
-            src={`https://player.vimeo.com/video/${currentVideo.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
+            src={getEmbedUrl(currentVideo)}
             className="w-full h-full"
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
@@ -85,7 +80,7 @@ export default function VideoPlayer({ videos, currentIndex, onClose, onVideoChan
           <div className="flex items-center justify-between mb-6">
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-white mb-2">{currentVideo.title}</h3>
-              <p className="text-gray-400">Vidéo {currentIndex + 1} sur {videos.length}</p>
+              <p className="text-gray-400">Video {currentIndex + 1} sur {videos.length}</p>
             </div>
 
             <div className="flex gap-2">

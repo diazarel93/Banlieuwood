@@ -6,7 +6,7 @@ import Testimonials from '../components/Testimonials';
 import TrustBadges from '../components/TrustBadges';
 import MediaGallery from '../components/MediaGallery';
 import LiveCounter from '../components/LiveCounter';
-import CountdownTimer from '../components/CountdownTimer';
+// CountdownTimer removed — using static CTA instead
 import SocialProofNotification from '../components/SocialProofNotification';
 import VideoHeroBackground from '../components/VideoHeroBackground';
 import BeforeAfterStories from '../components/BeforeAfterStories';
@@ -47,8 +47,8 @@ export default function Home() {
 
   const teaserVideo = [
     {
-      title: 'Teaser',
-      vimeoId: '515298131',
+      title: 'Teaser Banlieuwood',
+      vimeoId: '1161231299',
       thumbnail: 'http://banlieuwood.fr/wp-content/uploads/2021/03/TEASER.png'
     }
   ];
@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       <VideoHeroBackground
-        vimeoId="515298131"
+        vimeoId="1161231299"
         posterImage={heroBackground || "http://banlieuwood.fr/wp-content/uploads/2021/03/vintage-film-projector-and-film-screening-1.jpg"}
       >
         <div className="flex items-center justify-center h-full">
@@ -324,29 +324,30 @@ export default function Home() {
       {/* BLOC 10 : TÉMOIGNAGES TEXTE */}
       <Testimonials />
 
-      {/* BLOC 11 : COUNTDOWN URGENCE */}
+      {/* BLOC 11 : CTA INSCRIPTION */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto">
-          {/* [TODO: VOUS DEVEZ mettre une VRAIE date de prochaine session]
-              Date actuelle = placeholder dans le futur, pas crédible */}
-          <CountdownTimer
-            targetDate={new Date('2024-11-28T10:00:00')}
-            title="Prochaine Session - Atelier Découverte"
-            placesLeft={7}
-          />
+          <div className="glass-strong rounded-2xl p-8 md:p-12 border-2 border-amber-500/30 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Prochains <span className="gradient-text">Ateliers</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Les inscriptions sont ouvertes ! Rejoins-nous pour le prochain atelier.
+            </p>
 
-          <div className="mt-8 text-center">
             <Link
               to="/ateliers"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-red-500 to-red-600 text-white font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 hover-lift shadow-glow-strong hover:shadow-glow-primary animate-glow-pulse"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 hover-lift shadow-glow"
             >
-              <span>🔥 Réserver ma place maintenant</span>
+              <span>Voir les ateliers disponibles</span>
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
             <p className="text-gray-400 text-sm mt-6 flex items-center gap-4 justify-center flex-wrap">
-              <span className="flex items-center gap-2">✓ Inscription gratuite</span>
-              <span className="flex items-center gap-2">✓ Sans engagement</span>
-              <span className="flex items-center gap-2">✓ Confirmation immédiate</span>
+              <span className="flex items-center gap-2">100% gratuit</span>
+              <span className="text-amber-500">•</span>
+              <span className="flex items-center gap-2">Sans engagement</span>
+              <span className="text-amber-500">•</span>
+              <span className="flex items-center gap-2">12-25 ans</span>
             </p>
           </div>
         </div>

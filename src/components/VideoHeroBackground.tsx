@@ -10,7 +10,7 @@ interface VideoHeroBackgroundProps {
 
 export default function VideoHeroBackground({
   videoUrl,
-  vimeoId = '515298131',
+  vimeoId = '1161231299',
   posterImage,
   children
 }: VideoHeroBackgroundProps) {

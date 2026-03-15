@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 export default function Reussites() {
   const awardWinningFilms = [
     {
-      title: 'Film 1',
-      year: 2023,
-      award: 'Prix du Public',
-      festival: 'Festival International',
+      title: 'Voir la Mer',
+      year: 2021,
+      award: 'Prime 3 fois',
+      festival: 'Festivals regionaux',
       image: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg',
-      achievement: 'Notre premier prix majeur qui a propulsé les jeunes'
+      achievement: 'Realise a Rosny-sous-Bois, ce court-metrage a ete recompense 3 fois en festivals'
     },
     {
-      title: 'Film 2',
-      year: 2022,
-      award: 'Prix de la Meilleure Réalisation',
-      festival: 'Festival Régional',
-      image: 'https://images.pexels.com/photos/1174746/pexels-photo-1174746.jpeg',
-      achievement: 'Reconnaissance du talent des jeunes réalisateurs'
+      title: 'Tic Tac',
+      year: 2019,
+      award: 'Amazon Prime Video',
+      festival: 'Diffusion mondiale',
+      image: 'https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg',
+      achievement: 'Long-metrage realise avec 22 jeunes, disponible sur Amazon Prime Video et reference sur Allocine'
     }
   ];
 
@@ -115,7 +115,7 @@ export default function Reussites() {
           </h1>
 
           <p className="text-2xl md:text-3xl text-gray-300 mb-6 max-w-4xl leading-relaxed animate-fade-in stagger-delay-2">
-            Amazon Prime, prix en festivals, agents trouvés, 300 jeunes transformés.
+            Tic Tac sur Amazon Prime, prix en festivals, agents trouves, 200+ jeunes transformes.
           </p>
 
           <p className="text-xl text-white font-semibold mb-12 max-w-4xl animate-fade-in stagger-delay-3">
@@ -164,40 +164,40 @@ export default function Reussites() {
                   </div>
                 </div>
 
-                <h3 className="text-3xl font-bold mb-4">[Titre du Film]</h3>
+                <h3 className="text-3xl font-bold mb-4">Tic Tac</h3>
 
                 <div className="space-y-4 mb-6">
                   <div className="flex items-start gap-3">
                     <Star className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-white font-bold mb-1">Visibilité Mondiale</p>
-                      <p className="text-gray-400 text-sm">Accessible dans tous les pays Amazon Prime</p>
+                      <p className="text-white font-bold mb-1">Long-metrage</p>
+                      <p className="text-gray-400 text-sm">Realise avec 22 jeunes, disponible sur Amazon Prime Video</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Users className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-white font-bold mb-1">Fierté Collective</p>
-                      <p className="text-gray-400 text-sm">Les jeunes peuvent montrer leur travail à leur famille</p>
+                      <p className="text-white font-bold mb-1">Fierte Collective</p>
+                      <p className="text-gray-400 text-sm">Les jeunes peuvent montrer leur travail a leur famille</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Trophy className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
                     <div>
                       <p className="text-white font-bold mb-1">Reconnaissance Professionnelle</p>
-                      <p className="text-gray-400 text-sm">Validation par une plateforme internationale</p>
+                      <p className="text-gray-400 text-sm">Reference sur Allocine et Amazon Prime</p>
                     </div>
                   </div>
                 </div>
 
                 <a
-                  href="https://www.amazon.com/gp/video/storefront"
+                  href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000000693.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-6 py-3 rounded-lg transition-all hover-lift"
                 >
                   <Play className="w-5 h-5" />
-                  Voir sur Amazon Prime
+                  Voir sur Allocine
                 </a>
               </div>
             </div>

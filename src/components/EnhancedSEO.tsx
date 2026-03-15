@@ -15,7 +15,7 @@ const defaultMeta = {
   image: 'http://banlieuwood.fr/wp-content/uploads/2021/03/TEASER.png',
   keywords: 'atelier cinéma, formation gratuite, jeunes banlieue, réalisation film, école cinéma Paris, production audiovisuelle, court métrage, long métrage',
   siteName: 'Banlieuwood',
-  url: 'https://banlieuwood.fr'
+  url: 'https://banlieuwood.vercel.app'
 };
 
 const pageMetadata: Record<string, { title: string; description: string; keywords?: string }> = {

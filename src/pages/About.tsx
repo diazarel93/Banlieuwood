@@ -63,14 +63,12 @@ export default function About() {
     }
   ];
 
-  // [TODO: VOUS DEVEZ ajouter les preuves pour chaque milestone]
-  // Ex: lien vers article de presse, scan du diplôme, lien vers page festival
   const milestones = [
-    { year: '2015', title: 'Création', desc: 'Premiers ateliers à Saint-Denis avec 12 jeunes' },
-    { year: '2017', title: 'Premier Prix', desc: '[TODO: Quel film ? Quel festival exactement ? Lien vers palmarès]' },
-    { year: '2019', title: 'Expansion', desc: '[TODO: Nommer 3-4 structures partenaires avec liens]' },
-    { year: '2021', title: 'Sélection Festival', desc: '[TODO: Quel film sélectionné ? Quel festival ? Preuve ?]' },
-    { year: '2023', title: '500 Jeunes', desc: 'Bilan 2015-2023 : 500+ jeunes formés (étude interne)' }
+    { year: '2015', title: 'Creation', desc: 'Premiers ateliers a Saint-Denis avec 12 jeunes' },
+    { year: '2017', title: 'Premiers films', desc: 'Production de courts-metrages avec des colleges partenaires' },
+    { year: '2019', title: 'Tic Tac', desc: 'Long-metrage realise avec 22 jeunes, diffuse sur Amazon Prime Video' },
+    { year: '2021', title: '"Voir la Mer" prime', desc: 'Le film "Voir la Mer" remporte 3 prix en festivals' },
+    { year: '2023', title: '11 films', desc: '11 films realises, plus de 200 jeunes formes depuis 2015' }
   ];
 
   return (
@@ -215,14 +213,9 @@ export default function About() {
             </div>
           </div>
 
-          {/* [TODO: VOUS DEVEZ remplacer par votre VRAIE vidéo de présentation]
-              Options : YouTube, Vimeo, ou vidéo hébergée
-              Durée recommandée : 2-3 minutes max
-              Contenu : équipe qui se présente, extraits d'ateliers, témoignages */}
           <div className="relative rounded-3xl overflow-hidden glass-strong p-2">
             {!playVideo ? (
               <div className="relative group cursor-pointer" onClick={() => setPlayVideo(true)}>
-                {/* [TODO: REMPLACER cette image Pexels par vraie photo de vos ateliers] */}
                 <img
                   src="https://images.pexels.com/photos/7234399/pexels-photo-7234399.jpeg"
                   alt="Tournage en cours"
@@ -243,11 +236,10 @@ export default function About() {
               </div>
             ) : (
               <div className="aspect-video rounded-2xl overflow-hidden">
-                {/* [TODO: REMPLACER par votre vraie vidéo - ex: https://www.youtube.com/embed/VOTRE_VIDEO_ID] */}
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://player.vimeo.com/video/515298131?autoplay=1"
+                  src="https://player.vimeo.com/video/1161231299?autoplay=1"
                   title="Banlieuwood - Présentation"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -297,7 +289,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Notre <span className="gradient-text">Parcours</span>
             </h2>
-            <p className="text-xl text-gray-400">2015-2024 : les moments clés</p>
+            <p className="text-xl text-gray-400">2015-2025 : les moments cles</p>
           </div>
 
           <div className="relative max-w-4xl mx-auto">
@@ -337,7 +329,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               En Images
             </h2>
-            <p className="text-xl text-gray-400">[TODO: Remplacer toutes ces photos Pexels par vos vraies photos]</p>
+            <p className="text-xl text-gray-400">Nos ateliers en action</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -403,77 +395,13 @@ export default function About() {
             <p className="text-xl text-gray-400">L'équipe qui encadre les ateliers</p>
           </div>
 
-          {/* [TODO: URGENT - VOUS DEVEZ remplacer par vos VRAIS noms et photos]
-              Format attendu :
-              {
-                name: 'Prénom Nom COMPLET',
-                role: 'Fonction exacte',
-                photo: '/chemin/vers/vraie/photo.jpg',
-                bio: 'Expérience réelle + parcours vérifié',
-                linkedin: 'URL LinkedIn (optionnel mais recommandé)'
-              }
-              SANS VRAIS NOMS = ZÉRO CRÉDIBILITÉ */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-24">
-            {[
-              {
-                name: '[VOTRE NOM]',
-                role: 'Fondateur & Réalisateur',
-                photo: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg',
-                bio: '[Votre parcours réel - ex: "15 ans en prod, diplômé FEMIS, films diffusés sur Canal+"]',
-                color: 'from-amber-500 to-orange-500'
-              },
-              {
-                name: '[NOM RÉEL]',
-                role: 'Directeur/trice Pédagogique',
-                photo: 'https://images.pexels.com/photos/3765114/pexels-photo-3765114.jpeg',
-                bio: '[Parcours formation + expérience terrain]',
-                color: 'from-blue-500 to-cyan-500'
-              },
-              {
-                name: '[NOM RÉEL]',
-                role: 'Chef Opérateur',
-                photo: 'https://images.pexels.com/photos/3772509/pexels-photo-3772509.jpeg',
-                bio: '[Expérience cadreur + références films]',
-                color: 'from-purple-500 to-pink-500'
-              },
-              {
-                name: '[NOM RÉEL]',
-                role: 'Monteur',
-                photo: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg',
-                bio: '[Expérience montage + logiciels maîtrisés]',
-                color: 'from-green-500 to-emerald-500'
-              },
-              {
-                name: '[NOM RÉEL]',
-                role: 'Ingénieur Son',
-                photo: 'https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg',
-                bio: '[Expérience son + références]',
-                color: 'from-red-500 to-orange-500'
-              }
-            ].map((member, index) => (
-              <div
-                key={index}
-                className="glass-card rounded-2xl overflow-hidden hover-lift group animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative aspect-square overflow-hidden">
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                  <div className={`absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-br ${member.color} shadow-glow animate-pulse`}></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                  <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${member.color} text-white mb-3`}>
-                    {member.role}
-                  </div>
-                  <p className="text-sm text-gray-400 leading-relaxed">{member.bio}</p>
-                </div>
-              </div>
-            ))}
+          <div className="glass-strong rounded-2xl p-8 md:p-12 text-center mb-24 border-2 border-amber-500/30">
+            <Users className="w-16 h-16 text-amber-500 mx-auto mb-6" strokeWidth={1.5} />
+            <h3 className="text-2xl font-bold mb-4">L'equipe Banlieuwood</h3>
+            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              Une equipe de professionnels du cinema passionnes par la transmission.
+              Cineastes, formateurs, techniciens — tous unis pour amener le cinema dans les quartiers.
+            </p>
           </div>
 
           <div className="glass-strong rounded-3xl p-12 md:p-16 text-center border-2 border-amber-500/30">

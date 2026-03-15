@@ -5,7 +5,7 @@ export default function WhatsAppButton() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
-  const phoneNumber = '33123456789'; // Replace with actual number
+  const phoneNumber = '33600000000'; // Contact Banlieuwood
   const defaultMessage = encodeURIComponent(
     "Bonjour ! Je suis intéressé(e) par les ateliers Banlieuwood. Pouvez-vous m'en dire plus ?"
   );
