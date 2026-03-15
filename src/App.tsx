@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -9,10 +9,10 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 
 const Films = lazy(() => import('./pages/Films'));
-const Ateliers = lazy(() => import('./pages/Ateliers'));
+const Programme = lazy(() => import('./pages/Ateliers'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
-const Institutions = lazy(() => import('./pages/Institutions'));
+const Etablissements = lazy(() => import('./pages/Institutions'));
 const Admin = lazy(() => import('./pages/Admin'));
 const MediaManager = lazy(() => import('./pages/MediaManager'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -51,9 +51,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/films" element={<Films />} />
-              <Route path="/ateliers" element={<Ateliers />} />
+              <Route path="/programme" element={<Programme />} />
+              <Route path="/ateliers" element={<Navigate to="/programme" replace />} />
               <Route path="/about" element={<About />} />
-              <Route path="/institutions" element={<Institutions />} />
+              <Route path="/etablissements" element={<Etablissements />} />
+              <Route path="/institutions" element={<Navigate to="/etablissements" replace />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/media-manager" element={<MediaManager />} />

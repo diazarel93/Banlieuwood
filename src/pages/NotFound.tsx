@@ -29,11 +29,11 @@ export default function NotFound() {
             Retour à l'accueil
           </Link>
           <Link
-            to="/ateliers"
+            to="/programme"
             className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black font-semibold px-8 py-4 text-lg rounded-lg transition-all duration-300"
           >
             <Film className="w-5 h-5" />
-            Voir les ateliers
+            Le Programme
           </Link>
         </div>
 
@@ -44,12 +44,12 @@ export default function NotFound() {
               Nos Films
             </Link>
             <span className="text-gray-700">•</span>
-            <Link to="/about" className="text-amber-500 hover:text-amber-400 transition-colors">
-              A Propos
+            <Link to="/etablissements" className="text-amber-500 hover:text-amber-400 transition-colors">
+              Établissements
             </Link>
             <span className="text-gray-700">•</span>
-            <Link to="/institutions" className="text-amber-500 hover:text-amber-400 transition-colors">
-              Institutions
+            <Link to="/about" className="text-amber-500 hover:text-amber-400 transition-colors">
+              À Propos
             </Link>
             <span className="text-gray-700">•</span>
             <Link to="/contact" className="text-amber-500 hover:text-amber-400 transition-colors">

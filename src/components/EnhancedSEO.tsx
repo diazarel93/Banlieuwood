@@ -10,10 +10,10 @@ interface SEOProps {
 }
 
 const defaultMeta = {
-  title: 'Banlieuwood - Ateliers Cinéma Gratuits pour les 12-25 ans',
-  description: 'Apprends le cinéma gratuitement avec Banlieuwood ! Ateliers de réalisation, production de films et formation professionnelle pour les jeunes de 12 à 25 ans en banlieue parisienne.',
+  title: 'Banlieuwood - Programme Cinéma en 8 Modules pour les 12-25 ans',
+  description: 'Programme pédagogique cinéma en 8 modules avec outil numérique. De spectateur à créateur. Ateliers gratuits pour les jeunes de 12 à 25 ans.',
   image: 'http://banlieuwood.fr/wp-content/uploads/2021/03/TEASER.png',
-  keywords: 'atelier cinéma, formation gratuite, jeunes banlieue, réalisation film, école cinéma Paris, production audiovisuelle, court métrage, long métrage',
+  keywords: 'programme cinéma, 8 modules, formation gratuite, jeunes banlieue, outil numérique, plateforme edtech, court métrage, long métrage',
   siteName: 'Banlieuwood',
   url: 'https://banlieuwood.vercel.app'
 };
@@ -21,13 +21,13 @@ const defaultMeta = {
 const pageMetadata: Record<string, { title: string; description: string; keywords?: string }> = {
   '/': {
     title: 'Banlieuwood - Le Cinéma en Bas de Chez Toi',
-    description: 'Découvre les ateliers cinéma 100% gratuits de Banlieuwood. Formation professionnelle, réalisation de films et développement de talents pour les 12-25 ans.',
-    keywords: 'atelier cinéma gratuit, formation jeunes, banlieue, cinéma quartier, réalisation film gratuit'
+    description: 'Programme cinéma en 8 modules avec outil numérique. De spectateur à créateur. Ateliers gratuits pour les 12-25 ans.',
+    keywords: 'programme cinéma, 8 modules, formation jeunes, banlieue, outil numérique, de spectateur à créateur'
   },
-  '/ateliers': {
-    title: 'Nos Ateliers Cinéma - Banlieuwood',
-    description: 'Choisis ton atelier : découverte (2-5 jours), trimestriel (3 mois), semestriel (6 mois) ou long métrage (1-2 ans). Tous niveaux, 100% gratuit.',
-    keywords: 'atelier cinéma, formation réalisation, cours gratuit cinéma, stage audiovisuel, école cinéma gratuite'
+  '/programme': {
+    title: 'Le Programme - 8 Modules Cinéma - Banlieuwood',
+    description: 'Parcours pédagogique en 8 modules : observer, comprendre, imaginer, clarifier, construire, écrire, visualiser, produire. 3 formules adaptées.',
+    keywords: 'programme cinéma, 8 modules, formation réalisation, Carte Talent, outil numérique'
   },
   '/films': {
     title: 'Nos Films - Banlieuwood',
@@ -36,18 +36,18 @@ const pageMetadata: Record<string, { title: string; description: string; keyword
   },
   '/about': {
     title: 'À Propos - Banlieuwood',
-    description: "L'histoire de Banlieuwood : notre mission, nos valeurs, notre équipe et nos agréments.",
-    keywords: 'association cinéma, action culturelle, banlieue Paris, inclusion sociale cinéma'
+    description: "L'histoire de Banlieuwood : notre vision, nos principes pédagogiques, notre équipe et nos agréments.",
+    keywords: 'association cinéma, plateforme edtech, principes pédagogiques, banlieue Paris'
   },
-  '/institutions': {
-    title: 'Institutions - Banlieuwood',
-    description: 'Écoles, mairies, collectivités : nos interventions cinéma en milieu scolaire et nos partenariats institutionnels.',
-    keywords: 'partenariat scolaire, éducation artistique, intervention cinéma école'
+  '/etablissements': {
+    title: 'Établissements - Programme Cinéma pour Écoles - Banlieuwood',
+    description: '8 modules interactifs pour développer créativité, expression et coopération. Agréé Jeunesse & Éducation Populaire.',
+    keywords: 'programme cinéma école, éducation artistique culturelle, intervention scolaire, EAC'
   },
   '/contact': {
     title: 'Contact - Banlieuwood',
-    description: 'Contacte-nous pour rejoindre nos ateliers, poser tes questions ou devenir partenaire. Réponse rapide garantie !',
-    keywords: 'contact banlieuwood, inscription atelier, devenir partenaire, questions formation'
+    description: 'Contactez-nous pour rejoindre notre programme, poser vos questions ou devenir partenaire.',
+    keywords: 'contact banlieuwood, inscription programme, devenir partenaire'
   }
 };
 
@@ -87,7 +87,7 @@ export default function EnhancedSEO({ title, description, image, type = 'website
     }
   };
 
-  const eventStructuredData = location.pathname === '/ateliers' ? {
+  const eventStructuredData = location.pathname === '/programme' ? {
     "@context": "https://schema.org",
     "@type": "EducationEvent",
     "name": "Ateliers Cinéma Banlieuwood",

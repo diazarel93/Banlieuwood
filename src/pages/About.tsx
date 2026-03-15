@@ -1,4 +1,4 @@
-import { Film, MapPin, Users, Heart, Target, Award, Clapperboard, TrendingUp, Play, ArrowRight, Sparkles, Shield, CheckCircle, ChevronDown } from 'lucide-react';
+import { Film, MapPin, Users, Heart, Target, Award, Clapperboard, TrendingUp, Play, ArrowRight, Sparkles, Shield, CheckCircle, ChevronDown, BookOpen, Layers, Lightbulb, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -7,73 +7,40 @@ export default function About() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const impactNumbers = [
-    {
-      number: '500+',
-      label: 'Jeunes formés',
-      sublabel: 'depuis 2015',
-      icon: Users,
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      number: '30+',
-      label: 'Films produits',
-      sublabel: 'courts et longs métrages',
-      icon: Film,
-      color: 'from-amber-500 to-orange-500'
-    },
-    {
-      number: '15+',
-      label: 'Sélections festivals',
-      sublabel: 'nationaux et internationaux',
-      icon: Award,
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      number: '85%',
-      label: 'Poursuivent en audiovisuel',
-      sublabel: 'étude interne 2023 (n=47)',
-      icon: TrendingUp,
-      color: 'from-green-500 to-emerald-500'
-    }
+    { number: '500+', label: 'Jeunes formés', sublabel: 'depuis 2015', icon: Users, color: 'from-blue-500 to-cyan-500' },
+    { number: '30+', label: 'Films produits', sublabel: 'courts et longs métrages', icon: Film, color: 'from-amber-500 to-orange-500' },
+    { number: '15+', label: 'Sélections festivals', sublabel: 'nationaux et internationaux', icon: Award, color: 'from-purple-500 to-pink-500' },
+    { number: '85%', label: 'Poursuivent en audiovisuel', sublabel: 'étude interne 2023 (n=47)', icon: TrendingUp, color: 'from-green-500 to-emerald-500' }
   ];
 
   const values = [
-    {
-      icon: MapPin,
-      title: 'Ancrage local',
-      description: 'À Saint-Denis depuis 2015, au coeur des quartiers populaires',
-      color: 'from-red-500 to-orange-500'
-    },
-    {
-      icon: Users,
-      title: 'Équipe pro',
-      description: 'Cinéastes et formateurs passionnés par la transmission',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Heart,
-      title: 'Inclusion totale',
-      description: '100% gratuit, accessible à tous sans condition',
-      color: 'from-pink-500 to-red-500'
-    },
-    {
-      icon: Target,
-      title: 'Impact réel',
-      description: 'Des compétences professionnelles et des carrières lancées',
-      color: 'from-green-500 to-emerald-500'
-    }
+    { icon: MapPin, title: 'Ancrage local', description: 'À Saint-Denis depuis 2015, au coeur des quartiers populaires', color: 'from-red-500 to-orange-500' },
+    { icon: Users, title: 'Équipe pro', description: 'Cinéastes et formateurs passionnés par la transmission', color: 'from-blue-500 to-cyan-500' },
+    { icon: Heart, title: 'Inclusion totale', description: '100% gratuit, accessible à tous sans condition', color: 'from-pink-500 to-red-500' },
+    { icon: Target, title: 'Impact réel', description: 'Des compétences professionnelles et des carrières lancées', color: 'from-green-500 to-emerald-500' }
   ];
 
   const milestones = [
-    { year: '2015', title: 'Creation', desc: 'Premiers ateliers a Saint-Denis avec 12 jeunes' },
-    { year: '2017', title: 'Premiers films', desc: 'Production de courts-metrages avec des colleges partenaires' },
-    { year: '2019', title: 'Tic Tac', desc: 'Long-metrage realise avec 22 jeunes, diffuse sur Amazon Prime Video' },
-    { year: '2021', title: '"Voir la Mer" prime', desc: 'Le film "Voir la Mer" remporte 3 prix en festivals' },
-    { year: '2023', title: '11 films', desc: '11 films realises, plus de 200 jeunes formes depuis 2015' }
+    { year: '2015', title: 'Création', desc: 'Premiers ateliers à Saint-Denis avec 12 jeunes' },
+    { year: '2017', title: 'Premiers films', desc: 'Production de courts-métrages avec des collèges partenaires' },
+    { year: '2019', title: 'Tic Tac', desc: 'Long-métrage réalisé avec 22 jeunes, diffusé sur Amazon Prime Video' },
+    { year: '2021', title: '"Voir la Mer" primé', desc: 'Le film "Voir la Mer" remporte 3 prix en festivals' },
+    { year: '2023', title: '11 films', desc: '11 films réalisés, plus de 200 jeunes formés depuis 2015' },
+    { year: '2024', title: 'Programme 8 modules', desc: 'Développement du parcours pédagogique structuré et de l\'outil numérique' },
+    { year: '2025', title: 'Plateforme EdTech', desc: 'Lancement de la plateforme interactive sur tablettes pour les établissements scolaires' },
+  ];
+
+  const principes = [
+    { icon: Zap, title: 'Apprendre par l\'expérience', desc: 'Les élèves ne sont pas spectateurs. Ils observent, imaginent, proposent et construisent ensemble.' },
+    { icon: Sparkles, title: 'Le jeu comme moteur', desc: 'Les modules sont conçus comme des défis créatifs, pas comme des exercices scolaires.' },
+    { icon: Heart, title: 'L\'implication plutôt que la performance', desc: 'Pas de notes, pas de compétition. Ce qui compte : participer, proposer, s\'engager.' },
+    { icon: Shield, title: 'Un espace bienveillant', desc: 'Les erreurs font partie du processus créatif. Aucune idée n\'est mauvaise.' },
+    { icon: Target, title: 'Le processus compte autant que le résultat', desc: 'Les étapes de création sont aussi importantes que le film final.' },
   ];
 
   return (
     <div className="min-h-screen bg-black text-white pt-20">
+      {/* HERO */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -107,11 +74,11 @@ export default function About() {
 
             <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
               <Link
-                to="/ateliers"
+                to="/programme"
                 className="btn-primary text-xl py-5 px-8 shadow-glow-primary flex items-center gap-3"
               >
                 <Clapperboard className="w-6 h-6" />
-                Nos Ateliers
+                Le Programme
                 <ArrowRight className="w-6 h-6" />
               </Link>
               <Link
@@ -132,7 +99,32 @@ export default function About() {
         </div>
       </section>
 
+      {/* NOTRE VISION */}
       <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Notre <span className="gradient-text">Vision</span>
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            <div className="glass-card rounded-2xl p-8 border border-amber-500/20">
+              <p className="text-xl text-gray-200 leading-relaxed italic">
+                "Nous croyons que tout le monde peut apprendre à raconter une histoire. La narration n'est pas réservée à quelques spécialistes."
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl p-8 border border-white/10">
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Banlieuwood est né d'un constat : les jeunes des quartiers ont du talent, mais zéro accès aux métiers de l'audiovisuel. Notre mission : <span className="text-white font-semibold">démocratiser la création artistique</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="py-24 px-4 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-6">
             {impactNumbers.map((stat, index) => (
@@ -143,7 +135,6 @@ export default function About() {
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
-
                 <div className="relative z-10">
                   <stat.icon className="w-12 h-12 text-amber-500 mx-auto mb-4 animate-float" strokeWidth={1.5} />
                   <div className="text-5xl font-bold gradient-text mb-3">{stat.number}</div>
@@ -156,7 +147,8 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 px-4 bg-gray-900">
+      {/* NOTRE HISTOIRE */}
+      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div className="order-2 lg:order-1">
@@ -175,13 +167,11 @@ export default function About() {
                   <span className="text-amber-500 font-bold text-2xl">2015.</span> Tout commence avec une idée simple :
                   <span className="text-white font-semibold"> amener le cinéma directement dans les quartiers.</span>
                 </p>
-
                 <p>
                   Créée par des <span className="text-white font-semibold">professionnels du cinéma</span>,
                   Banlieuwood part d'un constat simple : les jeunes des quartiers ont du talent,
                   mais zéro accès aux métiers de l'audiovisuel.
                 </p>
-
                 <div className="glass-strong border-l-4 border-amber-500 p-6 rounded-r-xl">
                   <p className="text-xl font-bold text-white mb-3">Ce qu'on croit</p>
                   <p className="text-gray-300">
@@ -189,7 +179,6 @@ export default function About() {
                     En faisant. Avec du vrai matos. Encadré par des pros.
                   </p>
                 </div>
-
                 <p className="text-white font-semibold text-xl">
                   Depuis 2015 : <span className="text-amber-500">500+ jeunes formés</span>,
                   <span className="text-amber-500"> 30+ films produits</span>,
@@ -253,6 +242,7 @@ export default function About() {
         </div>
       </section>
 
+      {/* VALEURS */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -270,7 +260,6 @@ export default function About() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-
                 <div className="relative z-10">
                   <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform`}>
                     <value.icon className="w-10 h-10 text-white" strokeWidth={1.5} />
@@ -284,13 +273,46 @@ export default function About() {
         </div>
       </section>
 
+      {/* NOS PRINCIPES */}
       <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Nos <span className="gradient-text">Principes</span>
+            </h2>
+            <p className="text-xl text-gray-400">Ce qui guide notre pédagogie</p>
+          </div>
+
+          <div className="space-y-4">
+            {principes.map((principe, i) => (
+              <div key={i} className="glass-card rounded-xl p-6 flex items-start gap-5 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-glow">
+                  <principe.icon className="w-6 h-6 text-white" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-white mb-2">{principe.title}</h4>
+                  <p className="text-gray-400 leading-relaxed">{principe.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-400 italic text-lg">
+              "Il suffit parfois d'un moment, d'un groupe et d'un cadre pour que les idées apparaissent."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PARCOURS / TIMELINE */}
+      <section className="py-24 px-4 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Notre <span className="gradient-text">Parcours</span>
             </h2>
-            <p className="text-xl text-gray-400">2015-2025 : les moments cles</p>
+            <p className="text-xl text-gray-400">2015-2025 : les moments clés</p>
           </div>
 
           <div className="relative max-w-4xl mx-auto">
@@ -305,9 +327,7 @@ export default function About() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="hidden md:block w-1/2"></div>
-
                 <div className="absolute left-8 md:left-1/2 w-6 h-6 bg-amber-500 rounded-full -ml-[11px] z-10 shadow-glow animate-pulse"></div>
-
                 <div className="flex-1 pl-20 md:pl-0">
                   <div className="glass-strong rounded-2xl p-8 border-2 border-amber-500/30 hover:border-amber-500 transition-all hover-lift">
                     <div className="flex items-center gap-4 mb-4">
@@ -324,58 +344,64 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 px-4 bg-gray-900">
-        <div className="max-w-7xl mx-auto">
+      {/* L'ÉCOSYSTÈME */}
+      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              En Images
+              L'<span className="gradient-text">Écosystème</span>
             </h2>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              { icon: Layers, title: 'Plateforme technologique', desc: 'L\'outil numérique qui structure les ateliers sur tablettes', color: 'from-blue-500 to-cyan-500' },
+              { icon: Users, title: 'Partenaires pédagogiques', desc: 'Banlieuwood et les structures qui créent les parcours', color: 'from-amber-500 to-orange-500' },
+              { icon: BookOpen, title: 'Utilisateurs', desc: 'Écoles, enseignants, élèves', color: 'from-green-500 to-emerald-500' },
+            ].map((layer, i) => (
+              <div key={i} className="glass-strong rounded-2xl p-8 flex items-center gap-6 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${layer.color} flex items-center justify-center flex-shrink-0 shadow-glow`}>
+                  <layer.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-1">{layer.title}</h3>
+                  <p className="text-gray-400">{layer.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-gray-400 italic">
+              "L'association Banlieuwood est le premier partenaire pédagogique de la plateforme, spécialisé en narration audiovisuelle."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* EN IMAGES */}
+      <section className="py-24 px-4 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">En Images</h2>
             <p className="text-xl text-gray-400">Nos ateliers en action</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              {
-                src: "https://images.pexels.com/photos/7234403/pexels-photo-7234403.jpeg",
-                title: "Prise de vue",
-                desc: "Jeune réalisatrice au cadrage"
-              },
-              {
-                src: "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg",
-                title: "Travail d'équipe",
-                desc: "Coordination sur le plateau"
-              },
-              {
-                src: "https://images.pexels.com/photos/8613314/pexels-photo-8613314.jpeg",
-                title: "Le bon angle",
-                desc: "Recherche du cadre parfait"
-              },
-              {
-                src: "https://images.pexels.com/photos/7234399/pexels-photo-7234399.jpeg",
-                title: "Concentration",
-                desc: "Direction d'acteurs"
-              },
-              {
-                src: "https://images.pexels.com/photos/7234257/pexels-photo-7234257.jpeg",
-                title: "Formation",
-                desc: "Atelier technique pro"
-              },
-              {
-                src: "https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg",
-                title: "Action",
-                desc: "En plein tournage"
-              }
+              { src: "https://images.pexels.com/photos/7234403/pexels-photo-7234403.jpeg", title: "Prise de vue", desc: "Jeune réalisatrice au cadrage" },
+              { src: "https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg", title: "Travail d'équipe", desc: "Coordination sur le plateau" },
+              { src: "https://images.pexels.com/photos/8613314/pexels-photo-8613314.jpeg", title: "Le bon angle", desc: "Recherche du cadre parfait" },
+              { src: "https://images.pexels.com/photos/7234399/pexels-photo-7234399.jpeg", title: "Concentration", desc: "Direction d'acteurs" },
+              { src: "https://images.pexels.com/photos/7234257/pexels-photo-7234257.jpeg", title: "Formation", desc: "Atelier technique pro" },
+              { src: "https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg", title: "Action", desc: "En plein tournage" }
             ].map((photo, index) => (
               <div
                 key={index}
                 className="relative group overflow-hidden rounded-2xl aspect-[4/3] animate-scale-in"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <img
-                  src={photo.src}
-                  alt={photo.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                <img src={photo.src} alt={photo.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
                   <p className="text-xl font-bold mb-1">{photo.title}</p>
@@ -388,7 +414,7 @@ export default function About() {
       </section>
 
       {/* L'ÉQUIPE */}
-      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
+      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -421,7 +447,7 @@ export default function About() {
       </section>
 
       {/* AGRÉMENTS */}
-      <section className="py-24 px-4 bg-black">
+      <section className="py-24 px-4 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -432,27 +458,9 @@ export default function About() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              {
-                icon: Shield,
-                title: 'Jeunesse & Éducation Populaire',
-                numero: 'JEP-93-2016-042',
-                delivrePar: 'Préfecture de Seine-Saint-Denis',
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                icon: CheckCircle,
-                title: 'Convention Ville de Saint-Denis',
-                numero: 'CONV-2023-CULT-089',
-                delivrePar: 'Service Culture & Jeunesse',
-                color: 'from-green-500 to-green-600'
-              },
-              {
-                icon: Award,
-                title: 'Lauréat Fonds DRAC',
-                numero: 'Île-de-France',
-                delivrePar: 'Direction Régionale des Affaires Culturelles',
-                color: 'from-purple-500 to-purple-600'
-              }
+              { icon: Shield, title: 'Jeunesse & Éducation Populaire', numero: 'JEP-93-2016-042', delivrePar: 'Préfecture de Seine-Saint-Denis', color: 'from-blue-500 to-blue-600' },
+              { icon: CheckCircle, title: 'Convention Ville de Saint-Denis', numero: 'CONV-2023-CULT-089', delivrePar: 'Service Culture & Jeunesse', color: 'from-green-500 to-green-600' },
+              { icon: Award, title: 'Lauréat Fonds DRAC', numero: 'Île-de-France', delivrePar: 'Direction Régionale des Affaires Culturelles', color: 'from-purple-500 to-purple-600' }
             ].map((agrement, i) => (
               <div key={i} className="glass-strong rounded-2xl p-8 hover-lift border-t-4 border-amber-500 animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agrement.color} flex items-center justify-center mb-6 shadow-glow`}>
@@ -468,7 +476,7 @@ export default function About() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -478,11 +486,11 @@ export default function About() {
 
           <div className="space-y-4">
             {[
-              { q: "C'est payant ?", a: "Non. 100% gratuit. Matériel fourni. Formation offerte. Zéro frais cachés." },
+              { q: "C'est payant ?", a: "Non. 100% gratuit pour les jeunes. Matériel fourni. Formation offerte. Zéro frais cachés." },
               { q: "Qui peut participer ?", a: "Les jeunes de 12 à 25 ans, sans aucun prérequis. Motivation > Expérience." },
-              { q: "Comment s'inscrire ?", a: "Rendez-vous sur la page Ateliers, remplis le formulaire. On te rappelle sous 48h." },
-              { q: "J'ai besoin de matériel ?", a: "Non, tout est fourni : caméras, micros, ordinateurs, logiciels. Tu viens juste avec ta motivation." },
-              { q: "Il y a un diplôme ?", a: "Tu reçois une attestation de participation, valorisable pour tes études et ton CV." },
+              { q: "Comment s'inscrire ?", a: "Rendez-vous sur la page Programme, contactez-nous. On vous rappelle sous 48h." },
+              { q: "J'ai besoin de matériel ?", a: "Non, tout est fourni : tablettes, caméras, micros, ordinateurs, logiciels." },
+              { q: "Il y a un diplôme ?", a: "Tu reçois une Carte Talent personnalisée et une attestation de participation." },
               { q: "85% continuent dans l'audiovisuel ?", a: "Oui, étude interne 2023 (n=47). Écoles, stages, emplois, projets perso." },
             ].map((faq, i) => (
               <div key={i} className="glass-card rounded-xl overflow-hidden border border-white/10">
@@ -505,7 +513,7 @@ export default function About() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-24 px-4 bg-gray-900">
+      <section className="py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="glass-strong rounded-3xl p-12 md:p-16 text-center border-2 border-amber-500/30">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
@@ -513,18 +521,18 @@ export default function About() {
             </h2>
 
             <p className="text-2xl text-gray-300 leading-relaxed mb-12 max-w-3xl mx-auto">
-              Jeune ? Inscris-toi aux ateliers.<br />
-              Pro de l'audiovisuel ? On recrute des formateurs.<br />
-              École ou institution ? Parlons partenariat.
+              Jeune ? Découvre le programme.<br />
+              Établissement ? Organisez un atelier.<br />
+              Pro de l'audiovisuel ? Rejoignez l'équipe.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6">
               <Link
-                to="/ateliers"
+                to="/programme"
                 className="btn-primary text-xl py-5 px-8 shadow-glow-primary flex items-center gap-3"
               >
                 <Clapperboard className="w-6 h-6" />
-                Participer aux Ateliers
+                Le Programme
               </Link>
               <Link
                 to="/contact"

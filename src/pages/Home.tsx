@@ -1,4 +1,4 @@
-import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight } from 'lucide-react';
+import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight, Eye, Clapperboard, Lightbulb, Target, Pencil, Camera, BookOpen, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import VideoPlayer from '../components/VideoPlayer';
@@ -38,6 +38,17 @@ export default function Home() {
     }
   ];
 
+  const parcours = [
+    { icon: Eye, title: 'Observer', desc: 'Apprendre à regarder' },
+    { icon: Clapperboard, title: 'Comprendre', desc: 'La mécanique d\'une scène' },
+    { icon: Lightbulb, title: 'Imaginer', desc: 'Le "Et si..."' },
+    { icon: Target, title: 'Clarifier', desc: 'Du flou au pitch' },
+    { icon: Users, title: 'Construire', desc: 'L\'histoire collective' },
+    { icon: Pencil, title: 'Écrire', desc: 'Le scénario' },
+    { icon: Camera, title: 'Visualiser', desc: 'La mise en scène' },
+    { icon: Film, title: 'Produire', desc: 'L\'équipe de tournage' },
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* HERO */}
@@ -55,28 +66,31 @@ export default function Home() {
             BANLIEUWOOD
           </h1>
 
-          <p className="text-2xl sm:text-3xl md:text-4xl mb-8 font-light animate-fade-in stagger-delay-2 px-4">
+          <p className="text-2xl sm:text-3xl md:text-4xl mb-4 font-light animate-fade-in stagger-delay-2 px-4">
             Amener le cinéma <span className="gradient-text font-bold">en bas de chez vous</span>
+          </p>
+
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-300 font-light animate-fade-in stagger-delay-2 px-4">
+            Un programme pédagogique en 8 modules. Du regard à la réalisation.
           </p>
 
           <div className="glass-strong inline-block px-8 py-4 rounded-full mb-12 animate-scale-in stagger-delay-3">
             <p className="text-base sm:text-lg md:text-xl text-amber-500 font-semibold flex items-center gap-3 flex-wrap justify-center">
               <Sparkles className="w-5 h-5" />
-              Ateliers 100% gratuits
+              8 modules
               <span className="text-gray-400">•</span>
-              Formation pro
+              Outil numérique
               <span className="text-gray-400">•</span>
-              12-25 ans
+              De spectateur à créateur
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in stagger-delay-4 px-4">
             <Link
-              to="/ateliers"
+              to="/programme"
               className="group relative btn-primary inline-flex items-center justify-center gap-3 px-12 py-6 text-xl shadow-glow-primary hover:shadow-glow-strong"
             >
-              <span className="absolute -top-3 -right-3 bg-red-500 text-white text-xs font-bold px-4 py-2 rounded-full animate-pulse shadow-glow">GRATUIT</span>
-              <span className="relative z-10">Rejoindre un atelier</span>
+              <span className="relative z-10">Découvrir le programme</span>
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
             </Link>
             <Link
@@ -84,7 +98,7 @@ export default function Home() {
               className="inline-flex items-center justify-center gap-3 glass-card text-white border-2 border-amber-500/30 hover:border-amber-500 font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 hover-lift"
             >
               <Play className="w-6 h-6" />
-              <span>Découvrir nos films</span>
+              <span>Nos films</span>
             </Link>
           </div>
         </div>
@@ -95,21 +109,21 @@ export default function Home() {
       <section className="py-32 px-4 bg-gradient-to-b from-black via-black to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-radial from-amber-500/5 via-transparent to-transparent"></div>
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+        <div className="max-w-6xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
             C'est Quoi Banlieuwood ?
           </h2>
           <p className="text-xl md:text-2xl leading-relaxed text-gray-300 font-light mb-16 max-w-3xl mx-auto">
-            Des <span className="text-white font-semibold">ateliers gratuits</span> pour apprendre le cinéma avec des <span className="text-white font-semibold">pros</span>. Tu filmes, tu montes, tu créés tes films. <span className="gradient-text font-semibold">À Saint-Denis, 12-25 ans, gratuit.</span>
+            Un <span className="text-white font-semibold">programme pédagogique</span> pour apprendre le cinéma en faisant. <span className="gradient-text font-semibold">8 modules, de l'observation à la réalisation.</span>
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-20">
+          <div className="grid md:grid-cols-4 gap-6 mt-20">
             {[
               {
                 icon: Users,
                 number: '500+',
                 title: 'Jeunes formés',
-                desc: 'De 12 à 25 ans, tous niveaux',
+                desc: 'De 12 à 25 ans',
                 color: 'from-blue-500 to-cyan-500',
                 bgImage: 'https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us'
               },
@@ -117,7 +131,7 @@ export default function Home() {
                 icon: TrendingUp,
                 number: '85%',
                 title: 'Continuent dans l\'audiovisuel',
-                desc: 'Écoles, stages, emplois',
+                desc: 'Étude interne 2023',
                 color: 'from-amber-500 to-orange-500',
                 bgImage: 'https://i.vimeocdn.com/video/2116521612-e85659aaed322b96282e7645b11f02d215acc4f2200760c5f61e4c07658922d7-d_1280?region=us'
               },
@@ -128,6 +142,14 @@ export default function Home() {
                 desc: 'Reconnaissance nationale',
                 color: 'from-amber-500 to-orange-500',
                 bgImage: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us'
+              },
+              {
+                icon: BookOpen,
+                number: '8',
+                title: 'Modules pédagogiques',
+                desc: 'Du regard à la réalisation',
+                color: 'from-purple-500 to-pink-500',
+                bgImage: 'https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us'
               },
             ].map((stat, index) => (
               <div
@@ -145,18 +167,116 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                 </div>
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
-                <div className="relative p-10">
-                  <div className="mb-6 relative">
-                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto">
-                      <stat.icon className="w-8 h-8 text-white animate-float" strokeWidth={1.5} />
+                <div className="relative p-8">
+                  <div className="mb-4 relative">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto">
+                      <stat.icon className="w-7 h-7 text-white animate-float" strokeWidth={1.5} />
                     </div>
                   </div>
-                  <div className="text-6xl md:text-7xl font-bold text-white drop-shadow-2xl mb-4">{stat.number}</div>
-                  <p className="text-xl font-bold text-white mb-3 drop-shadow-lg">{stat.title}</p>
-                  <p className="text-gray-100 drop-shadow">{stat.desc}</p>
+                  <div className="text-5xl md:text-6xl font-bold text-white drop-shadow-2xl mb-3">{stat.number}</div>
+                  <p className="text-lg font-bold text-white mb-2 drop-shadow-lg">{stat.title}</p>
+                  <p className="text-gray-100 text-sm drop-shadow">{stat.desc}</p>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LE PARCOURS — 8 modules */}
+      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Le <span className="gradient-text">Parcours</span>
+            </h2>
+            <p className="text-xl text-gray-400">8 modules pour passer de spectateur à créateur</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {parcours.map((step, i) => (
+              <div
+                key={i}
+                className="glass-card rounded-2xl p-6 text-center hover-lift group animate-scale-in relative"
+                style={{ animationDelay: `${i * 0.05}s` }}
+              >
+                <div className="text-4xl font-bold text-white/10 absolute top-2 right-3">{String(i + 1).padStart(2, '0')}</div>
+                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform">
+                  <step.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-lg font-bold mb-1 text-white">{step.title}</h3>
+                <p className="text-gray-400 text-sm">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/programme"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-10 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow"
+            >
+              Découvrir le programme complet
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* POUR QUI ? */}
+      <section className="py-24 px-4 bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Pour <span className="gradient-text">Qui</span> ?
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="glass-strong rounded-2xl p-10 border-2 border-amber-500/30 hover:border-amber-500 transition-all hover-lift">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-6 shadow-glow">
+                <Users className="w-8 h-8 text-white" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Tu as 12-25 ans ?</h3>
+              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                Rejoins un atelier et crée ton premier film. 100% gratuit, matériel fourni.
+              </p>
+              <Link
+                to="/programme"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-8 py-4 rounded-xl transition-all hover-lift shadow-glow"
+              >
+                Voir les ateliers
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+
+            <div className="glass-strong rounded-2xl p-10 border-2 border-blue-500/30 hover:border-blue-500 transition-all hover-lift">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-6 shadow-glow">
+                <Building2 className="w-8 h-8 text-white" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Vous êtes un établissement ?</h3>
+              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                Organisez un programme cinéma dans votre école. 8 modules clé en main.
+              </p>
+              <Link
+                to="/etablissements"
+                className="inline-flex items-center gap-2 glass-card text-white font-bold px-8 py-4 rounded-xl border-2 border-blue-500/30 hover:border-blue-500 transition-all hover-lift"
+              >
+                En savoir plus
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CITATION */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="glass-card rounded-2xl p-12 border border-amber-500/20">
+            <p className="text-2xl md:text-3xl font-light italic text-gray-200 leading-relaxed mb-4">
+              "Tout le monde peut apprendre à raconter une histoire."
+            </p>
+            <p className="text-amber-500 font-bold">— Manifeste Banlieuwood</p>
           </div>
         </div>
       </section>
@@ -251,25 +371,21 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="glass-strong rounded-2xl p-8 md:p-12 border-2 border-amber-500/30 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Prochains <span className="gradient-text">Ateliers</span>
+              Prêt à <span className="gradient-text">Commencer</span> ?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Les inscriptions sont ouvertes ! Rejoins-nous pour le prochain atelier.
+              Rejoins le programme et crée ton premier film.
             </p>
 
             <Link
-              to="/ateliers"
+              to="/programme"
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 hover-lift shadow-glow"
             >
               <span>Voir les ateliers disponibles</span>
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
-            <p className="text-gray-400 text-sm mt-6 flex items-center gap-4 justify-center flex-wrap">
-              <span className="flex items-center gap-2">100% gratuit</span>
-              <span className="text-amber-500">•</span>
-              <span className="flex items-center gap-2">Sans engagement</span>
-              <span className="text-amber-500">•</span>
-              <span className="flex items-center gap-2">12-25 ans</span>
+            <p className="text-gray-400 text-sm mt-6">
+              Vous êtes un établissement ? <Link to="/etablissements" className="text-amber-500 hover:text-amber-400 underline transition-colors">Contactez-nous</Link>
             </p>
           </div>
         </div>

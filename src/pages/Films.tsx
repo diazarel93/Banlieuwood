@@ -206,11 +206,11 @@ export default function Films() {
           </h1>
 
           <p className="text-2xl md:text-3xl text-gray-300 mb-6 max-w-4xl leading-relaxed animate-fade-in stagger-delay-2">
-            Chaque film est une histoire vraie. Faite par des jeunes. Pour de vrai.
+            Chaque film est le résultat de notre parcours en 8 modules. De l'idée au tournage, tout est créé par les jeunes.
           </p>
 
           <p className="text-xl text-white font-semibold mb-8 max-w-4xl animate-fade-in stagger-delay-3">
-            Courts-metrages, making-of, documentaires. Tous crees de A a Z par les ateliers.
+            Courts-métrages, making-of, documentaires. Tous créés de A à Z par les ateliers.
           </p>
         </div>
       </section>
@@ -474,7 +474,7 @@ export default function Films() {
             </p>
 
             <Link
-              to="/ateliers"
+              to="/programme"
               className="btn-primary text-xl py-5 px-8 shadow-glow-primary inline-flex items-center gap-3"
             >
               <Clapperboard className="w-6 h-6" />

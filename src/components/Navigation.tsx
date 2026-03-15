@@ -8,10 +8,10 @@ export default function Navigation() {
 
   const links = [
     { path: '/', label: 'Accueil' },
-    { path: '/ateliers', label: 'Ateliers' },
+    { path: '/programme', label: 'Le Programme' },
     { path: '/films', label: 'Films' },
-    { path: '/institutions', label: 'Institutions' },
-    { path: '/about', label: 'A Propos' },
+    { path: '/etablissements', label: 'Établissements' },
+    { path: '/about', label: 'À Propos' },
     { path: '/contact', label: 'Contact' },
   ];
 

@@ -14,14 +14,14 @@ const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const PAGE_SEO_DATA: Record<string, SEOProps> = {
   '/': {
-    title: 'Banlieuwood | Atelier Cinéma Gratuit pour Jeunes 12-25 ans | Formation Audiovisuelle',
-    description: 'Formation cinéma 100% gratuite pour jeunes de 12 à 25 ans. Ateliers audiovisuels, réalisation de films, montage vidéo. Devenez réalisateur sans diplôme. Saint-Denis (93).',
-    keywords: 'atelier cinéma gratuit, formation audiovisuelle gratuite, école cinéma banlieue, apprendre le cinéma, Saint-Denis',
+    title: 'Banlieuwood | Programme Pédagogique Cinéma pour Jeunes 12-25 ans',
+    description: 'Programme cinéma en 8 modules pour jeunes de 12 à 25 ans. Outil numérique, ateliers gratuits, de spectateur à créateur. Saint-Denis (93).',
+    keywords: 'programme cinéma, formation audiovisuelle, école cinéma banlieue, 8 modules, outil numérique, Saint-Denis',
   },
-  '/ateliers': {
-    title: 'Ateliers Cinéma Gratuits | Inscription Formation Audiovisuelle Jeunes',
-    description: 'Rejoignez nos ateliers cinéma 100% gratuits : écriture, réalisation, tournage, montage. Ouvert aux 12-25 ans, tous niveaux. Inscrivez-vous maintenant !',
-    keywords: 'inscription atelier cinéma, cours vidéo gratuit, formation réalisation, atelier montage, rejoindre formation audiovisuelle',
+  '/programme': {
+    title: 'Le Programme | 8 Modules Cinéma | Banlieuwood',
+    description: 'Parcours pédagogique en 8 modules : observer, comprendre, imaginer, clarifier, construire, écrire, visualiser, produire. 3 formules adaptées.',
+    keywords: 'programme cinéma, 8 modules, formation réalisation, atelier cinéma gratuit, Carte Talent',
   },
   '/films': {
     title: 'Films Réalisés | Court-Métrages des Jeunes de Banlieuwood',
@@ -29,19 +29,19 @@ const PAGE_SEO_DATA: Record<string, SEOProps> = {
     keywords: 'court métrage jeunes, films banlieue, documentaire quartiers, création audiovisuelle',
   },
   '/about': {
-    title: 'À Propos | Banlieuwood — École de Cinéma Gratuite',
-    description: 'Découvrez Banlieuwood : notre mission, notre équipe, nos agréments. Association loi 1901 à Saint-Denis formant les jeunes au cinéma depuis 2015.',
-    keywords: 'association cinéma, école gratuite, quartiers populaires, culture audiovisuelle, égalité des chances',
+    title: 'À Propos | Banlieuwood — Programme Cinéma & Plateforme EdTech',
+    description: 'Découvrez Banlieuwood : notre vision, nos principes pédagogiques, notre équipe et nos agréments. Association loi 1901 à Saint-Denis depuis 2015.',
+    keywords: 'association cinéma, plateforme edtech, principes pédagogiques, quartiers populaires, égalité des chances',
   },
-  '/institutions': {
-    title: 'Institutions & Partenaires | Banlieuwood',
-    description: 'Écoles, mairies, collectivités : découvrez nos interventions en milieu scolaire et nos partenariats institutionnels. Agréé Jeunesse & Éducation Populaire.',
-    keywords: 'partenariat scolaire, intervention cinéma école, éducation artistique culturelle, collectivité locale',
+  '/etablissements': {
+    title: 'Établissements | Programme Cinéma pour Écoles & Collectivités | Banlieuwood',
+    description: '8 modules interactifs pour développer créativité, expression et coopération. Agréé Jeunesse & Éducation Populaire. Outil numérique sur tablettes.',
+    keywords: 'programme cinéma école, éducation artistique culturelle, intervention scolaire, collectivité locale, EAC',
   },
   '/contact': {
     title: 'Contact | Nous Joindre | Banlieuwood',
     description: 'Contactez-nous pour toute question : inscription, partenariat, presse. Nous sommes à Saint-Denis (93).',
-    keywords: 'contact banlieuwood, nous joindre, inscription atelier, Saint-Denis',
+    keywords: 'contact banlieuwood, nous joindre, inscription programme, Saint-Denis',
   },
 };
 
