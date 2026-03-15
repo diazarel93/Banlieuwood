@@ -1,4 +1,4 @@
-import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight, Building2 } from 'lucide-react';
+import { Film, Play, Sparkles, Users, Award, TrendingUp, ArrowRight, BookOpen, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import VideoPlayer from '../components/VideoPlayer';
