@@ -12,6 +12,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Etablissements = lazy(() => import('./pages/Institutions'));
 const Admin = lazy(() => import('./pages/Admin'));
 const MediaManager = lazy(() => import('./pages/MediaManager'));
+const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/media-manager" element={<MediaManager />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

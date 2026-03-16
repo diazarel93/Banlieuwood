@@ -1,4 +1,4 @@
-import { Building2, Shield, Users, ArrowRight, CheckCircle, Lightbulb, Award, ChevronDown, Tablet, Camera, MessageSquare, Heart, Mic, Eye, Puzzle } from 'lucide-react';
+import { Building2, Shield, Users, ArrowRight, CheckCircle, Lightbulb, Award, ChevronDown, Tablet, Camera, MessageSquare, Heart, Mic, Eye, Puzzle, BookOpen, GraduationCap } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -39,7 +39,7 @@ export default function Institutions() {
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 px-5 py-2 rounded-full mb-8 animate-fade-in">
             <Shield className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-300 font-medium text-sm">Agréé Jeunesse & Éducation Populaire • EAC</span>
+            <span className="text-blue-300 font-medium text-sm">Association loi 1901 • Saint-Denis (93)</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in stagger-delay-1">
@@ -222,6 +222,112 @@ export default function Institutions() {
         </div>
       </section>
 
+      {/* CADRE INSTITUTIONNEL — PEAC, socle commun, dispositifs */}
+      <section className="py-24 px-4 bg-gray-900/50 border-y border-gray-800">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-16">
+            <p className="text-blue-400 font-bold text-sm uppercase tracking-wider mb-3">Cadre institutionnel</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">S'inscrit dans les dispositifs officiels</h2>
+            <p className="text-gray-400 text-lg max-w-3xl">
+              Notre programme est conçu pour répondre aux cadres de l'Éducation Nationale et des collectivités territoriales.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* PEAC */}
+            <div className="border border-gray-800 rounded-xl p-8 hover:border-blue-500/20 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                  <BookOpen className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-bold text-white text-lg">PEAC</h3>
+              </div>
+              <p className="text-gray-400 mb-4">
+                Parcours d'Éducation Artistique et Culturelle — les 3 piliers sont couverts :
+              </p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300"><strong className="text-white">Rencontres</strong> — avec des professionnels du cinéma en activité</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300"><strong className="text-white">Pratiques</strong> — écriture, jeu d'acteur, tournage, post-production</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300"><strong className="text-white">Connaissances</strong> — analyse d'image, narration, grammaire cinématographique</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Socle commun */}
+            <div className="border border-gray-800 rounded-xl p-8 hover:border-blue-500/20 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                  <GraduationCap className="w-5 h-5 text-blue-400" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-bold text-white text-lg">Socle commun</h3>
+              </div>
+              <p className="text-gray-400 mb-4">
+                Contribue à 3 domaines du socle commun de compétences :
+              </p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300"><strong className="text-white">Domaine 1</strong> — Langages : expression orale, argumentation, pitch</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300"><strong className="text-white">Domaine 3</strong> — Citoyenneté : coopération, écoute, vivre-ensemble</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-300"><strong className="text-white">Domaine 5</strong> — Culture : éducation à l'image, création artistique</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Dispositifs et financements */}
+          <div className="mt-8 border border-gray-800 rounded-xl p-8 hover:border-blue-500/20 transition-colors">
+            <h3 className="font-bold text-white text-lg mb-6">Dispositifs et financements éligibles</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <p className="text-blue-400 font-bold text-sm mb-3">Éducation Nationale</p>
+                <ul className="space-y-1.5 text-sm text-gray-400">
+                  <li>• EAC / PEAC</li>
+                  <li>• Pass Culture (part collective)</li>
+                  <li>• Projets d'établissement</li>
+                  <li>• Cité Éducative</li>
+                  <li>• Contrat Local d'Accompagnement (CLAS)</li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-blue-400 font-bold text-sm mb-3">Collectivités territoriales</p>
+                <ul className="space-y-1.5 text-sm text-gray-400">
+                  <li>• Politique de la Ville / Contrat de Ville</li>
+                  <li>• Conseil Départemental (93)</li>
+                  <li>• Conseil Régional Île-de-France</li>
+                  <li>• Mairie / Intercommunalité</li>
+                  <li>• Programme de Réussite Éducative (PRE)</li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-blue-400 font-bold text-sm mb-3">Autres financements</p>
+                <ul className="space-y-1.5 text-sm text-gray-400">
+                  <li>• DRAC Île-de-France</li>
+                  <li>• FDVA (Fonds de Vie Associative)</li>
+                  <li>• CAF 93</li>
+                  <li>• Fondations privées</li>
+                  <li>• Mécénat d'entreprise</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ — style ligne, pas accordion cards */}
       <section className="py-24 px-4 bg-gray-900/50 border-y border-gray-800">
         <div className="max-w-3xl mx-auto">
@@ -251,31 +357,28 @@ export default function Institutions() {
         </div>
       </section>
 
-      {/* AGRÉMENTS — badges horizontaux */}
+      {/* CADRE — honnête et clair */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
           <div className="mb-16">
-            <p className="text-blue-400 font-bold text-sm uppercase tracking-wider mb-3">Reconnaissances</p>
-            <h2 className="text-4xl md:text-5xl font-bold">Agréments & Labels</h2>
+            <p className="text-blue-400 font-bold text-sm uppercase tracking-wider mb-3">Notre cadre</p>
+            <h2 className="text-4xl md:text-5xl font-bold">Garanties & engagements</h2>
           </div>
 
           <div className="space-y-4">
             {[
-              { icon: Shield, title: 'Jeunesse & Éducation Populaire', numero: 'JEP-93-2016-042', delivrePar: 'Préfecture de Seine-Saint-Denis' },
-              { icon: CheckCircle, title: 'Convention Ville de Saint-Denis', numero: 'CONV-2023-CULT-089', delivrePar: 'Service Culture & Jeunesse' },
-              { icon: Award, title: 'Lauréat Fonds DRAC Île-de-France', numero: '', delivrePar: 'Direction Régionale des Affaires Culturelles' },
-            ].map((agrement, i) => (
+              { icon: Shield, title: 'Association loi 1901', desc: 'Déclarée en préfecture de Seine-Saint-Denis — gestion désintéressée et transparente' },
+              { icon: CheckCircle, title: 'Programme structuré et éprouvé', desc: '8 modules testés depuis 2015, plus de 500 jeunes formés, 30+ films produits' },
+              { icon: Award, title: 'Intervenants professionnels', desc: 'Encadrement par des professionnels du cinéma et de l\'audiovisuel en activité' },
+            ].map((item, i) => (
               <div key={i} className="flex items-center gap-6 border border-gray-800 rounded-xl p-6 hover:border-blue-500/30 transition-colors">
                 <div className="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
-                  <agrement.icon className="w-6 h-6 text-blue-400" strokeWidth={1.5} />
+                  <item.icon className="w-6 h-6 text-blue-400" strokeWidth={1.5} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold text-white">{agrement.title}</h3>
-                  <p className="text-gray-500 text-sm">{agrement.delivrePar}</p>
+                  <h3 className="font-bold text-white">{item.title}</h3>
+                  <p className="text-gray-500 text-sm">{item.desc}</p>
                 </div>
-                {agrement.numero && (
-                  <span className="text-gray-600 font-mono text-xs hidden sm:block">{agrement.numero}</span>
-                )}
               </div>
             ))}
           </div>

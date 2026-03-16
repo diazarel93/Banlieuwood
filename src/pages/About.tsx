@@ -186,35 +186,35 @@ export default function About() {
         </div>
       </section>
 
-      {/* AGRÉMENTS — compact */}
+      {/* STATUT — honnête et clair */}
       <section className="py-20 px-4 bg-gray-950 border-y border-gray-800/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12" data-reveal>
-            Nos agréments
+            Notre statut
           </h2>
 
           <div className="space-y-6">
-            {[
-              { icon: Shield, title: 'Jeunesse & Éducation Populaire', numero: 'JEP-93-2016-042', org: 'Préfecture de Seine-Saint-Denis' },
-              { icon: CheckCircle, title: 'Convention Ville de Saint-Denis', numero: 'CONV-2023-CULT-089', org: 'Service Culture & Jeunesse' },
-              { icon: Award, title: 'Lauréat Fonds DRAC Île-de-France', numero: '', org: 'Direction Régionale des Affaires Culturelles' },
-            ].map((a, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-5"
-                data-reveal
-                data-reveal-delay={String(i * 80)}
-              >
-                <a.icon className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" strokeWidth={1.5} />
-                <div>
-                  <p className="text-white font-semibold">{a.title}</p>
-                  <p className="text-gray-500 text-sm">
-                    {a.numero && <span className="text-amber-500/70 font-mono mr-2">{a.numero}</span>}
-                    {a.org}
-                  </p>
-                </div>
+            <div className="flex items-start gap-5" data-reveal>
+              <Shield className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" strokeWidth={1.5} />
+              <div>
+                <p className="text-white font-semibold">Association loi 1901</p>
+                <p className="text-gray-500 text-sm">Déclarée en préfecture de Seine-Saint-Denis</p>
               </div>
-            ))}
+            </div>
+            <div className="flex items-start gap-5" data-reveal data-reveal-delay="80">
+              <CheckCircle className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" strokeWidth={1.5} />
+              <div>
+                <p className="text-white font-semibold">Gestion désintéressée</p>
+                <p className="text-gray-500 text-sm">100% bénévole — chaque euro va aux ateliers et aux films</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-5" data-reveal data-reveal-delay="160">
+              <Award className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" strokeWidth={1.5} />
+              <div>
+                <p className="text-white font-semibold">Dons déductibles d'impôts</p>
+                <p className="text-gray-500 text-sm">Réduction de 66% sur l'impôt sur le revenu pour les donateurs</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

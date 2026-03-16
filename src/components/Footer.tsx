@@ -65,8 +65,11 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="text-center text-gray-400 text-sm">
+          <div className="text-center text-gray-400 text-sm space-y-2">
             <p>&copy; {new Date().getFullYear()} Banlieuwood — Tous droits réservés.</p>
+            <Link to="/mentions-legales" className="text-gray-500 hover:text-gray-300 transition-colors text-xs">
+              Mentions légales & Politique de confidentialité
+            </Link>
           </div>
         </div>
       </div>

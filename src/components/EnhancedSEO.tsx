@@ -20,34 +20,34 @@ const defaultMeta = {
 
 const pageMetadata: Record<string, { title: string; description: string; keywords?: string }> = {
   '/': {
-    title: 'Banlieuwood - Le Cinéma en Bas de Chez Toi',
-    description: 'Programme cinéma en 8 modules avec outil numérique. De spectateur à créateur. Ateliers gratuits pour les 12-25 ans.',
-    keywords: 'programme cinéma, 8 modules, formation jeunes, banlieue, outil numérique, de spectateur à créateur'
+    title: 'Banlieuwood — Atelier Cinéma Gratuit Jeunes 12-25 ans | Saint-Denis 93',
+    description: 'Programme cinéma en 8 modules 100% gratuit pour jeunes de 12 à 25 ans. Outil numérique, ateliers encadrés par des pros du cinéma. Saint-Denis (93).',
+    keywords: 'atelier cinéma gratuit, formation audiovisuelle jeunes, programme cinéma 8 modules, école cinéma banlieue, outil numérique pédagogique, éducation à l\'image, Saint-Denis, Seine-Saint-Denis 93, Île-de-France, cinéma quartiers populaires'
   },
   '/programme': {
-    title: 'Le Programme - 8 Modules Cinéma - Banlieuwood',
-    description: 'Parcours pédagogique en 8 modules : observer, comprendre, imaginer, clarifier, construire, écrire, visualiser, produire. 3 formules adaptées.',
-    keywords: 'programme cinéma, 8 modules, formation réalisation, Carte Talent, outil numérique'
+    title: 'Programme 8 Modules Cinéma Gratuit — Banlieuwood',
+    description: 'Parcours pédagogique cinéma en 8 modules. 3 formules adaptées collège, lycée, structures jeunesse. Outil numérique sur tablettes inclus.',
+    keywords: 'programme pédagogique cinéma, parcours 8 modules, formation réalisation film gratuite, atelier audiovisuel collège lycée, apprendre le cinéma, éducation artistique culturelle cinéma'
   },
   '/films': {
-    title: 'Nos Films - Banlieuwood',
-    description: 'Découvre les courts et longs métrages réalisés par les jeunes de Banlieuwood. Films primés en festivals et reconnus nationalement.',
-    keywords: 'court métrage, long métrage, films jeunes, cinéma banlieue, festival film'
+    title: 'Films Réalisés par les Jeunes — Banlieuwood',
+    description: 'Courts et longs métrages réalisés par les jeunes de Banlieuwood. Films primés en festivals, diffusés sur Amazon Prime Video.',
+    keywords: 'court métrage jeunes banlieue, films réalisés par des jeunes, festival film jeunesse, Amazon Prime Video, création audiovisuelle quartiers, cinéma social'
   },
   '/about': {
-    title: 'À Propos - Banlieuwood',
-    description: "L'histoire de Banlieuwood : notre vision, nos principes pédagogiques, notre équipe et nos agréments.",
-    keywords: 'association cinéma, plateforme edtech, principes pédagogiques, banlieue Paris'
+    title: 'À Propos — Banlieuwood | Association Cinéma Saint-Denis',
+    description: 'Association loi 1901 à Saint-Denis depuis 2015. 500+ jeunes formés, 30+ films produits. Équipe de professionnels du cinéma.',
+    keywords: 'association cinéma quartiers populaires, formation audiovisuelle gratuite, programme éducation image, association loi 1901 Saint-Denis, cinéma banlieue'
   },
   '/etablissements': {
-    title: 'Établissements - Programme Cinéma pour Écoles - Banlieuwood',
-    description: '8 modules interactifs pour développer créativité, expression et coopération. Agréé Jeunesse & Éducation Populaire.',
-    keywords: 'programme cinéma école, éducation artistique culturelle, intervention scolaire, EAC'
+    title: 'Programme Cinéma pour Écoles et Collectivités — Banlieuwood',
+    description: 'Programme cinéma clé en main pour établissements scolaires. Éligible EAC, PEAC, Pass Culture, Politique de la Ville. Outil numérique sur tablettes.',
+    keywords: 'intervention cinéma établissement scolaire, programme EAC cinéma, PEAC cinéma, Pass Culture, atelier audiovisuel collège lycée, Politique de la Ville, Cité Éducative, socle commun, DRAC, CLAS, PRE'
   },
   '/contact': {
-    title: 'Contact - Banlieuwood',
-    description: 'Contactez-nous pour rejoindre notre programme, poser vos questions ou devenir partenaire.',
-    keywords: 'contact banlieuwood, inscription programme, devenir partenaire'
+    title: 'Contact — Inscription Atelier Cinéma | Banlieuwood',
+    description: 'Contactez Banlieuwood pour inscription, partenariat ou organiser un programme cinéma dans votre école. Réponse sous 48h. Saint-Denis (93).',
+    keywords: 'contacter Banlieuwood, inscription atelier cinéma gratuit, organiser atelier cinéma école, Saint-Denis 93'
   }
 };
 
@@ -91,7 +91,7 @@ export default function EnhancedSEO({ title, description, image, type = 'website
     "@context": "https://schema.org",
     "@type": "EducationEvent",
     "name": "Ateliers Cinéma Banlieuwood",
-    "description": "Ateliers de cinéma gratuits pour les jeunes de 12 à 25 ans",
+    "description": "Ateliers de cinéma gratuits pour les jeunes de 12 à 25 ans. 8 modules pédagogiques avec outil numérique sur tablettes.",
     "organizer": {
       "@type": "Organization",
       "name": "Banlieuwood",
@@ -102,7 +102,9 @@ export default function EnhancedSEO({ title, description, image, type = 'website
       "name": "Banlieuwood",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "10 rue Frazier",
         "addressLocality": "Saint-Denis",
+        "postalCode": "93200",
         "addressRegion": "Île-de-France",
         "addressCountry": "FR"
       }
@@ -113,6 +115,43 @@ export default function EnhancedSEO({ title, description, image, type = 'website
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock"
     }
+  } : null;
+
+  const faqStructuredData = location.pathname === '/etablissements' ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Les élèves ont-ils besoin d'expérience en cinéma ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Non, le programme est conçu pour des débutants complets. Aucun prérequis technique ou artistique." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel matériel est nécessaire pour l'atelier cinéma ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Léger et accessible. L'essentiel est fourni par Banlieuwood : tablettes avec outil numérique dédié, caméra, matériel son." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle durée prévoir pour un programme cinéma en classe ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Modulable. De quelques séances avec la Formule Découverte (modules 1 à 5) à un programme complet avec tournage avec la Formule Création ou Production (modules 1 à 8)." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le programme est-il éligible à l'EAC et au PEAC ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le programme couvre les 3 piliers du PEAC : Rencontres avec des professionnels du cinéma, Pratiques artistiques (écriture, tournage, montage) et Connaissances (analyse d'image, grammaire cinématographique). Il est également éligible au Pass Culture (part collective), aux Contrats de Ville et aux dispositifs Cité Éducative." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment financer un atelier cinéma dans un établissement scolaire ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Plusieurs dispositifs sont mobilisables : EAC/PEAC, Pass Culture (part collective), Politique de la Ville, Conseil Départemental, Conseil Régional Île-de-France, DRAC, FDVA, CAF/CLAS, Programme de Réussite Éducative. Nous accompagnons les établissements dans le montage des dossiers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi choisir Banlieuwood pour un atelier cinéma ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Un programme structuré en 8 modules, testés depuis 2015. Un outil numérique interactif sur tablettes. Des intervenants professionnels du cinéma. Plus de 500 jeunes formés et 30 films produits." }
+      }
+    ]
   } : null;
 
   return (
@@ -152,6 +191,11 @@ export default function EnhancedSEO({ title, description, image, type = 'website
         {eventStructuredData && (
           <script type="application/ld+json">
             {JSON.stringify(eventStructuredData)}
+          </script>
+        )}
+        {faqStructuredData && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqStructuredData)}
           </script>
         )}
       </Helmet>
