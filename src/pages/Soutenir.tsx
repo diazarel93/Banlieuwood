@@ -1,7 +1,9 @@
-import { Heart, ArrowRight, Users, Building2, Gift, CheckCircle, ChevronDown } from 'lucide-react';
+import { Heart, ArrowRight, Users, Building2, Gift, CheckCircle, ChevronDown, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+
+const HELLOASSO_URL = 'https://www.helloasso.com/associations/banlieuwood';
 
 export default function Soutenir() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -14,7 +16,7 @@ export default function Soutenir() {
     },
     {
       q: 'Comment effectuer un don ?',
-      a: 'Contactez-nous à contact@banlieuwood.fr. Nous vous transmettrons les coordonnées pour effectuer votre don par virement ou chèque. Un reçu fiscal vous sera envoyé automatiquement.'
+      a: 'Directement en ligne via HelloAsso (paiement sécurisé, reçu fiscal automatique). Vous pouvez aussi nous contacter à contact@banlieuwood.fr pour un don par virement ou chèque.'
     },
     {
       q: 'Puis-je faire un don en nature ?',
@@ -44,9 +46,29 @@ export default function Soutenir() {
             Donnez une caméra<br />
             <span className="text-amber-500">à un jeune</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed mb-10">
             Chaque don finance directement les ateliers. L'association est 100% bénévole — aucun salarié, aucune rémunération.
           </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href={HELLOASSO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group btn-primary inline-flex items-center justify-center gap-3 px-10 py-5 text-lg"
+            >
+              <Heart className="w-5 h-5" />
+              Faire un don
+              <ExternalLink className="w-4 h-4 opacity-60" />
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-3 text-white border border-white/20 hover:border-white/40 font-medium px-10 py-5 text-lg rounded-xl transition-all duration-300"
+            >
+              Nous contacter
+            </Link>
+          </div>
+          <p className="text-gray-600 text-xs mt-4">Paiement sécurisé via HelloAsso — Reçu fiscal automatique</p>
         </div>
       </section>
 
@@ -259,18 +281,30 @@ export default function Soutenir() {
             Prêt à nous soutenir ?
           </h2>
           <p className="text-xl text-gray-400 mb-10">
-            Contactez-nous pour effectuer un don, proposer un partenariat ou rejoindre l'équipe.
+            Un don, un partenariat, du bénévolat — chaque geste compte.
           </p>
 
-          <Link
-            to="/contact"
-            className="group btn-primary inline-flex items-center gap-3 px-10 py-5 text-lg"
-          >
-            Nous contacter
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={HELLOASSO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group btn-primary inline-flex items-center justify-center gap-3 px-10 py-5 text-lg"
+            >
+              <Heart className="w-5 h-5" />
+              Faire un don
+              <ExternalLink className="w-4 h-4 opacity-60" />
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-3 text-white border border-white/20 hover:border-white/40 font-medium px-10 py-5 text-lg rounded-xl transition-all duration-300"
+            >
+              Nous contacter
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
           <p className="text-gray-600 text-sm mt-6">
-            Email direct : <a href="mailto:contact@banlieuwood.fr" className="text-amber-500/70 hover:text-amber-500 transition-colors">contact@banlieuwood.fr</a>
+            Paiement sécurisé via HelloAsso • Reçu fiscal automatique • <a href="mailto:contact@banlieuwood.fr" className="text-amber-500/70 hover:text-amber-500 transition-colors">contact@banlieuwood.fr</a>
           </p>
         </div>
       </section>

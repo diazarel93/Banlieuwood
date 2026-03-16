@@ -162,6 +162,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ILS NOUS FONT CONFIANCE */}
+      <section className="py-12 px-4 bg-gray-950 border-b border-gray-800/50">
+        <div className="max-w-5xl mx-auto text-center" data-reveal>
+          <p className="text-gray-600 text-sm uppercase tracking-widest mb-6">Ils nous ont fait confiance</p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-gray-500 text-sm">
+            <span>Collège Grands Champs (78)</span>
+            <span className="text-gray-700">•</span>
+            <span>Collège Blaise Pascal (78)</span>
+            <span className="text-gray-700">•</span>
+            <span>Établissements d'Aubervilliers (93)</span>
+            <span className="text-gray-700">•</span>
+            <span>Rosny-sous-Bois (93)</span>
+            <span className="text-gray-700">•</span>
+            <span>Créteil (94)</span>
+            <span className="text-gray-700">•</span>
+            <span>Roissy-en-Brie (77)</span>
+          </div>
+        </div>
+      </section>
+
       {/* L'OUTIL — section produit avec vraie capture */}
       <section className="py-32 px-4 bg-gray-950 border-y border-gray-800/50">
         <div className="max-w-6xl mx-auto">

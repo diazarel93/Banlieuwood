@@ -1,4 +1,4 @@
-import { Play, ArrowRight, Shield, CheckCircle, Award } from 'lucide-react';
+import { Play, ArrowRight, Shield, CheckCircle, Award, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -240,10 +240,19 @@ export default function About() {
             ))}
           </div>
 
-          <div className="text-center" data-reveal>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center" data-reveal>
+            <a
+              href="https://www.helloasso.com/associations/banlieuwood"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center justify-center gap-3 px-8 py-4 text-lg"
+            >
+              <Heart className="w-5 h-5" />
+              Faire un don
+            </a>
             <Link
               to="/soutenir"
-              className="text-amber-500 font-bold inline-flex items-center gap-2 hover:gap-3 transition-all text-lg"
+              className="text-amber-500 font-bold inline-flex items-center justify-center gap-2 hover:gap-3 transition-all text-lg py-4"
             >
               Toutes les façons de nous soutenir <ArrowRight className="w-5 h-5" />
             </Link>

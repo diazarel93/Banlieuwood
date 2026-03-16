@@ -82,6 +82,29 @@ export default function Institutions() {
         </div>
       </section>
 
+      {/* ILS NOUS ONT FAIT CONFIANCE */}
+      <section className="py-16 px-4 bg-black">
+        <div className="max-w-5xl mx-auto" data-reveal>
+          <p className="text-blue-400 font-bold text-sm uppercase tracking-wider mb-8 text-center">Établissements partenaires</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: 'Collège Grands Champs', city: 'Poissy (78)', film: 'L\'Interrogatoire, Silence Moteur Action' },
+              { name: 'Collège Blaise Pascal', city: 'Plaisir (78)', film: 'Délégué des Tas' },
+              { name: 'Établissements scolaires', city: 'Aubervilliers (93)', film: 'Snap peut nuire à votre santé' },
+            ].map((partner, i) => (
+              <div key={i} className="border border-gray-800 rounded-xl p-6 hover:border-blue-500/20 transition-colors" data-reveal data-reveal-delay={String(i * 80)}>
+                <p className="text-white font-bold mb-1">{partner.name}</p>
+                <p className="text-blue-400 text-sm mb-3">{partner.city}</p>
+                <p className="text-gray-500 text-xs">Films réalisés : {partner.film}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-gray-600 text-sm text-center mt-6">
+            + établissements à Rosny-sous-Bois (93), Créteil (94), Roissy-en-Brie (77), Saint-Denis (93)
+          </p>
+        </div>
+      </section>
+
       {/* COMPÉTENCES — liste horizontale avec trait bleu */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-6xl mx-auto">
