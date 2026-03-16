@@ -63,7 +63,7 @@ export default function Home() {
             Un programme pédagogique en 8 modules. Du regard à la réalisation.
           </p>
 
-          <div className="glass-strong inline-block px-8 py-4 rounded-full mb-12 animate-scale-in stagger-delay-3">
+          <div className="inline-block bg-black/40 backdrop-blur-sm px-8 py-4 rounded-full mb-12 animate-scale-in stagger-delay-3">
             <p className="text-base sm:text-lg md:text-xl text-amber-500 font-semibold flex items-center gap-3 flex-wrap justify-center">
               <Sparkles className="w-5 h-5" />
               8 modules
@@ -84,7 +84,7 @@ export default function Home() {
             </Link>
             <Link
               to="/films"
-              className="inline-flex items-center justify-center gap-3 glass-card text-white border-2 border-amber-500/30 hover:border-amber-500 font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 hover-lift"
+              className="inline-flex items-center justify-center gap-3 text-white border border-white/20 hover:border-amber-500/50 font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 hover-lift"
             >
               <Play className="w-6 h-6" />
               <span>Nos films</span>
@@ -95,10 +95,8 @@ export default function Home() {
       </VideoHeroBackground>
 
       {/* STATS */}
-      <section className="py-24 px-4 bg-gradient-to-b from-black via-black to-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-radial from-amber-500/5 via-transparent to-transparent"></div>
-
-        <div className="max-w-6xl mx-auto text-center relative z-10">
+      <section className="py-24 px-4 bg-black">
+        <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             C'est Quoi <span className="text-amber-500">Banlieuwood</span> ?
           </h2>
@@ -150,12 +148,11 @@ export default function Home() {
                   <img
                     src={stat.bgImage}
                     alt={stat.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-80`}></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                 </div>
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
                 <div className="relative p-8">
                   <div className="mb-4 relative">
                     <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto">
@@ -194,7 +191,7 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
-            <div className="glass-card rounded-2xl p-8 border border-amber-500/20">
+            <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800">
               <div className="space-y-4">
                 {['Observer', 'Comprendre', 'Imaginer', 'Clarifier', 'Construire', 'Écrire', 'Visualiser', 'Produire'].map((step, i) => (
                   <div key={i} className="flex items-center gap-4">
@@ -213,7 +210,7 @@ export default function Home() {
       <section className="py-24 px-4 bg-gray-900">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
-            <Link to="/programme" className="glass-strong rounded-2xl p-8 border-2 border-amber-500/20 hover:border-amber-500 transition-all hover-lift group">
+            <Link to="/programme" className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-amber-500/50 transition-all hover-lift group">
               <Users className="w-10 h-10 text-amber-500 mb-4" strokeWidth={1.5} />
               <h3 className="text-2xl font-bold mb-2">Tu as 12-25 ans ?</h3>
               <p className="text-gray-400 mb-4">Crée ton premier film. 100% gratuit.</p>
@@ -222,7 +219,7 @@ export default function Home() {
               </span>
             </Link>
 
-            <Link to="/etablissements" className="glass-strong rounded-2xl p-8 border-2 border-blue-500/20 hover:border-blue-500 transition-all hover-lift group">
+            <Link to="/etablissements" className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-blue-500/50 transition-all hover-lift group">
               <Building2 className="w-10 h-10 text-blue-400 mb-4" strokeWidth={1.5} />
               <h3 className="text-2xl font-bold mb-2">Vous êtes un établissement ?</h3>
               <p className="text-gray-400 mb-4">Un programme cinéma clé en main pour vos élèves.</p>
@@ -235,13 +232,8 @@ export default function Home() {
       </section>
 
       {/* FILMS PREVIEW */}
-      <section className="py-24 px-4 bg-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section className="py-24 px-4 bg-gray-900">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Nos <span className="text-amber-500">Films</span></h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -251,32 +243,31 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'VOIR LA MER', image: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us', color: 'from-blue-500' },
-              { title: 'TIC-TAC', image: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us', color: 'from-amber-500' },
-              { title: "L'INTERROGATOIRE", image: 'https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us', color: 'from-red-500' }
+              { title: 'VOIR LA MER', image: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us' },
+              { title: 'TIC-TAC', image: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us' },
+              { title: "L'INTERROGATOIRE", image: 'https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us' }
             ].map((project, index) => (
               <Link
                 key={index}
                 to="/films"
-                className="group relative overflow-hidden aspect-[3/4] rounded-2xl shadow-2xl hover-lift"
+                className="group relative overflow-hidden aspect-[3/4] rounded-2xl hover-lift"
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${project.color} to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300`}></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  <div className="w-12 h-0.5 bg-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="glass-strong p-6 rounded-full">
-                    <Play className="w-12 h-12 text-amber-500" />
+                  <div className="w-16 h-16 bg-amber-500/90 rounded-full flex items-center justify-center">
+                    <Play className="w-8 h-8 text-black ml-0.5" fill="currentColor" />
                   </div>
                 </div>
               </Link>

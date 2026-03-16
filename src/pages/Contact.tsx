@@ -142,7 +142,7 @@ export default function Contact() {
                   <button
                     key={p.type}
                     onClick={() => setProfile(p.type)}
-                    className="glass-card rounded-2xl p-6 text-center hover-lift border-2 border-white/10 hover:border-amber-500 transition-all group"
+                    className="bg-gray-900 rounded-2xl p-6 text-center hover-lift border border-gray-800 hover:border-amber-500/50 transition-all group"
                   >
                     <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <p.icon className="w-7 h-7 text-white" strokeWidth={1.5} />

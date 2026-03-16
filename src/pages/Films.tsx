@@ -196,7 +196,7 @@ export default function Films() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full mb-6 animate-fade-in">
             <Video className="w-5 h-5 text-amber-500" />
             <span className="text-amber-400 font-bold">18 Productions</span>
           </div>
@@ -226,7 +226,7 @@ export default function Films() {
 
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             {stats.map((stat, i) => (
-              <div key={i} className="glass-strong rounded-2xl p-8 text-center border-t-4 border-amber-500 hover-lift animate-scale-in" style={{animationDelay: `${i * 0.1}s`}}>
+              <div key={i} className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 hover-lift animate-scale-in" style={{animationDelay: `${i * 0.1}s`}}>
                 <stat.icon className="w-14 h-14 text-amber-500 mx-auto mb-4" strokeWidth={1.5} />
                 <div className="text-5xl font-bold text-amber-500 mb-3">{stat.number}</div>
                 <h3 className="text-lg font-bold mb-2">{stat.label}</h3>
@@ -241,7 +241,7 @@ export default function Films() {
       <section className="py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-5 py-2 rounded-full mb-6">
               <Sparkles className="w-5 h-5 text-amber-500" />
               <span className="text-amber-400 font-bold">Amazon Prime Video</span>
             </div>
@@ -251,7 +251,7 @@ export default function Films() {
             <p className="text-xl text-gray-400">Notre long-métrage, accessible mondialement</p>
           </div>
 
-          <div className="glass-strong rounded-3xl overflow-hidden border-2 border-amber-500/30 max-w-5xl mx-auto">
+          <div className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative h-96 lg:h-auto cursor-pointer" onClick={() => {
                 const ticTacIndex = films.findIndex(f => f.title === 'Tic Tac');
@@ -301,7 +301,7 @@ export default function Films() {
                       const ticTacIndex = films.findIndex(f => f.title === 'Tic Tac');
                       if (ticTacIndex !== -1) setSelectedFilmIndex(ticTacIndex);
                     }}
-                    className="inline-flex items-center gap-2 glass-card text-white font-bold px-8 py-4 rounded-xl border-2 border-white/20 hover:border-amber-500 transition-all hover-lift text-lg"
+                    className="inline-flex items-center gap-2 text-white font-bold px-8 py-4 rounded-xl border border-white/20 hover:border-amber-500/50 transition-all hover-lift text-lg"
                   >
                     <Play className="w-6 h-6" />
                     Voir le film
@@ -316,7 +316,7 @@ export default function Films() {
       <section className="py-24 px-4 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-gray-800 border border-gray-700 px-5 py-2 rounded-full mb-6">
               <Clapperboard className="w-5 h-5 text-amber-500" />
               <span className="text-amber-400 font-bold">Notre Filmographie</span>
             </div>
@@ -331,8 +331,8 @@ export default function Films() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-3 rounded-xl font-bold transition-all hover-lift ${
                     selectedCategory === category
-                      ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-black'
-                      : 'glass-card text-gray-300 hover:text-white border-2 border-white/20 hover:border-amber-500'
+                      ? 'bg-amber-500 text-black'
+                      : 'bg-gray-900 text-gray-300 hover:text-white border border-gray-800 hover:border-gray-600'
                   }`}
                 >
                   {category}
@@ -346,26 +346,26 @@ export default function Films() {
               <div
                 key={i}
                 onClick={() => setSelectedFilmIndex(films.findIndex(f => f.title === film.title))}
-                className="group glass-strong rounded-2xl overflow-hidden cursor-pointer hover-lift border-2 border-white/10 hover:border-amber-500 transition-all animate-scale-in"
+                className="group bg-gray-900 rounded-2xl overflow-hidden cursor-pointer hover-lift border border-gray-800 hover:border-gray-600 transition-all animate-scale-in"
                 style={{animationDelay: `${i * 0.1}s`}}
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
                     src={film.thumbnail}
                     alt={film.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-20 h-20 rounded-full bg-amber-500 flex items-center justify-center">
-                      <Play className="w-10 h-10 text-black ml-1" fill="black" />
+                    <div className="w-14 h-14 rounded-full bg-amber-500/90 flex items-center justify-center">
+                      <Play className="w-7 h-7 text-black ml-0.5" fill="black" />
                     </div>
                   </div>
 
                   {film.award && (
-                    <div className="absolute top-4 right-4 glass-card px-3 py-1 rounded-full border-2 border-amber-500">
+                    <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full border border-amber-500/50">
                       <div className="flex items-center gap-2">
                         <Award className="w-4 h-4 text-amber-500" />
                         <span className="text-xs font-bold text-amber-500">{film.award}</span>
@@ -373,7 +373,7 @@ export default function Films() {
                     </div>
                   )}
 
-                  <div className="absolute top-4 left-4 glass-card px-3 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
                     <span className="text-xs font-bold text-white">{film.youtubeId ? 'YouTube' : 'Vimeo'}</span>
                   </div>
                 </div>
@@ -412,7 +412,7 @@ export default function Films() {
       <section className="py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-5 py-2 rounded-full mb-6">
               <Star className="w-5 h-5 text-purple-500" />
               <span className="text-purple-400 font-bold">Opportunités Créées</span>
             </div>
@@ -440,11 +440,11 @@ export default function Films() {
                 story: 'Grâce aux films réalisés, Karim a constitué un book professionnel qu\'il présente en castings.',
               }
             ].map((talent, i) => (
-              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6">
-                  <span className="text-white font-bold text-xl">{talent.name.charAt(0)}</span>
+              <div key={i} className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6">
+                  <span className="text-white font-bold text-lg">{talent.name.charAt(0)}</span>
                 </div>
-                <div className="glass-card px-3 py-1 rounded-full inline-block mb-4 border border-purple-500/30">
+                <div className="bg-purple-500/10 px-3 py-1 rounded-full inline-block mb-4 border border-purple-500/20">
                   <p className="text-purple-400 font-bold text-xs">{talent.achievement}</p>
                 </div>
                 <h3 className="text-xl font-bold mb-3">{talent.name}</h3>

@@ -45,7 +45,7 @@ export default function About() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-3 glass-card px-6 py-3 rounded-full mb-8 animate-fade-in">
+            <div className="inline-flex items-center gap-3 bg-black/40 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-full mb-8 animate-fade-in">
               <Film className="w-6 h-6 text-amber-500" />
               <span className="text-amber-400 font-bold text-lg">Depuis 2015 à Saint-Denis</span>
             </div>
@@ -74,7 +74,7 @@ export default function About() {
               </Link>
               <Link
                 to="/films"
-                className="glass-card text-white font-bold text-xl py-5 px-8 rounded-xl border-2 border-white/20 hover:border-amber-500/50 transition-all hover-lift flex items-center gap-3"
+                className="text-white font-bold text-xl py-5 px-8 rounded-xl border border-white/20 hover:border-amber-500/50 transition-all hover-lift flex items-center gap-3"
               >
                 <Play className="w-6 h-6" />
                 Voir nos Films
@@ -92,12 +92,10 @@ export default function About() {
             {impactNumbers.map((stat, index) => (
               <div
                 key={index}
-                className="glass-card rounded-2xl p-8 text-center relative overflow-hidden group animate-scale-in"
+                className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 group animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
-                <div className="relative z-10">
+                <div>
                   <stat.icon className="w-12 h-12 text-amber-500 mx-auto mb-4" strokeWidth={1.5} />
                   <div className="text-5xl font-bold text-amber-500 mb-3">{stat.number}</div>
                   <p className="text-xl font-bold text-white">{stat.label}</p>
@@ -114,7 +112,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
             <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-4 py-2 rounded-full mb-6">
                 <Sparkles className="w-5 h-5 text-amber-500" />
                 <span className="text-amber-400 font-bold">Notre Histoire</span>
               </div>
@@ -134,7 +132,7 @@ export default function About() {
                   Banlieuwood part d'un constat simple : les jeunes des quartiers ont du talent,
                   mais zéro accès aux métiers de l'audiovisuel.
                 </p>
-                <div className="glass-strong border-l-4 border-amber-500 p-6 rounded-r-xl">
+                <div className="bg-gray-900 border-l-4 border-amber-500 p-6 rounded-r-xl">
                   <p className="text-xl font-bold text-white mb-3">Ce qu'on croit</p>
                   <p className="text-gray-300">
                     Le cinéma, ça s'apprend par la pratique. Pas en regardant des tutos YouTube.
@@ -154,7 +152,7 @@ export default function About() {
                 <img
                   src="https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us"
                   alt="Tournage d'un court-métrage Banlieuwood"
-                  className="w-full h-[600px] object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-[600px] object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -165,7 +163,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden glass-strong p-2">
+          <div className="relative rounded-2xl overflow-hidden border border-gray-800 p-2 bg-gray-900">
             {!playVideo ? (
               <div className="relative group cursor-pointer" onClick={() => setPlayVideo(true)}>
                 <img
@@ -174,11 +172,8 @@ export default function About() {
                   className="w-full h-[500px] object-cover rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all flex items-center justify-center rounded-2xl">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-amber-500 blur-3xl opacity-30"></div>
-                    <div className="relative w-24 h-24 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="w-12 h-12 text-black ml-2" fill="black" />
-                    </div>
+                  <div className="w-20 h-20 bg-amber-500 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <Play className="w-10 h-10 text-black ml-1" fill="black" />
                   </div>
                 </div>
                 <div className="absolute bottom-8 left-8 right-8 text-white">
@@ -218,12 +213,11 @@ export default function About() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="glass-card rounded-2xl p-8 text-center hover-lift group relative overflow-hidden animate-scale-in"
+                className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 hover-lift group animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                <div className="relative z-10">
-                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                <div>
+                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center group-hover:scale-105 transition-transform`}>
                     <value.icon className="w-10 h-10 text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
@@ -259,7 +253,7 @@ export default function About() {
                 <div className="hidden md:block w-1/2"></div>
                 <div className="absolute left-8 md:left-1/2 w-6 h-6 bg-amber-500 rounded-full -ml-[11px] z-10"></div>
                 <div className="flex-1 pl-20 md:pl-0">
-                  <div className="glass-strong rounded-2xl p-8 border-2 border-amber-500/30 hover:border-amber-500 transition-all hover-lift">
+                  <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-gray-600 transition-all hover-lift">
                     <div className="flex items-center gap-4 mb-4">
                       <span className="text-5xl font-bold text-amber-500">{milestone.year}</span>
                       <div className="h-12 w-1 bg-amber-500"></div>
@@ -293,7 +287,7 @@ export default function About() {
               { name: 'Sandrine FELQUIN', role: 'Rédactrice en Chef', initials: 'SF', color: 'from-red-500 to-orange-500' },
               { name: 'Alice VALETTE', role: 'Rédactrice en Chef', initials: 'AV', color: 'from-indigo-500 to-blue-500' },
             ].map((member, i) => (
-              <div key={i} className="glass-card rounded-2xl p-6 flex items-center gap-5 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
+              <div key={i} className="bg-gray-900 rounded-2xl p-6 flex items-center gap-5 border border-gray-800 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${member.color} flex items-center justify-center flex-shrink-0`}>
                   <span className="text-white font-bold text-xl">{member.initials}</span>
                 </div>
@@ -323,7 +317,7 @@ export default function About() {
               { icon: CheckCircle, title: 'Convention Ville de Saint-Denis', numero: 'CONV-2023-CULT-089', delivrePar: 'Service Culture & Jeunesse', color: 'from-green-500 to-green-600' },
               { icon: Award, title: 'Lauréat Fonds DRAC', numero: 'Île-de-France', delivrePar: 'Direction Régionale des Affaires Culturelles', color: 'from-purple-500 to-purple-600' }
             ].map((agrement, i) => (
-              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift border-t-4 border-amber-500 animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+              <div key={i} className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agrement.color} flex items-center justify-center mb-6`}>
                   <agrement.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>
@@ -360,7 +354,7 @@ export default function About() {
               </Link>
               <Link
                 to="/contact"
-                className="glass-card text-white font-bold text-xl py-5 px-8 rounded-xl border-2 border-white/20 hover:border-amber-500 transition-all hover-lift flex items-center gap-3"
+                className="text-white font-bold text-xl py-5 px-8 rounded-xl border border-white/20 hover:border-amber-500/50 transition-all hover-lift flex items-center gap-3"
               >
                 Nous Contacter
                 <ArrowRight className="w-6 h-6" />

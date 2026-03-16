@@ -71,8 +71,8 @@ export default function Navigation() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block w-full text-left font-semibold transition-all py-4 px-5 rounded-xl ${
                     isActive(link.path)
-                      ? 'text-amber-400 glass-card'
-                      : 'text-gray-300 hover:text-white glass hover:glass-strong'
+                      ? 'text-amber-400 bg-white/5'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {link.label}

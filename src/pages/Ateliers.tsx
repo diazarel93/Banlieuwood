@@ -61,7 +61,7 @@ export default function Ateliers() {
       <section className="relative py-32 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/7234403/pexels-photo-7234403.jpeg"
+            src="https://i.vimeocdn.com/video/2116521612-e85659aaed322b96282e7645b11f02d215acc4f2200760c5f61e4c07658922d7-d_1280?region=us"
             alt="Atelier en action"
             className="w-full h-full object-cover opacity-20"
           />
@@ -69,7 +69,7 @@ export default function Ateliers() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full mb-6 animate-fade-in">
             <Zap className="w-5 h-5 text-amber-500" />
             <span className="text-amber-400 font-bold">8 modules • Outil numérique • Tablettes</span>
           </div>
@@ -100,7 +100,7 @@ export default function Ateliers() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {modules.map((mod, i) => (
-              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift border-t-4 border-amber-500 animate-scale-in relative" style={{ animationDelay: `${i * 0.05}s` }}>
+              <div key={i} className="bg-gray-900 rounded-2xl p-8 hover-lift border border-gray-800 animate-scale-in relative" style={{ animationDelay: `${i * 0.05}s` }}>
                 <div className="text-6xl font-bold text-white/10 absolute top-4 right-4">{String(mod.number).padStart(2, '0')}</div>
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${mod.color} flex items-center justify-center mb-6`}>
                   <mod.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
@@ -119,7 +119,7 @@ export default function Ateliers() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-4 py-2 rounded-full mb-6">
                 <Tablet className="w-5 h-5 text-amber-500" />
                 <span className="text-amber-400 font-bold">Innovation pédagogique</span>
               </div>
@@ -133,7 +133,7 @@ export default function Ateliers() {
                   Chaque élève utilise une <span className="text-white font-semibold">tablette</span> avec notre outil interactif dédié.
                 </p>
 
-                <div className="glass-strong border-l-4 border-amber-500 p-6 rounded-r-xl">
+                <div className="bg-gray-900 border-l-4 border-amber-500 p-6 rounded-r-xl">
                   <p className="text-2xl font-bold text-white mb-3">30% numérique, 70% humain</p>
                   <p className="text-gray-300">
                     L'outil ne remplace jamais le facilitateur — il accompagne. L'échange, le débat et la création restent au centre.
@@ -205,7 +205,7 @@ export default function Ateliers() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {formules.map((formule, i) => (
-              <div key={i} className="glass-strong rounded-3xl p-8 hover-lift border-2 border-white/10 hover:border-amber-500 transition-all animate-scale-in relative overflow-hidden" style={{ animationDelay: `${i * 0.1}s` }}>
+              <div key={i} className="bg-gray-900 rounded-2xl p-8 hover-lift border border-gray-800 hover:border-gray-600 transition-all animate-scale-in relative overflow-hidden" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${formule.color}`}></div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${formule.color} flex items-center justify-center`}>
@@ -243,7 +243,7 @@ export default function Ateliers() {
       <section className="py-24 px-4 bg-black">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 glass-card px-5 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-5 py-2 rounded-full mb-6">
               <Award className="w-5 h-5 text-amber-500" />
               <span className="text-amber-400 font-bold">Gamification</span>
             </div>
@@ -257,7 +257,7 @@ export default function Ateliers() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {talentProfiles.map((profile, i) => (
-              <div key={i} className="glass-card rounded-2xl p-6 text-center hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
+              <div key={i} className="bg-gray-900 rounded-2xl p-6 text-center border border-gray-800 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
                 <div className="text-4xl mb-4">{profile.emoji}</div>
                 <h4 className="font-bold text-white mb-2">{profile.name}</h4>
                 <p className="text-gray-400 text-sm">{profile.desc}</p>
@@ -309,7 +309,7 @@ export default function Ateliers() {
                 color: 'from-amber-500 to-orange-500'
               }
             ].map((reason, i) => (
-              <div key={i} className="glass-strong rounded-2xl p-8 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
+              <div key={i} className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${reason.color} flex items-center justify-center mb-6`}>
                   <reason.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>
@@ -364,7 +364,7 @@ export default function Ateliers() {
               </Link>
               <Link
                 to="/etablissements"
-                className="glass-card text-white font-bold text-lg py-4 px-8 rounded-xl border-2 border-white/20 hover:border-amber-500 transition-all hover-lift flex items-center gap-3"
+                className="text-white font-bold text-lg py-4 px-8 rounded-xl border border-white/20 hover:border-amber-500/50 transition-all hover-lift flex items-center gap-3"
               >
                 Pour les établissements
               </Link>
