@@ -94,7 +94,7 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-px bg-gray-800 rounded-2xl overflow-hidden">
               {[
                 { number: '500+', label: 'jeunes formés' },
-                { number: '85%', label: 'continuent en audiovisuel' },
+                { number: '85%', label: 'continuent en audiovisuel*' },
                 { number: '15+', label: 'prix en festivals' },
                 { number: '8', label: 'modules pédagogiques' },
               ].map((stat, i) => (
@@ -105,6 +105,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <p className="text-gray-600 text-xs mt-6 text-right" data-reveal>*Étude interne 2023</p>
         </div>
       </section>
 
@@ -136,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* POUR QUI — 2 blocs distincts */}
-      <section className="py-20 px-4 bg-gray-950 border-y border-gray-800/50">
+      <section className="py-20 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4">
             <Link to="/programme" className="group p-10 rounded-2xl border border-gray-800 hover:border-amber-500/30 transition-all" data-reveal>
@@ -156,6 +157,38 @@ export default function Home() {
                 En savoir plus <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* L'OUTIL — section produit avec vraie capture */}
+      <section className="py-32 px-4 bg-gray-950 border-y border-gray-800/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center" data-reveal>
+            <div>
+              <p className="text-amber-500 font-bold text-sm uppercase tracking-widest mb-6">Innovation pédagogique</p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                Un outil numérique<br />
+                <span className="text-amber-500">interactif</span>
+              </h2>
+              <p className="text-xl text-gray-400 leading-relaxed mb-6">
+                Chaque élève utilise une tablette avec notre application dédiée. Questions, votes, débats, écriture — tout passe par l'outil.
+              </p>
+              <p className="text-gray-500 leading-relaxed mb-8">
+                30% numérique, 70% humain. L'outil accompagne, le facilitateur anime.
+              </p>
+              <Link to="/programme" className="text-amber-500 font-bold inline-flex items-center gap-2 hover:gap-3 transition-all">
+                Découvrir le programme <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            <div className="bg-gray-900 rounded-2xl p-2 border border-gray-800 shadow-2xl">
+              <img
+                src="/images/app-pilot.png"
+                alt="Interface cockpit Banlieuwood — votes en temps réel"
+                className="rounded-xl w-full"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -207,6 +240,31 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PHOTO + TÉMOIGNAGE */}
+      <section className="py-24 px-4 bg-gray-950 border-y border-gray-800/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center" data-reveal>
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+              <img
+                src="/images/atelier-cover.png"
+                alt="Tournage Banlieuwood — jeunes filmées en extérieur"
+                className="w-full h-full object-cover object-center"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <blockquote className="text-2xl md:text-3xl font-light text-gray-200 leading-relaxed mb-6">
+                "J'ai découvert que j'aimais écrire des histoires. Aujourd'hui je suis en BTS audiovisuel."
+              </blockquote>
+              <div>
+                <p className="text-white font-semibold">Sofiane, 19 ans</p>
+                <p className="text-gray-500 text-sm">Participant depuis 2021 — Rosny-sous-Bois</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

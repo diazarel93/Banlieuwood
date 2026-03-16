@@ -182,17 +182,21 @@ export default function Films() {
               </Link>
             </div>
             <div className="space-y-4">
-              {[
-                { name: 'Sofiane L.', achievement: 'Agent artistique trouvé', story: 'Repéré après 3 courts-métrages. Enchaîne maintenant les castings professionnels.' },
-                { name: 'Inès M.', achievement: 'Agent artistique trouvé', story: 'Son talent naturel devant la caméra lui a ouvert les portes de l\'industrie.' },
-                { name: 'Karim B.', achievement: 'Book professionnel', story: 'A constitué un book professionnel grâce aux films réalisés avec Banlieuwood.' }
-              ].map((talent, i) => (
-                <div key={i} className="border-l-2 border-gray-800 pl-6 py-2" data-reveal data-reveal-delay={String(i * 100)}>
-                  <p className="font-bold text-white">{talent.name}</p>
-                  <p className="text-purple-400 text-sm font-medium mb-1">{talent.achievement}</p>
-                  <p className="text-gray-500 text-sm">{talent.story}</p>
-                </div>
-              ))}
+              <div className="border-l-2 border-gray-800 pl-6 py-2" data-reveal>
+                <p className="font-bold text-white">Agents artistiques</p>
+                <p className="text-purple-400 text-sm font-medium mb-1">Plusieurs jeunes repérés</p>
+                <p className="text-gray-500 text-sm">Après les tournages Banlieuwood, certains participants ont trouvé un agent artistique et enchaînent les castings professionnels.</p>
+              </div>
+              <div className="border-l-2 border-gray-800 pl-6 py-2" data-reveal data-reveal-delay="100">
+                <p className="font-bold text-white">Books professionnels</p>
+                <p className="text-purple-400 text-sm font-medium mb-1">Des portefeuilles construits</p>
+                <p className="text-gray-500 text-sm">Les films produits servent de book pour des candidatures en BTS audiovisuel, écoles de cinéma ou castings.</p>
+              </div>
+              <div className="border-l-2 border-gray-800 pl-6 py-2" data-reveal data-reveal-delay="200">
+                <p className="font-bold text-white">Formations audiovisuelles</p>
+                <p className="text-purple-400 text-sm font-medium mb-1">85% continuent</p>
+                <p className="text-gray-500 text-sm">La majorité des participants poursuivent dans l'audiovisuel — BTS, licence, ou formations spécialisées. <span className="text-gray-600 text-xs">(Étude interne 2023)</span></p>
+              </div>
             </div>
           </div>
         </div>

@@ -47,7 +47,7 @@ export default function Institutions() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 mb-10 max-w-3xl leading-relaxed animate-fade-in stagger-delay-2">
-            8 modules interactifs pour développer créativité, expression et coopération chez vos élèves.
+            Vos élèves consomment des images toute la journée, mais ne comprennent jamais comment elles sont fabriquées. On les fait passer de spectateur à créateur.
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-in stagger-delay-3">
@@ -68,17 +68,16 @@ export default function Institutions() {
         </div>
       </section>
 
-      {/* LE CONSTAT — pleine largeur, typographique */}
-      <section className="py-24 px-4 bg-black border-y border-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-2xl md:text-3xl text-gray-300 leading-relaxed mb-8 font-light">
-            Les jeunes consomment des images toute la journée — films, séries, réseaux sociaux — mais ne comprennent jamais <span className="text-white font-medium">comment elles sont fabriquées</span>.
-          </p>
-          <p className="text-xl text-gray-500 mb-8">Ils voient le résultat, jamais le processus.</p>
-          <div className="inline-block bg-blue-500/10 border border-blue-500/20 rounded-xl px-8 py-4">
-            <p className="text-xl text-blue-300 font-semibold">
-              Banlieuwood les fait passer de spectateur à créateur.
-            </p>
+      {/* PHOTO — atelier en action */}
+      <section className="px-4 py-12 bg-black border-y border-gray-800">
+        <div className="max-w-6xl mx-auto" data-reveal>
+          <div className="grid md:grid-cols-2 gap-3">
+            <div className="aspect-[4/3] rounded-xl overflow-hidden">
+              <img src="/images/groupe-jeunes.png" alt="Groupe de jeunes participants Banlieuwood" className="w-full h-full object-cover object-[100%_20%]" loading="lazy" />
+            </div>
+            <div className="aspect-[4/3] rounded-xl overflow-hidden">
+              <img src="/images/atelier-camera.png" alt="Intervenant apprenant la caméra à un jeune" className="w-full h-full object-cover object-[100%_30%]" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>

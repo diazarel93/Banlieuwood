@@ -56,8 +56,23 @@ export default function About() {
               <div>
                 <div className="text-4xl font-bold text-white logo-font">85%</div>
                 <p className="text-gray-500 text-sm">continuent en audiovisuel</p>
+                <p className="text-gray-600 text-xs mt-1">Étude interne 2023</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PHOTO — pleine largeur */}
+      <section className="px-4 pb-12 bg-black">
+        <div className="max-w-6xl mx-auto" data-reveal>
+          <div className="aspect-[21/9] rounded-xl overflow-hidden">
+            <img
+              src="/images/equipe-toit.png"
+              alt="L'équipe Banlieuwood — Saint-Denis"
+              className="w-full h-full object-cover object-[50%_30%]"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -142,12 +157,12 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
             {[
-              { name: 'Adrian YOUNSI', role: 'Président & Fondateur' },
-              { name: 'Wadi LAADAM', role: 'Producteur' },
-              { name: 'Anwar LAADAM', role: 'Producteur' },
-              { name: 'Romain NDIAYE CHANSAREL', role: 'Producteur' },
-              { name: 'Sandrine FELQUIN', role: 'Rédactrice en Chef' },
-              { name: 'Alice VALETTE', role: 'Rédactrice en Chef' },
+              { name: 'Adrian YOUNSI', role: 'Président & Fondateur', bio: 'Professionnel de l\'audiovisuel, à l\'origine du projet depuis 2015' },
+              { name: 'Wadi LAADAM', role: 'Producteur', bio: 'Production et coordination des tournages' },
+              { name: 'Anwar LAADAM', role: 'Producteur', bio: 'Production et développement de projets' },
+              { name: 'Romain NDIAYE CHANSAREL', role: 'Producteur', bio: 'Production et encadrement des ateliers' },
+              { name: 'Sandrine FELQUIN', role: 'Rédactrice en Chef', bio: 'Écriture scénaristique et accompagnement narratif' },
+              { name: 'Alice VALETTE', role: 'Rédactrice en Chef', bio: 'Écriture et direction artistique éditoriale' },
             ].map((member, i) => (
               <div
                 key={i}
@@ -162,7 +177,8 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-white font-semibold">{member.name}</p>
-                  <p className="text-gray-500 text-sm">{member.role}</p>
+                  <p className="text-amber-500/70 text-sm">{member.role}</p>
+                  <p className="text-gray-600 text-xs">{member.bio}</p>
                 </div>
               </div>
             ))}

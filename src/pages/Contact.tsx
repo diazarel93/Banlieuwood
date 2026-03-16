@@ -128,9 +128,10 @@ export default function Contact() {
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-8 leading-[1.05]">
             Écrivez-nous
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
+          <p className="text-xl text-gray-400 max-w-2xl leading-relaxed mb-4">
             Rejoindre le programme, organiser un atelier dans votre école ou devenir partenaire.
           </p>
+          <p className="text-amber-500/70 font-medium">On répond sous 48h.</p>
         </div>
       </section>
 

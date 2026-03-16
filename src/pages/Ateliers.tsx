@@ -59,6 +59,20 @@ export default function Ateliers() {
         </div>
       </section>
 
+      {/* PHOTO — tournage en action */}
+      <section className="px-4 py-12 bg-black">
+        <div className="max-w-6xl mx-auto" data-reveal>
+          <div className="grid md:grid-cols-2 gap-3">
+            <div className="aspect-[4/3] rounded-xl overflow-hidden">
+              <img src="/images/tournage-plage.png" alt="Tournage en extérieur — équipe avec perche son" className="w-full h-full object-cover object-[0%_30%]" loading="lazy" />
+            </div>
+            <div className="aspect-[4/3] rounded-xl overflow-hidden">
+              <img src="/images/atelier-clap.png" alt="Jeune avec clap de tournage" className="w-full h-full object-cover object-[0%_20%]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* L'OUTIL NUMÉRIQUE — éditorial split */}
       <section className="py-20 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
@@ -150,6 +164,16 @@ export default function Ateliers() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* TÉMOIGNAGE */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-4xl mx-auto text-center" data-reveal>
+          <blockquote className="text-2xl md:text-3xl font-light text-gray-200 leading-relaxed mb-6">
+            "Les jeunes ont pris plaisir à faire ce projet ensemble et ont su chacun y trouver une place."
+          </blockquote>
+          <p className="text-gray-500">— Dossier pédagogique Banlieuwood</p>
         </div>
       </section>
 
