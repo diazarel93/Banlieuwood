@@ -1,299 +1,168 @@
-import { Film, MapPin, Users, Heart, Target, Award, Clapperboard, TrendingUp, Play, ArrowRight, Sparkles, Shield, CheckCircle } from 'lucide-react';
+import { Play, ArrowRight, Shield, CheckCircle, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function About() {
   const [playVideo, setPlayVideo] = useState(false);
-
-  const impactNumbers = [
-    { number: '500+', label: 'Jeunes formés', sublabel: 'depuis 2015', icon: Users, color: 'from-blue-500 to-cyan-500' },
-    { number: '30+', label: 'Films produits', sublabel: 'courts et longs métrages', icon: Film, color: 'from-amber-500 to-orange-500' },
-    { number: '15+', label: 'Sélections festivals', sublabel: 'nationaux et internationaux', icon: Award, color: 'from-purple-500 to-pink-500' },
-    { number: '85%', label: 'Poursuivent en audiovisuel', sublabel: 'étude interne 2023 (n=47)', icon: TrendingUp, color: 'from-green-500 to-emerald-500' }
-  ];
-
-  const values = [
-    { icon: MapPin, title: 'Ancrage local', description: 'À Saint-Denis depuis 2015, au coeur des quartiers populaires', color: 'from-red-500 to-orange-500' },
-    { icon: Users, title: 'Équipe pro', description: 'Cinéastes et formateurs passionnés par la transmission', color: 'from-blue-500 to-cyan-500' },
-    { icon: Heart, title: 'Inclusion totale', description: '100% gratuit, accessible à tous sans condition', color: 'from-pink-500 to-red-500' },
-    { icon: Target, title: 'Impact réel', description: 'Des compétences professionnelles et des carrières lancées', color: 'from-green-500 to-emerald-500' }
-  ];
-
-  const milestones = [
-    { year: '2015', title: 'Création', desc: 'Premiers ateliers à Saint-Denis avec 12 jeunes' },
-    { year: '2017', title: 'Premiers films', desc: 'Production de courts-métrages avec des collèges partenaires' },
-    { year: '2019', title: 'Tic Tac', desc: 'Long-métrage réalisé avec 22 jeunes, diffusé sur Amazon Prime Video' },
-    { year: '2021', title: '"Voir la Mer" primé', desc: 'Le film "Voir la Mer" remporte 3 prix en festivals' },
-    { year: '2023', title: '11 films', desc: '11 films réalisés, plus de 200 jeunes formés depuis 2015' },
-    { year: '2024', title: 'Programme 8 modules', desc: 'Développement du parcours pédagogique structuré et de l\'outil numérique' },
-    { year: '2025', title: 'Plateforme EdTech', desc: 'Lancement de la plateforme interactive sur tablettes pour les établissements scolaires' },
-  ];
+  const scrollRef = useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
-      {/* HERO */}
-      <section className="relative py-32 flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us"
-            alt="Tournage Banlieuwood"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 py-24">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-3 bg-black/40 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-full mb-8 animate-fade-in">
-              <Film className="w-6 h-6 text-amber-500" />
-              <span className="text-amber-400 font-bold text-lg">Depuis 2015 à Saint-Denis</span>
-            </div>
-
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-slide-up">
-              Le Cinéma<br />
-              <span className="text-amber-500">Des Quartiers</span>
-            </h1>
-
-            <p className="text-3xl md:text-4xl text-amber-400 font-light italic mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              "Nous sommes là où le cinéma<br />ne nous attend pas."
-            </p>
-
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              Former des jeunes au cinéma. Produire des films. Créer des opportunités.
-            </p>
-
-            <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              <Link
-                to="/programme"
-                className="btn-primary text-xl py-5 px-8 flex items-center gap-3"
-              >
-                <Clapperboard className="w-6 h-6" />
-                Le Programme
-                <ArrowRight className="w-6 h-6" />
-              </Link>
-              <Link
-                to="/films"
-                className="text-white font-bold text-xl py-5 px-8 rounded-xl border border-white/20 hover:border-amber-500/50 transition-all hover-lift flex items-center gap-3"
-              >
-                <Play className="w-6 h-6" />
-                Voir nos Films
-              </Link>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      {/* STATS */}
-      <section className="py-24 px-4 bg-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-6">
-            {impactNumbers.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 group animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div>
-                  <stat.icon className="w-12 h-12 text-amber-500 mx-auto mb-4" strokeWidth={1.5} />
-                  <div className="text-5xl font-bold text-amber-500 mb-3">{stat.number}</div>
-                  <p className="text-xl font-bold text-white">{stat.label}</p>
-                  <p className="text-xs text-gray-500 mt-2">{stat.sublabel}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+    <div className="min-h-screen bg-black text-white pt-20" ref={scrollRef}>
+      {/* HERO — éditorial, pas marketing */}
+      <section className="py-32 px-4">
+        <div className="max-w-5xl mx-auto" data-reveal>
+          <p className="text-amber-500 font-bold text-sm uppercase tracking-widest mb-6">Depuis 2015 à Saint-Denis</p>
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-8 leading-[1.05]">
+            Le cinéma<br />
+            <span className="text-amber-500">des quartiers</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
+            Former des jeunes au cinéma. Produire des films. Créer des opportunités.
+          </p>
         </div>
       </section>
 
-      {/* NOTRE HISTOIRE */}
-      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-            <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-4 py-2 rounded-full mb-6">
-                <Sparkles className="w-5 h-5 text-amber-500" />
-                <span className="text-amber-400 font-bold">Notre Histoire</span>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                Comment Ça a<br />
-                <span className="text-amber-500">Commencé</span>
-              </h2>
-
+      {/* NOTRE HISTOIRE — narratif, pas grille */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-16" data-reveal>
+            <div className="md:col-span-3">
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  <span className="text-amber-500 font-bold text-2xl">2015.</span> Tout commence avec une idée simple :
+                  <span className="text-amber-500 font-bold text-3xl">2015.</span> Tout commence avec une idée simple :
                   <span className="text-white font-semibold"> amener le cinéma directement dans les quartiers.</span>
                 </p>
                 <p>
-                  Créée par des <span className="text-white font-semibold">professionnels du cinéma</span>,
-                  Banlieuwood part d'un constat simple : les jeunes des quartiers ont du talent,
+                  Créée par des professionnels du cinéma,
+                  Banlieuwood part d'un constat : les jeunes des quartiers ont du talent,
                   mais zéro accès aux métiers de l'audiovisuel.
                 </p>
-                <div className="bg-gray-900 border-l-4 border-amber-500 p-6 rounded-r-xl">
-                  <p className="text-xl font-bold text-white mb-3">Ce qu'on croit</p>
-                  <p className="text-gray-300">
-                    Le cinéma, ça s'apprend par la pratique. Pas en regardant des tutos YouTube.
-                    En faisant. Avec du vrai matos. Encadré par des pros.
-                  </p>
-                </div>
-                <p className="text-white font-semibold text-xl">
-                  Depuis 2015 : <span className="text-amber-500">500+ jeunes formés</span>,
-                  <span className="text-amber-500"> 30+ films produits</span>,
-                  <span className="text-amber-500"> 15+ prix en festivals</span>.
+                <p>
+                  Le cinéma, ça s'apprend par la pratique. Pas en regardant des tutos.
+                  En faisant. Avec du vrai matos. Encadré par des pros.
                 </p>
               </div>
             </div>
-
-            <div className="order-1 lg:order-2">
-              <div className="relative rounded-2xl overflow-hidden group">
-                <img
-                  src="https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us"
-                  alt="Tournage d'un court-métrage Banlieuwood"
-                  className="w-full h-[600px] object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <p className="text-2xl font-bold text-white mb-2">Formation en action</p>
-                  <p className="text-gray-300">Nos formateurs professionnels transmettent leur passion du cinéma</p>
-                </div>
+            <div className="md:col-span-2 flex flex-col justify-center gap-6">
+              <div>
+                <div className="text-4xl font-bold text-white logo-font">500+</div>
+                <p className="text-gray-500 text-sm">jeunes formés</p>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-white logo-font">30+</div>
+                <p className="text-gray-500 text-sm">films produits</p>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-white logo-font">85%</div>
+                <p className="text-gray-500 text-sm">continuent en audiovisuel</p>
               </div>
             </div>
           </div>
-
-          <div className="relative rounded-2xl overflow-hidden border border-gray-800 p-2 bg-gray-900">
-            {!playVideo ? (
-              <div className="relative group cursor-pointer" onClick={() => setPlayVideo(true)}>
-                <img
-                  src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
-                  alt="Tournage Banlieuwood"
-                  className="w-full h-[500px] object-cover rounded-2xl"
-                />
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all flex items-center justify-center rounded-2xl">
-                  <div className="w-20 h-20 bg-amber-500 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <Play className="w-10 h-10 text-black ml-1" fill="black" />
-                  </div>
-                </div>
-                <div className="absolute bottom-8 left-8 right-8 text-white">
-                  <p className="text-3xl font-bold mb-2">Banlieuwood en 2 minutes</p>
-                  <p className="text-xl text-gray-200">Qui on est, ce qu'on fait</p>
-                </div>
-              </div>
-            ) : (
-              <div className="aspect-video rounded-2xl overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://player.vimeo.com/video/1161231299?autoplay=1"
-                  title="Banlieuwood - Présentation"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
-              </div>
-            )}
-          </div>
         </div>
       </section>
 
-      {/* VALEURS */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Nos <span className="text-amber-500">Valeurs</span>
-            </h2>
-            <p className="text-xl text-gray-400">Ce qui guide notre action au quotidien</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 hover-lift group animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div>
-                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center group-hover:scale-105 transition-transform`}>
-                    <value.icon className="w-10 h-10 text-white" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{value.description}</p>
+      {/* VIDÉO — pleine largeur */}
+      <section className="px-4 pb-20 bg-black">
+        <div className="max-w-6xl mx-auto" data-reveal>
+          {!playVideo ? (
+            <div
+              className="relative aspect-video rounded-xl overflow-hidden group cursor-pointer"
+              onClick={() => setPlayVideo(true)}
+            >
+              <img
+                src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
+                alt="Tournage Banlieuwood"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play className="w-10 h-10 text-black ml-1" fill="currentColor" />
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="absolute bottom-8 left-8">
+                <p className="text-white font-bold text-2xl">Banlieuwood en 2 minutes</p>
+              </div>
+            </div>
+          ) : (
+            <div className="aspect-video rounded-xl overflow-hidden">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://player.vimeo.com/video/1161231299?autoplay=1"
+                title="Banlieuwood - Présentation"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* PARCOURS / TIMELINE */}
-      <section className="py-24 px-4 bg-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Notre <span className="text-amber-500">Parcours</span>
-            </h2>
-            <p className="text-xl text-gray-400">2015-2025 : les moments clés</p>
-          </div>
+      {/* PARCOURS — timeline simple */}
+      <section className="py-20 px-4 bg-gray-950 border-y border-gray-800/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12" data-reveal>
+            Les moments clés
+          </h2>
 
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-500 via-amber-500 to-transparent"></div>
-
-            {milestones.map((milestone, index) => (
-              <div
-                key={index}
-                className={`relative flex items-center gap-8 mb-16 animate-slide-up ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="hidden md:block w-1/2"></div>
-                <div className="absolute left-8 md:left-1/2 w-6 h-6 bg-amber-500 rounded-full -ml-[11px] z-10"></div>
-                <div className="flex-1 pl-20 md:pl-0">
-                  <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-gray-600 transition-all hover-lift">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="text-5xl font-bold text-amber-500">{milestone.year}</span>
-                      <div className="h-12 w-1 bg-amber-500"></div>
-                      <h3 className="text-2xl font-bold text-white">{milestone.title}</h3>
-                    </div>
-                    <p className="text-gray-300 text-lg leading-relaxed">{milestone.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* L'ÉQUIPE */}
-      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Notre <span className="text-amber-500">Équipe</span>
-            </h2>
-            <p className="text-xl text-gray-400">Les professionnels qui encadrent les ateliers</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-0">
             {[
-              { name: 'Adrian YOUNSI', role: 'Président & Fondateur', initials: 'AY', color: 'from-amber-500 to-orange-500' },
-              { name: 'Wadi LAADAM', role: 'Producteur', initials: 'WL', color: 'from-blue-500 to-cyan-500' },
-              { name: 'Anwar LAADAM', role: 'Producteur', initials: 'AL', color: 'from-green-500 to-emerald-500' },
-              { name: 'Romain NDIAYE CHANSAREL', role: 'Producteur', initials: 'RN', color: 'from-purple-500 to-pink-500' },
-              { name: 'Sandrine FELQUIN', role: 'Rédactrice en Chef', initials: 'SF', color: 'from-red-500 to-orange-500' },
-              { name: 'Alice VALETTE', role: 'Rédactrice en Chef', initials: 'AV', color: 'from-indigo-500 to-blue-500' },
+              { year: '2015', text: 'Premiers ateliers à Saint-Denis avec 12 jeunes' },
+              { year: '2017', text: 'Production de courts-métrages avec des collèges partenaires' },
+              { year: '2019', text: 'Tic Tac — long-métrage avec 22 jeunes, diffusé sur Amazon Prime Video' },
+              { year: '2021', text: '"Voir la Mer" remporte 3 prix en festivals' },
+              { year: '2023', text: '11 films réalisés, plus de 200 jeunes formés' },
+              { year: '2024', text: 'Développement du parcours pédagogique en 8 modules' },
+              { year: '2025', text: 'Lancement de la plateforme interactive sur tablettes' },
+            ].map((m, i) => (
+              <div
+                key={i}
+                className="flex gap-6 py-6 border-b border-gray-800/50 last:border-0"
+                data-reveal
+                data-reveal-delay={String(i * 60)}
+              >
+                <span className="text-amber-500 font-bold text-lg w-16 flex-shrink-0">{m.year}</span>
+                <p className="text-gray-300 text-lg">{m.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* L'ÉQUIPE — liste simple */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" data-reveal>L'équipe</h2>
+          <p className="text-gray-400 mb-12" data-reveal>Les professionnels qui encadrent les ateliers</p>
+
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
+            {[
+              { name: 'Adrian YOUNSI', role: 'Président & Fondateur' },
+              { name: 'Wadi LAADAM', role: 'Producteur' },
+              { name: 'Anwar LAADAM', role: 'Producteur' },
+              { name: 'Romain NDIAYE CHANSAREL', role: 'Producteur' },
+              { name: 'Sandrine FELQUIN', role: 'Rédactrice en Chef' },
+              { name: 'Alice VALETTE', role: 'Rédactrice en Chef' },
             ].map((member, i) => (
-              <div key={i} className="bg-gray-900 rounded-2xl p-6 flex items-center gap-5 border border-gray-800 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${member.color} flex items-center justify-center flex-shrink-0`}>
-                  <span className="text-white font-bold text-xl">{member.initials}</span>
+              <div
+                key={i}
+                className="flex items-center gap-4 py-3 border-b border-gray-800/50"
+                data-reveal
+                data-reveal-delay={String(i * 50)}
+              >
+                <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
+                  <span className="text-amber-500 font-bold text-sm">
+                    {member.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
+                  </span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">{member.name}</h3>
-                  <p className="text-amber-500 text-sm font-semibold">{member.role}</p>
+                  <p className="text-white font-semibold">{member.name}</p>
+                  <p className="text-gray-500 text-sm">{member.role}</p>
                 </div>
               </div>
             ))}
@@ -301,65 +170,62 @@ export default function About() {
         </div>
       </section>
 
-      {/* AGRÉMENTS */}
-      <section className="py-24 px-4 bg-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Nos <span className="text-amber-500">Agréments</span>
-            </h2>
-            <p className="text-xl text-gray-400">Reconnus par les institutions publiques</p>
-          </div>
+      {/* AGRÉMENTS — compact */}
+      <section className="py-20 px-4 bg-gray-950 border-y border-gray-800/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12" data-reveal>
+            Nos agréments
+          </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="space-y-6">
             {[
-              { icon: Shield, title: 'Jeunesse & Éducation Populaire', numero: 'JEP-93-2016-042', delivrePar: 'Préfecture de Seine-Saint-Denis', color: 'from-blue-500 to-blue-600' },
-              { icon: CheckCircle, title: 'Convention Ville de Saint-Denis', numero: 'CONV-2023-CULT-089', delivrePar: 'Service Culture & Jeunesse', color: 'from-green-500 to-green-600' },
-              { icon: Award, title: 'Lauréat Fonds DRAC', numero: 'Île-de-France', delivrePar: 'Direction Régionale des Affaires Culturelles', color: 'from-purple-500 to-purple-600' }
-            ].map((agrement, i) => (
-              <div key={i} className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agrement.color} flex items-center justify-center mb-6`}>
-                  <agrement.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+              { icon: Shield, title: 'Jeunesse & Éducation Populaire', numero: 'JEP-93-2016-042', org: 'Préfecture de Seine-Saint-Denis' },
+              { icon: CheckCircle, title: 'Convention Ville de Saint-Denis', numero: 'CONV-2023-CULT-089', org: 'Service Culture & Jeunesse' },
+              { icon: Award, title: 'Lauréat Fonds DRAC Île-de-France', numero: '', org: 'Direction Régionale des Affaires Culturelles' },
+            ].map((a, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-5"
+                data-reveal
+                data-reveal-delay={String(i * 80)}
+              >
+                <a.icon className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" strokeWidth={1.5} />
+                <div>
+                  <p className="text-white font-semibold">{a.title}</p>
+                  <p className="text-gray-500 text-sm">
+                    {a.numero && <span className="text-amber-500/70 font-mono mr-2">{a.numero}</span>}
+                    {a.org}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{agrement.title}</h3>
-                <p className="text-amber-500 font-mono text-sm mb-2">{agrement.numero}</p>
-                <p className="text-gray-400 text-sm">{agrement.delivrePar}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="rounded-2xl border border-gray-800 bg-gray-900 p-8 md:p-12 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Vous Voulez <span className="text-amber-500">Participer</span> ?
-            </h2>
-
-            <p className="text-2xl text-gray-300 leading-relaxed mb-12 max-w-3xl mx-auto">
-              Jeune ? Découvre le programme.<br />
-              Établissement ? Organisez un atelier.<br />
-              Pro de l'audiovisuel ? Rejoignez l'équipe.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link
-                to="/programme"
-                className="btn-primary text-xl py-5 px-8 flex items-center gap-3"
-              >
-                <Clapperboard className="w-6 h-6" />
-                Le Programme
-              </Link>
-              <Link
-                to="/contact"
-                className="text-white font-bold text-xl py-5 px-8 rounded-xl border border-white/20 hover:border-amber-500/50 transition-all hover-lift flex items-center gap-3"
-              >
-                Nous Contacter
-                <ArrowRight className="w-6 h-6" />
-              </Link>
-            </div>
+      {/* CTA — minimal */}
+      <section className="py-32 px-4 bg-black">
+        <div className="max-w-3xl mx-auto text-center" data-reveal>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Vous voulez participer ?
+          </h2>
+          <p className="text-xl text-gray-400 mb-10">
+            Jeune, établissement ou pro — on a une place pour vous.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/programme"
+              className="group btn-primary inline-flex items-center justify-center gap-3 px-10 py-5 text-lg"
+            >
+              Le programme
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-3 text-white border border-white/20 hover:border-white/40 font-medium px-10 py-5 text-lg rounded-xl transition-all duration-300"
+            >
+              Nous contacter
+            </Link>
           </div>
         </div>
       </section>

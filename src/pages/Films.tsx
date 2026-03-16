@@ -1,7 +1,8 @@
-import { Film, Play, Award, Users, Clapperboard, Sparkles, Video, Eye, ExternalLink, Star } from 'lucide-react';
+import { Play, Award, Users, Clapperboard, Sparkles, ExternalLink, Star, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import VideoPlayer from '../components/VideoPlayer';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface FilmData {
   title: string;
@@ -16,323 +17,98 @@ interface FilmData {
 }
 
 const films: FilmData[] = [
-  // FICTIONS
-  {
-    title: "L'Interrogatoire",
-    vimeoId: '1161233515',
-    thumbnail: 'https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Court-métrage réalisé au collège Grands Champs, Poissy',
-    crew: 'Collège Grands Champs',
-    location: 'Poissy'
-  },
-  {
-    title: 'Voir la Mer',
-    vimeoId: '1161235634',
-    thumbnail: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Court-métrage primé 3 fois en festivals',
-    crew: 'Rosny-sous-Bois',
-    award: 'Primé 3 fois',
-    location: 'Rosny-sous-Bois'
-  },
-  {
-    title: "L'Homme de Famille",
-    vimeoId: '1161233669',
-    thumbnail: 'https://i.vimeocdn.com/video/2116519921-796ca26347a7fa7710da6ab1310491e707849f9d89bfc4cd00ceef3bbc5dd3d4-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Réalisé pour le Nikon Film Festival',
-    crew: 'Saint-Denis',
-    location: 'Saint-Denis'
-  },
-  {
-    title: 'Délégué des Tas',
-    vimeoId: '1161234751',
-    thumbnail: 'https://i.vimeocdn.com/video/2116521958-735964467320283972471ad91e8c89f589c25560834a04e65960d6f8925cafee-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Court-métrage au collège Blaise Pascal',
-    crew: 'Collège Blaise Pascal',
-    location: 'Plaisir'
-  },
-  {
-    title: 'ODEULC',
-    vimeoId: '1161231322',
-    thumbnail: 'https://i.vimeocdn.com/video/2116516973-cfb43c14c607375cdf6b6affb594a3c73e1dad808cf204d1b616bab81093da52-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Réalisé avec 15 jeunes',
-    crew: '15 jeunes',
-    location: 'Roissy-en-Brie'
-  },
-  {
-    title: 'La Belle Saison',
-    vimeoId: '1161234053',
-    thumbnail: 'https://i.vimeocdn.com/video/2116521612-e85659aaed322b96282e7645b11f02d215acc4f2200760c5f61e4c07658922d7-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Réalisé avec 18 jeunes à Créteil',
-    crew: '18 jeunes',
-    location: 'Créteil'
-  },
-  {
-    title: 'Snap peut nuire à votre santé',
-    vimeoId: '1161231894',
-    thumbnail: 'https://i.vimeocdn.com/video/2116517155-3fd5d47899ca88918810fff00f7c39cf6e0a14fb987d07678fe8d6d690a8095a-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Court-métrage réalisé avec 30 élèves',
-    crew: '30 élèves',
-    location: 'Aubervilliers'
-  },
-  {
-    title: 'Silence, Moteur, Action',
-    youtubeId: 'eo_qVvsWRwM',
-    thumbnail: 'https://img.youtube.com/vi/eo_qVvsWRwM/hqdefault.jpg',
-    category: 'Fiction',
-    description: 'Sur le thème du harcèlement scolaire',
-    crew: 'Poissy',
-    location: 'Poissy'
-  },
-  {
-    title: 'Tic Tac',
-    vimeoId: '1161235536',
-    thumbnail: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Long-métrage réalisé avec 22 jeunes. Disponible sur Amazon Prime Video.',
-    crew: '22 jeunes',
-    award: 'Amazon Prime'
-  },
-  {
-    title: 'La Petite Princesse',
-    vimeoId: '1160858372',
-    thumbnail: 'https://i.vimeocdn.com/video/2116005228-afff924899569cad1567ca9a9867ad510c4082ae51f1a4c44510c3c4179c0e51-d_1280?region=us',
-    category: 'Fiction',
-    description: 'Court-métrage de fiction'
-  },
-  // MAKING-OF
-  {
-    title: "Making Of L'Interrogatoire",
-    vimeoId: '1161232067',
-    thumbnail: 'https://i.vimeocdn.com/video/2116519419-d83037aaf8c61f2523f1c8f7cb552e9a6bfd7be13175e404fcb6cd918e5c58dc-d_1280?region=us',
-    category: 'Making-of',
-    description: 'Les coulisses du tournage'
-  },
-  {
-    title: 'Making Of Le Passage',
-    youtubeId: 'a0Px84_uZnQ',
-    thumbnail: 'https://img.youtube.com/vi/a0Px84_uZnQ/hqdefault.jpg',
-    category: 'Making-of',
-    description: 'Les coulisses du tournage avec les CM2'
-  },
-  {
-    title: 'Making Of Délégué des Tas',
-    vimeoId: '1161234440',
-    thumbnail: 'https://i.vimeocdn.com/video/2116520904-5e3353b05fab87db8e5abcb07c99f9f10f8515949107668c990d10bb9a1e6f29-d_1280?region=us',
-    category: 'Making-of',
-    description: 'En coulisses au collège Blaise Pascal'
-  },
-  {
-    title: 'Making Of Perdue',
-    vimeoId: '1161234268',
-    thumbnail: 'https://i.vimeocdn.com/video/2116520406-2e129c5503261820b0c95915d8fee6cc5ccb20bb7fb11984c2b9bd0780b0ba7b-d_1280?region=us',
-    category: 'Making-of',
-    description: 'Les coulisses du film Perdue'
-  },
-  {
-    title: 'Making Of Tic Tac',
-    vimeoId: '1161234232',
-    thumbnail: 'https://i.vimeocdn.com/video/2116520146-9109d1f6fd8e73d5b9531879f7d8b01192a0d6f4485c391c9136a335d3799d8b-d_1280?region=us',
-    category: 'Making-of',
-    description: 'Les coulisses du long-métrage Tic Tac'
-  },
-  // DOCUMENTAIRES
-  {
-    title: 'Teaser Banlieuwood',
-    vimeoId: '1161231299',
-    thumbnail: 'https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us',
-    category: 'Documentaire',
-    description: 'Découvre qui on est et ce qu\'on fait'
-  },
-  {
-    title: 'Grand Pari Citoyen',
-    youtubeId: 'k2t-cjl4Fgg',
-    thumbnail: 'https://img.youtube.com/vi/k2t-cjl4Fgg/hqdefault.jpg',
-    category: 'Documentaire',
-    description: 'Documentaire sur l\'engagement citoyen'
-  },
-  {
-    title: 'Reportage Blaise Pascal',
-    youtubeId: 'Ep1LQcSP57Y',
-    thumbnail: 'https://img.youtube.com/vi/Ep1LQcSP57Y/hqdefault.jpg',
-    category: 'Documentaire',
-    description: 'Reportage au collège Blaise Pascal'
-  }
+  { title: "L'Interrogatoire", vimeoId: '1161233515', thumbnail: 'https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us', category: 'Fiction', description: 'Court-métrage réalisé au collège Grands Champs, Poissy', crew: 'Collège Grands Champs', location: 'Poissy' },
+  { title: 'Voir la Mer', vimeoId: '1161235634', thumbnail: 'https://i.vimeocdn.com/video/2116522335-2c12cb492e9e4cb23457fcdd53b991e25580890117f6af4a11812961a39c55bf-d_1280?region=us', category: 'Fiction', description: 'Court-métrage primé 3 fois en festivals', crew: 'Rosny-sous-Bois', award: 'Primé 3 fois', location: 'Rosny-sous-Bois' },
+  { title: "L'Homme de Famille", vimeoId: '1161233669', thumbnail: 'https://i.vimeocdn.com/video/2116519921-796ca26347a7fa7710da6ab1310491e707849f9d89bfc4cd00ceef3bbc5dd3d4-d_1280?region=us', category: 'Fiction', description: 'Réalisé pour le Nikon Film Festival', crew: 'Saint-Denis', location: 'Saint-Denis' },
+  { title: 'Délégué des Tas', vimeoId: '1161234751', thumbnail: 'https://i.vimeocdn.com/video/2116521958-735964467320283972471ad91e8c89f589c25560834a04e65960d6f8925cafee-d_1280?region=us', category: 'Fiction', description: 'Court-métrage au collège Blaise Pascal', crew: 'Collège Blaise Pascal', location: 'Plaisir' },
+  { title: 'ODEULC', vimeoId: '1161231322', thumbnail: 'https://i.vimeocdn.com/video/2116516973-cfb43c14c607375cdf6b6affb594a3c73e1dad808cf204d1b616bab81093da52-d_1280?region=us', category: 'Fiction', description: 'Réalisé avec 15 jeunes', crew: '15 jeunes', location: 'Roissy-en-Brie' },
+  { title: 'La Belle Saison', vimeoId: '1161234053', thumbnail: 'https://i.vimeocdn.com/video/2116521612-e85659aaed322b96282e7645b11f02d215acc4f2200760c5f61e4c07658922d7-d_1280?region=us', category: 'Fiction', description: 'Réalisé avec 18 jeunes à Créteil', crew: '18 jeunes', location: 'Créteil' },
+  { title: 'Snap peut nuire à votre santé', vimeoId: '1161231894', thumbnail: 'https://i.vimeocdn.com/video/2116517155-3fd5d47899ca88918810fff00f7c39cf6e0a14fb987d07678fe8d6d690a8095a-d_1280?region=us', category: 'Fiction', description: 'Court-métrage réalisé avec 30 élèves', crew: '30 élèves', location: 'Aubervilliers' },
+  { title: 'Silence, Moteur, Action', youtubeId: 'eo_qVvsWRwM', thumbnail: 'https://img.youtube.com/vi/eo_qVvsWRwM/hqdefault.jpg', category: 'Fiction', description: 'Sur le thème du harcèlement scolaire', crew: 'Poissy', location: 'Poissy' },
+  { title: 'Tic Tac', vimeoId: '1161235536', thumbnail: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us', category: 'Fiction', description: 'Long-métrage réalisé avec 22 jeunes. Disponible sur Amazon Prime Video.', crew: '22 jeunes', award: 'Amazon Prime' },
+  { title: 'La Petite Princesse', vimeoId: '1160858372', thumbnail: 'https://i.vimeocdn.com/video/2116005228-afff924899569cad1567ca9a9867ad510c4082ae51f1a4c44510c3c4179c0e51-d_1280?region=us', category: 'Fiction', description: 'Court-métrage de fiction' },
+  { title: "Making Of L'Interrogatoire", vimeoId: '1161232067', thumbnail: 'https://i.vimeocdn.com/video/2116519419-d83037aaf8c61f2523f1c8f7cb552e9a6bfd7be13175e404fcb6cd918e5c58dc-d_1280?region=us', category: 'Making-of', description: 'Les coulisses du tournage' },
+  { title: 'Making Of Le Passage', youtubeId: 'a0Px84_uZnQ', thumbnail: 'https://img.youtube.com/vi/a0Px84_uZnQ/hqdefault.jpg', category: 'Making-of', description: 'Les coulisses du tournage avec les CM2' },
+  { title: 'Making Of Délégué des Tas', vimeoId: '1161234440', thumbnail: 'https://i.vimeocdn.com/video/2116520904-5e3353b05fab87db8e5abcb07c99f9f10f8515949107668c990d10bb9a1e6f29-d_1280?region=us', category: 'Making-of', description: 'En coulisses au collège Blaise Pascal' },
+  { title: 'Making Of Perdue', vimeoId: '1161234268', thumbnail: 'https://i.vimeocdn.com/video/2116520406-2e129c5503261820b0c95915d8fee6cc5ccb20bb7fb11984c2b9bd0780b0ba7b-d_1280?region=us', category: 'Making-of', description: 'Les coulisses du film Perdue' },
+  { title: 'Making Of Tic Tac', vimeoId: '1161234232', thumbnail: 'https://i.vimeocdn.com/video/2116520146-9109d1f6fd8e73d5b9531879f7d8b01192a0d6f4485c391c9136a335d3799d8b-d_1280?region=us', category: 'Making-of', description: 'Les coulisses du long-métrage Tic Tac' },
+  { title: 'Teaser Banlieuwood', vimeoId: '1161231299', thumbnail: 'https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us', category: 'Documentaire', description: 'Découvre qui on est et ce qu\'on fait' },
+  { title: 'Grand Pari Citoyen', youtubeId: 'k2t-cjl4Fgg', thumbnail: 'https://img.youtube.com/vi/k2t-cjl4Fgg/hqdefault.jpg', category: 'Documentaire', description: 'Documentaire sur l\'engagement citoyen' },
+  { title: 'Reportage Blaise Pascal', youtubeId: 'Ep1LQcSP57Y', thumbnail: 'https://img.youtube.com/vi/Ep1LQcSP57Y/hqdefault.jpg', category: 'Documentaire', description: 'Reportage au collège Blaise Pascal' }
 ];
 
 export default function Films() {
   const [selectedFilmIndex, setSelectedFilmIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('Tous');
+  const scrollRef = useScrollReveal();
 
   const categories = ['Tous', 'Fiction', 'Making-of', 'Documentaire'];
-
-  const filteredFilms = films.filter(film => {
-    return selectedCategory === 'Tous' || film.category === selectedCategory;
-  });
-
-  const stats = [
-    { icon: Film, number: '10', label: 'Films Fiction', description: 'Courts et longs métrages' },
-    { icon: Users, number: '200+', label: 'Jeunes Acteurs', description: 'Ont participé aux productions' },
-    { icon: Award, number: '3', label: 'Prix Gagnés', description: '"Voir la Mer" primé 3 fois' },
-    { icon: Eye, number: '18', label: 'Vidéos', description: 'Films, making-of et documentaires' }
-  ];
+  const filteredFilms = films.filter(film => selectedCategory === 'Tous' || film.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
-      <section className="relative py-32 px-4 overflow-hidden">
+    <div className="min-h-screen bg-black text-white pt-20" ref={scrollRef}>
+
+      {/* HERO — Tic Tac plein écran */}
+      <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us"
-            alt="Tournage Banlieuwood"
-            className="w-full h-full object-cover opacity-20"
+            src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
+            alt="Tic Tac - Long métrage Banlieuwood"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2 rounded-full mb-6 animate-fade-in">
-            <Video className="w-5 h-5 text-amber-500" />
-            <span className="text-amber-400 font-bold">18 Productions</span>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight animate-fade-in stagger-delay-1">
-            Nos <span className="text-amber-500">Films</span>
-          </h1>
-
-          <p className="text-2xl md:text-3xl text-gray-300 mb-6 max-w-4xl leading-relaxed animate-fade-in stagger-delay-2">
-            Chaque film est le résultat de notre parcours en 8 modules. De l'idée au tournage, tout est créé par les jeunes.
-          </p>
-
-          <p className="text-xl text-white font-semibold mb-8 max-w-4xl animate-fade-in stagger-delay-3">
-            Courts-métrages, making-of, documentaires. Tous créés de A à Z par les ateliers.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Ce Qu'On A <span className="text-amber-500">Créé</span>
-            </h2>
-            <p className="text-xl text-gray-400">Les chiffres de notre production collective</p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, i) => (
-              <div key={i} className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 hover-lift animate-scale-in" style={{animationDelay: `${i * 0.1}s`}}>
-                <stat.icon className="w-14 h-14 text-amber-500 mx-auto mb-4" strokeWidth={1.5} />
-                <div className="text-5xl font-bold text-amber-500 mb-3">{stat.number}</div>
-                <h3 className="text-lg font-bold mb-2">{stat.label}</h3>
-                <p className="text-sm text-gray-400">{stat.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tic Tac sur Amazon Prime */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-5 py-2 rounded-full mb-6">
-              <Sparkles className="w-5 h-5 text-amber-500" />
-              <span className="text-amber-400 font-bold">Amazon Prime Video</span>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 pb-16 w-full">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="animate-fade-in">
+              <p className="text-amber-500 font-bold text-sm uppercase tracking-widest mb-4">Sur Amazon Prime Video</p>
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 logo-font">TIC TAC</h1>
+              <p className="text-xl text-gray-300 max-w-xl">
+                Long-métrage réalisé avec 22 jeunes. De l'écriture à la diffusion mondiale.
+              </p>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Tic Tac sur <span className="text-amber-500">Amazon Prime</span>
-            </h2>
-            <p className="text-xl text-gray-400">Notre long-métrage, accessible mondialement</p>
-          </div>
-
-          <div className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-0">
-              <div className="relative h-96 lg:h-auto cursor-pointer" onClick={() => {
-                const ticTacIndex = films.findIndex(f => f.title === 'Tic Tac');
-                if (ticTacIndex !== -1) setSelectedFilmIndex(ticTacIndex);
-              }}>
-                <img
-                  src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
-                  alt="Tic Tac - Long métrage"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/80 lg:to-black"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-amber-500 flex items-center justify-center">
-                    <Play className="w-12 h-12 text-black ml-1" fill="black" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-12 bg-gradient-to-br from-amber-500/10 to-transparent flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center">
-                    <Video className="w-7 h-7 text-white" strokeWidth={2} />
-                  </div>
-                  <div>
-                    <p className="text-amber-500 font-bold text-sm uppercase">Disponible sur</p>
-                    <p className="text-2xl font-bold">Amazon Prime Video</p>
-                  </div>
-                </div>
-
-                <h3 className="text-3xl font-bold mb-4">Tic Tac</h3>
-                <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                  Long-métrage réalisé avec 22 jeunes. De l'écriture à la diffusion mondiale sur Amazon Prime Video.
-                </p>
-
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000000693.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-xl text-lg"
-                  >
-                    <ExternalLink className="w-6 h-6" />
-                    Voir sur Allociné
-                  </a>
-                  <button
-                    onClick={() => {
-                      const ticTacIndex = films.findIndex(f => f.title === 'Tic Tac');
-                      if (ticTacIndex !== -1) setSelectedFilmIndex(ticTacIndex);
-                    }}
-                    className="inline-flex items-center gap-2 text-white font-bold px-8 py-4 rounded-xl border border-white/20 hover:border-amber-500/50 transition-all hover-lift text-lg"
-                  >
-                    <Play className="w-6 h-6" />
-                    Voir le film
-                  </button>
-                </div>
-              </div>
+            <div className="flex gap-3 animate-fade-in stagger-delay-2">
+              <button
+                onClick={() => {
+                  const idx = films.findIndex(f => f.title === 'Tic Tac');
+                  if (idx !== -1) setSelectedFilmIndex(idx);
+                }}
+                className="btn-primary inline-flex items-center gap-2 px-6 py-4 text-base"
+              >
+                <Play className="w-5 h-5" fill="currentColor" />
+                Regarder
+              </button>
+              <a
+                href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000000693.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-4 text-base border border-white/20 hover:border-white/40 rounded-xl transition-all font-medium"
+              >
+                <ExternalLink className="w-5 h-5" />
+                Allociné
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-4 bg-gray-900">
+      {/* FILMOGRAPHIE — filtres + grille */}
+      <section className="py-24 px-4 bg-black border-t border-gray-800/50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gray-800 border border-gray-700 px-5 py-2 rounded-full mb-6">
-              <Clapperboard className="w-5 h-5 text-amber-500" />
-              <span className="text-amber-400 font-bold">Notre Filmographie</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Regarde Ce Qu'On <span className="text-amber-500">Fait</span>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12" data-reveal>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Filmographie
             </h2>
-
-            <div className="flex gap-3 flex-wrap justify-center mb-12">
+            <div className="flex gap-2 flex-wrap">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-xl font-bold transition-all hover-lift ${
+                  className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all ${
                     selectedCategory === category
-                      ? 'bg-amber-500 text-black'
-                      : 'bg-gray-900 text-gray-300 hover:text-white border border-gray-800 hover:border-gray-600'
+                      ? 'bg-white text-black'
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {category}
@@ -341,13 +117,14 @@ export default function Films() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {filteredFilms.map((film, i) => (
               <div
                 key={i}
                 onClick={() => setSelectedFilmIndex(films.findIndex(f => f.title === film.title))}
-                className="group bg-gray-900 rounded-2xl overflow-hidden cursor-pointer hover-lift border border-gray-800 hover:border-gray-600 transition-all animate-scale-in"
-                style={{animationDelay: `${i * 0.1}s`}}
+                className="group cursor-pointer rounded-xl overflow-hidden"
+                data-reveal
+                data-reveal-delay={String(Math.min(i, 5) * 80)}
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
@@ -356,51 +133,30 @@ export default function Films() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300"></div>
 
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-14 h-14 rounded-full bg-amber-500/90 flex items-center justify-center">
-                      <Play className="w-7 h-7 text-black ml-0.5" fill="black" />
+                    <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
+                      <Play className="w-5 h-5 text-black ml-0.5" fill="black" />
                     </div>
                   </div>
 
                   {film.award && (
-                    <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full border border-amber-500/50">
-                      <div className="flex items-center gap-2">
-                        <Award className="w-4 h-4 text-amber-500" />
-                        <span className="text-xs font-bold text-amber-500">{film.award}</span>
+                    <div className="absolute top-3 right-3 bg-amber-500 px-3 py-1 rounded-full">
+                      <div className="flex items-center gap-1.5">
+                        <Award className="w-3 h-3 text-black" />
+                        <span className="text-xs font-bold text-black">{film.award}</span>
                       </div>
                     </div>
                   )}
-
-                  <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs font-bold text-white">{film.youtubeId ? 'YouTube' : 'Vimeo'}</span>
-                  </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-amber-500/20 text-amber-500 text-xs font-bold rounded-full">
-                      {film.category}
-                    </span>
+                <div className="py-4">
+                  <div className="flex items-center gap-3 mb-1">
+                    <h3 className="font-bold group-hover:text-amber-500 transition-colors">{film.title}</h3>
+                    <span className="text-gray-600 text-xs">{film.category}</span>
                   </div>
-
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-amber-500 transition-colors">{film.title}</h3>
-                  <p className="text-gray-400 mb-4 leading-relaxed">{film.description}</p>
-
-                  {(film.crew || film.location) && (
-                    <div className="flex items-center justify-between text-sm text-gray-500">
-                      {film.crew && (
-                        <div className="flex items-center gap-2">
-                          <Users className="w-4 h-4 text-amber-500" />
-                          <span>{film.crew}</span>
-                        </div>
-                      )}
-                      {film.location && (
-                        <span className="text-gray-500">{film.location}</span>
-                      )}
-                    </div>
-                  )}
+                  <p className="text-gray-500 text-sm">{film.description}</p>
                 </div>
               </div>
             ))}
@@ -409,78 +165,54 @@ export default function Films() {
       </section>
 
       {/* TALENTS REPÉRÉS */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gray-900 border border-gray-800 px-5 py-2 rounded-full mb-6">
-              <Star className="w-5 h-5 text-purple-500" />
-              <span className="text-purple-400 font-bold">Opportunités Créées</span>
+      <section className="py-24 px-4 bg-gray-950 border-t border-gray-800/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-start" data-reveal>
+            <div>
+              <p className="text-purple-400 font-bold text-sm uppercase tracking-widest mb-4">Opportunités créées</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Des talents repérés
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                On ne promet pas Hollywood. Mais certains jeunes ont trouvé des agents artistiques, constitué des books professionnels, et enchaînent maintenant les castings.
+              </p>
+              <Link to="/contact" className="text-amber-500 font-bold inline-flex items-center gap-2 hover:gap-3 transition-all">
+                Rejoindre un atelier <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Talents <span className="text-amber-500">Repérés</span>
-            </h2>
-            <p className="text-xl text-gray-400">Certains jeunes ont trouvé des agents artistiques après nos films</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Sofiane L.',
-                achievement: 'Agent Artistique Trouvé',
-                story: 'Après avoir joué dans 3 de nos courts-métrages, Sofiane a été repéré et a maintenant un agent qui lui trouve des castings.',
-              },
-              {
-                name: 'Inès M.',
-                achievement: 'Agent Artistique Trouvé',
-                story: 'Son talent naturel devant la caméra lui a ouvert les portes. Elle enchaîne maintenant les auditions professionnelles.',
-              },
-              {
-                name: 'Karim B.',
-                achievement: 'Book Professionnel',
-                story: 'Grâce aux films réalisés, Karim a constitué un book professionnel qu\'il présente en castings.',
-              }
-            ].map((talent, i) => (
-              <div key={i} className="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6">
-                  <span className="text-white font-bold text-lg">{talent.name.charAt(0)}</span>
+            <div className="space-y-4">
+              {[
+                { name: 'Sofiane L.', achievement: 'Agent artistique trouvé', story: 'Repéré après 3 courts-métrages. Enchaîne maintenant les castings professionnels.' },
+                { name: 'Inès M.', achievement: 'Agent artistique trouvé', story: 'Son talent naturel devant la caméra lui a ouvert les portes de l\'industrie.' },
+                { name: 'Karim B.', achievement: 'Book professionnel', story: 'A constitué un book professionnel grâce aux films réalisés avec Banlieuwood.' }
+              ].map((talent, i) => (
+                <div key={i} className="border-l-2 border-gray-800 pl-6 py-2" data-reveal data-reveal-delay={String(i * 100)}>
+                  <p className="font-bold text-white">{talent.name}</p>
+                  <p className="text-purple-400 text-sm font-medium mb-1">{talent.achievement}</p>
+                  <p className="text-gray-500 text-sm">{talent.story}</p>
                 </div>
-                <div className="bg-purple-500/10 px-3 py-1 rounded-full inline-block mb-4 border border-purple-500/20">
-                  <p className="text-purple-400 font-bold text-xs">{talent.achievement}</p>
-                </div>
-                <h3 className="text-xl font-bold mb-3">{talent.name}</h3>
-                <p className="text-gray-400 leading-relaxed text-sm">{talent.story}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-400 text-lg">
-              <span className="text-white font-bold">On ne promet pas Hollywood</span>, mais on crée de vraies opportunités pour ceux qui s'investissent.
-            </p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl border border-gray-800 bg-gray-900 p-8 md:p-12 text-center">
-            <Sparkles className="w-16 h-16 text-amber-500 mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Crée ton <span className="text-amber-500">Film</span>
-            </h2>
-            <p className="text-2xl text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Tous ces films ont été créés par des jeunes comme toi. Rejoins un atelier et fais le prochain.
-            </p>
-
-            <Link
-              to="/programme"
-              className="btn-primary text-xl py-5 px-8 inline-flex items-center gap-3"
-            >
-              <Clapperboard className="w-6 h-6" />
-              Rejoindre un Atelier
-            </Link>
-          </div>
+      <section className="py-32 px-4 bg-black border-t border-gray-800/50">
+        <div className="max-w-3xl mx-auto text-center" data-reveal>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Crée ton film
+          </h2>
+          <p className="text-xl text-gray-400 mb-10">
+            Tous ces films ont été créés par des jeunes comme toi.
+          </p>
+          <Link
+            to="/programme"
+            className="btn-primary text-lg py-5 px-10 inline-flex items-center gap-3"
+          >
+            <Clapperboard className="w-5 h-5" />
+            Rejoindre un atelier
+          </Link>
         </div>
       </section>
 
