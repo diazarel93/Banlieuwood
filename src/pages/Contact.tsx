@@ -318,7 +318,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold px-8 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold px-8 py-4 text-lg rounded-xl transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
                   </button>

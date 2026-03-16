@@ -29,12 +29,9 @@ export default function Navigation() {
               to="/"
               className="flex items-center gap-3 text-lg lg:text-xl font-bold group"
             >
-              <div className="relative">
-                <Film className="w-6 h-6 lg:w-7 lg:h-7 text-amber-500 animate-float" strokeWidth={1.5} />
-                <div className="absolute inset-0 blur-lg bg-amber-500/30 animate-glow-pulse"></div>
-              </div>
-              <span className="hidden sm:inline logo-font text-glow">BANLIEUWOOD</span>
-              <span className="sm:hidden logo-font text-glow">BW</span>
+              <Film className="w-6 h-6 lg:w-7 lg:h-7 text-amber-500" strokeWidth={1.5} />
+              <span className="hidden sm:inline logo-font">BANLIEUWOOD</span>
+              <span className="sm:hidden logo-font">BW</span>
             </Link>
 
             <div className="hidden lg:flex gap-6 items-center text-sm">

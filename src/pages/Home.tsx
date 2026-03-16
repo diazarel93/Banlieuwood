@@ -47,16 +47,16 @@ export default function Home() {
       >
         <div className="flex items-center justify-center h-full">
           <div className="text-center px-4 max-w-5xl mx-auto">
-          <div className="mb-8 flex justify-center animate-float">
-            <Film className="w-20 h-20 text-amber-500 drop-shadow-2xl shadow-glow" strokeWidth={1.5} />
+          <div className="mb-8 flex justify-center">
+            <Film className="w-16 h-16 text-amber-500" strokeWidth={1.5} />
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight animate-fade-in stagger-delay-1 text-glow logo-font">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight animate-fade-in stagger-delay-1 logo-font">
             BANLIEUWOOD
           </h1>
 
           <p className="text-2xl sm:text-3xl md:text-4xl mb-4 font-light animate-fade-in stagger-delay-2 px-4">
-            Amener le cinéma <span className="gradient-text font-bold">en bas de chez vous</span>
+            Amener le cinéma <span className="text-amber-500 font-bold">en bas de chez vous</span>
           </p>
 
           <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-300 font-light animate-fade-in stagger-delay-2 px-4">
@@ -77,10 +77,10 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in stagger-delay-4 px-4">
             <Link
               to="/programme"
-              className="group relative btn-primary inline-flex items-center justify-center gap-3 px-12 py-6 text-xl shadow-glow-primary hover:shadow-glow-strong"
+              className="group btn-primary inline-flex items-center justify-center gap-3 px-12 py-6 text-xl"
             >
-              <span className="relative z-10">Découvrir le programme</span>
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
+              Découvrir le programme
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/films"
@@ -100,10 +100,10 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            C'est Quoi <span className="gradient-text">Banlieuwood</span> ?
+            C'est Quoi <span className="text-amber-500">Banlieuwood</span> ?
           </h2>
           <p className="text-xl md:text-2xl leading-relaxed text-gray-300 font-light mb-16 max-w-3xl mx-auto">
-            Un <span className="text-white font-semibold">programme pédagogique</span> pour apprendre le cinéma en faisant. <span className="gradient-text font-semibold">8 modules, de l'observation à la réalisation.</span>
+            Un <span className="text-white font-semibold">programme pédagogique</span> pour apprendre le cinéma en faisant. <span className="text-amber-500 font-semibold">8 modules, de l'observation à la réalisation.</span>
           </p>
 
           <div className="grid md:grid-cols-4 gap-6">
@@ -159,7 +159,7 @@ export default function Home() {
                 <div className="relative p-8">
                   <div className="mb-4 relative">
                     <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto">
-                      <stat.icon className="w-7 h-7 text-white animate-float" strokeWidth={1.5} />
+                      <stat.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
                   <div className="text-5xl md:text-6xl font-bold text-white drop-shadow-2xl mb-3">{stat.number}</div>
@@ -178,7 +178,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                De spectateur<br />à <span className="gradient-text">créateur</span>
+                De spectateur<br />à <span className="text-amber-500">créateur</span>
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed mb-6">
                 8 modules progressifs. De l'observation à la réalisation d'un film. Chaque étape construit sur la précédente.
@@ -188,7 +188,7 @@ export default function Home() {
               </p>
               <Link
                 to="/programme"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-10 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow"
+                className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg rounded-xl"
               >
                 Découvrir le programme
                 <ArrowRight className="w-5 h-5" />
@@ -243,7 +243,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Nos <span className="gradient-text">Films</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Nos <span className="text-amber-500">Films</span></h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Ce que les jeunes créent : courts-métrages, clips, documentaires.
             </p>
@@ -270,12 +270,12 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-2xl font-bold mb-2 text-glow">{project.title}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                   <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="glass-strong p-6 rounded-full shadow-glow-strong">
+                  <div className="glass-strong p-6 rounded-full">
                     <Play className="w-12 h-12 text-amber-500" />
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               to="/films"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-10 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow"
+              className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg rounded-xl"
             >
               Voir tous nos films
               <ArrowRight className="w-5 h-5" />
@@ -298,21 +298,21 @@ export default function Home() {
       {/* TEASER */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center gradient-text">Teaser</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-amber-500">Teaser</h2>
           <p className="text-xl text-gray-400 text-center mb-12">Banlieuwood en images</p>
           <div
-            className="relative aspect-video glass rounded-2xl overflow-hidden group cursor-pointer shadow-2xl hover:shadow-glow-strong transition-all duration-500"
+            className="relative aspect-video rounded-2xl overflow-hidden group cursor-pointer border border-gray-800 transition-all duration-300 hover:border-gray-700"
             onClick={() => setShowTeaser(true)}
           >
             <img
               src="http://banlieuwood.fr/wp-content/uploads/2021/03/TEASER.png"
               alt="Teaser Banlieuwood"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover transition-transform duration-500"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/60 transition-all duration-300"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-24 h-24 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:from-amber-600 group-hover:to-amber-700 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-glow-strong animate-pulse-slow">
+              <div className="w-20 h-20 bg-amber-500 hover:bg-amber-600 rounded-full flex items-center justify-center transition-colors duration-300">
                 <Play className="w-12 h-12 text-black ml-1" fill="currentColor" />
               </div>
             </div>
@@ -321,11 +321,11 @@ export default function Home() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-24 px-4 bg-black">
         <div className="max-w-4xl mx-auto">
-          <div className="glass-strong rounded-2xl p-8 md:p-12 border-2 border-amber-500/30 text-center">
+          <div className="rounded-2xl border border-gray-800 bg-gray-900 p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Prêt à <span className="gradient-text">Commencer</span> ?
+              Prêt à <span className="text-amber-500">Commencer</span> ?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               Contactez-nous pour rejoindre le prochain atelier.
@@ -333,10 +333,10 @@ export default function Home() {
 
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 hover-lift shadow-glow"
+              className="group btn-primary inline-flex items-center gap-3 px-10 py-4 text-lg rounded-xl"
             >
-              <span>Nous contacter</span>
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              Nous contacter
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="text-gray-400 text-sm mt-6">
               Vous êtes un établissement ? <Link to="/etablissements" className="text-amber-500 hover:text-amber-400 underline transition-colors">Découvrez nos formules</Link>

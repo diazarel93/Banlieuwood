@@ -1,8 +1,7 @@
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import LoadingScreen from './components/LoadingScreen';
 import SEO from './components/SEO';
 import EnhancedSEO from './components/EnhancedSEO';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -18,8 +17,6 @@ const MediaManager = lazy(() => import('./pages/MediaManager'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,44 +25,30 @@ function App() {
 
   return (
     <>
-      {isLoading && (
-        <LoadingScreen
-          onComplete={() => {
-            setIsLoading(false);
-            setTimeout(() => setShowContent(true), 100);
-          }}
-        />
-      )}
-      {showContent && (
-        <>
-          <SEO />
-          <EnhancedSEO />
-          <Navigation />
-          <WhatsAppButton />
-          <div className="page-transition">
-            <Suspense fallback={
-              <div className="min-h-screen bg-black flex items-center justify-center">
-                <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
-              </div>
-            }>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/films" element={<Films />} />
-              <Route path="/programme" element={<Programme />} />
-              <Route path="/ateliers" element={<Navigate to="/programme" replace />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/etablissements" element={<Etablissements />} />
-              <Route path="/institutions" element={<Navigate to="/etablissements" replace />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/media-manager" element={<MediaManager />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            </Suspense>
-          </div>
-          <Footer />
-        </>
-      )}
+      <SEO />
+      <EnhancedSEO />
+      <Navigation />
+      <WhatsAppButton />
+      <Suspense fallback={
+        <div className="min-h-screen bg-black flex items-center justify-center">
+          <div className="w-12 h-12 border-2 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      }>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/films" element={<Films />} />
+          <Route path="/programme" element={<Programme />} />
+          <Route path="/ateliers" element={<Navigate to="/programme" replace />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/etablissements" element={<Etablissements />} />
+          <Route path="/institutions" element={<Navigate to="/etablissements" replace />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/media-manager" element={<MediaManager />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+      <Footer />
     </>
   );
 }

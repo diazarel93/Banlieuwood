@@ -35,8 +35,8 @@ export default function About() {
       <section className="relative py-32 flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg"
-            alt="Équipe en plein tournage de court-métrage"
+            src="https://i.vimeocdn.com/video/2116519312-c1874b4b3e33b7012026ae6e959222f560b08c522d6bf4bb1d741c02f9b3fb56-d_1280?region=us"
+            alt="Tournage Banlieuwood"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60"></div>
@@ -52,7 +52,7 @@ export default function About() {
 
             <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-slide-up">
               Le Cinéma<br />
-              <span className="gradient-text text-glow">Des Quartiers</span>
+              <span className="text-amber-500">Des Quartiers</span>
             </h1>
 
             <p className="text-3xl md:text-4xl text-amber-400 font-light italic mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
@@ -66,7 +66,7 @@ export default function About() {
             <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
               <Link
                 to="/programme"
-                className="btn-primary text-xl py-5 px-8 shadow-glow-primary flex items-center gap-3"
+                className="btn-primary text-xl py-5 px-8 flex items-center gap-3"
               >
                 <Clapperboard className="w-6 h-6" />
                 Le Programme
@@ -98,8 +98,8 @@ export default function About() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent"></div>
                 <div className="relative z-10">
-                  <stat.icon className="w-12 h-12 text-amber-500 mx-auto mb-4 animate-float" strokeWidth={1.5} />
-                  <div className="text-5xl font-bold gradient-text mb-3">{stat.number}</div>
+                  <stat.icon className="w-12 h-12 text-amber-500 mx-auto mb-4" strokeWidth={1.5} />
+                  <div className="text-5xl font-bold text-amber-500 mb-3">{stat.number}</div>
                   <p className="text-xl font-bold text-white">{stat.label}</p>
                   <p className="text-xs text-gray-500 mt-2">{stat.sublabel}</p>
                 </div>
@@ -121,7 +121,7 @@ export default function About() {
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
                 Comment Ça a<br />
-                <span className="gradient-text">Commencé</span>
+                <span className="text-amber-500">Commencé</span>
               </h2>
 
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
@@ -175,8 +175,8 @@ export default function About() {
                 />
                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all flex items-center justify-center rounded-2xl">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-amber-500 blur-3xl opacity-50 animate-pulse"></div>
-                    <div className="relative w-24 h-24 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-glow">
+                    <div className="absolute inset-0 bg-amber-500 blur-3xl opacity-30"></div>
+                    <div className="relative w-24 h-24 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Play className="w-12 h-12 text-black ml-2" fill="black" />
                     </div>
                   </div>
@@ -209,7 +209,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Nos <span className="gradient-text">Valeurs</span>
+              Nos <span className="text-amber-500">Valeurs</span>
             </h2>
             <p className="text-xl text-gray-400">Ce qui guide notre action au quotidien</p>
           </div>
@@ -223,7 +223,7 @@ export default function About() {
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
                 <div className="relative z-10">
-                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform`}>
+                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                     <value.icon className="w-10 h-10 text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
@@ -240,7 +240,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Notre <span className="gradient-text">Parcours</span>
+              Notre <span className="text-amber-500">Parcours</span>
             </h2>
             <p className="text-xl text-gray-400">2015-2025 : les moments clés</p>
           </div>
@@ -257,11 +257,11 @@ export default function About() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="hidden md:block w-1/2"></div>
-                <div className="absolute left-8 md:left-1/2 w-6 h-6 bg-amber-500 rounded-full -ml-[11px] z-10 shadow-glow animate-pulse"></div>
+                <div className="absolute left-8 md:left-1/2 w-6 h-6 bg-amber-500 rounded-full -ml-[11px] z-10"></div>
                 <div className="flex-1 pl-20 md:pl-0">
                   <div className="glass-strong rounded-2xl p-8 border-2 border-amber-500/30 hover:border-amber-500 transition-all hover-lift">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="text-5xl font-bold gradient-text">{milestone.year}</span>
+                      <span className="text-5xl font-bold text-amber-500">{milestone.year}</span>
                       <div className="h-12 w-1 bg-amber-500"></div>
                       <h3 className="text-2xl font-bold text-white">{milestone.title}</h3>
                     </div>
@@ -279,7 +279,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Notre <span className="gradient-text">Équipe</span>
+              Notre <span className="text-amber-500">Équipe</span>
             </h2>
             <p className="text-xl text-gray-400">Les professionnels qui encadrent les ateliers</p>
           </div>
@@ -294,7 +294,7 @@ export default function About() {
               { name: 'Alice VALETTE', role: 'Rédactrice en Chef', initials: 'AV', color: 'from-indigo-500 to-blue-500' },
             ].map((member, i) => (
               <div key={i} className="glass-card rounded-2xl p-6 flex items-center gap-5 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${member.color} flex items-center justify-center flex-shrink-0 shadow-glow`}>
+                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${member.color} flex items-center justify-center flex-shrink-0`}>
                   <span className="text-white font-bold text-xl">{member.initials}</span>
                 </div>
                 <div>
@@ -312,7 +312,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Nos <span className="gradient-text">Agréments</span>
+              Nos <span className="text-amber-500">Agréments</span>
             </h2>
             <p className="text-xl text-gray-400">Reconnus par les institutions publiques</p>
           </div>
@@ -324,7 +324,7 @@ export default function About() {
               { icon: Award, title: 'Lauréat Fonds DRAC', numero: 'Île-de-France', delivrePar: 'Direction Régionale des Affaires Culturelles', color: 'from-purple-500 to-purple-600' }
             ].map((agrement, i) => (
               <div key={i} className="glass-strong rounded-2xl p-8 hover-lift border-t-4 border-amber-500 animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agrement.color} flex items-center justify-center mb-6 shadow-glow`}>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${agrement.color} flex items-center justify-center mb-6`}>
                   <agrement.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{agrement.title}</h3>
@@ -339,9 +339,9 @@ export default function About() {
       {/* CTA FINAL */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
-          <div className="glass-strong rounded-3xl p-12 md:p-16 text-center border-2 border-amber-500/30">
+          <div className="rounded-2xl border border-gray-800 bg-gray-900 p-8 md:p-12 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Vous Voulez <span className="gradient-text">Participer</span> ?
+              Vous Voulez <span className="text-amber-500">Participer</span> ?
             </h2>
 
             <p className="text-2xl text-gray-300 leading-relaxed mb-12 max-w-3xl mx-auto">
@@ -353,7 +353,7 @@ export default function About() {
             <div className="flex flex-wrap justify-center gap-6">
               <Link
                 to="/programme"
-                className="btn-primary text-xl py-5 px-8 shadow-glow-primary flex items-center gap-3"
+                className="btn-primary text-xl py-5 px-8 flex items-center gap-3"
               >
                 <Clapperboard className="w-6 h-6" />
                 Le Programme

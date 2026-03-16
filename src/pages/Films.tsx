@@ -202,7 +202,7 @@ export default function Films() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight animate-fade-in stagger-delay-1">
-            Nos <span className="gradient-text">Films</span>
+            Nos <span className="text-amber-500">Films</span>
           </h1>
 
           <p className="text-2xl md:text-3xl text-gray-300 mb-6 max-w-4xl leading-relaxed animate-fade-in stagger-delay-2">
@@ -219,7 +219,7 @@ export default function Films() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Ce Qu'On A <span className="gradient-text">Créé</span>
+              Ce Qu'On A <span className="text-amber-500">Créé</span>
             </h2>
             <p className="text-xl text-gray-400">Les chiffres de notre production collective</p>
           </div>
@@ -227,8 +227,8 @@ export default function Films() {
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             {stats.map((stat, i) => (
               <div key={i} className="glass-strong rounded-2xl p-8 text-center border-t-4 border-amber-500 hover-lift animate-scale-in" style={{animationDelay: `${i * 0.1}s`}}>
-                <stat.icon className="w-14 h-14 text-amber-500 mx-auto mb-4 animate-float" strokeWidth={1.5} />
-                <div className="text-5xl font-bold gradient-text mb-3">{stat.number}</div>
+                <stat.icon className="w-14 h-14 text-amber-500 mx-auto mb-4" strokeWidth={1.5} />
+                <div className="text-5xl font-bold text-amber-500 mb-3">{stat.number}</div>
                 <h3 className="text-lg font-bold mb-2">{stat.label}</h3>
                 <p className="text-sm text-gray-400">{stat.description}</p>
               </div>
@@ -246,7 +246,7 @@ export default function Films() {
               <span className="text-amber-400 font-bold">Amazon Prime Video</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Tic Tac sur <span className="gradient-text">Amazon Prime</span>
+              Tic Tac sur <span className="text-amber-500">Amazon Prime</span>
             </h2>
             <p className="text-xl text-gray-400">Notre long-métrage, accessible mondialement</p>
           </div>
@@ -264,7 +264,7 @@ export default function Films() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/80 lg:to-black"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-amber-500 flex items-center justify-center shadow-glow animate-pulse">
+                  <div className="w-24 h-24 rounded-full bg-amber-500 flex items-center justify-center">
                     <Play className="w-12 h-12 text-black ml-1" fill="black" />
                   </div>
                 </div>
@@ -291,7 +291,7 @@ export default function Films() {
                     href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000000693.html"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold px-8 py-4 rounded-xl transition-all hover-lift shadow-glow text-lg"
+                    className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-xl text-lg"
                   >
                     <ExternalLink className="w-6 h-6" />
                     Voir sur Allociné
@@ -321,7 +321,7 @@ export default function Films() {
               <span className="text-amber-400 font-bold">Notre Filmographie</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Regarde Ce Qu'On <span className="gradient-text">Fait</span>
+              Regarde Ce Qu'On <span className="text-amber-500">Fait</span>
             </h2>
 
             <div className="flex gap-3 flex-wrap justify-center mb-12">
@@ -331,7 +331,7 @@ export default function Films() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-3 rounded-xl font-bold transition-all hover-lift ${
                     selectedCategory === category
-                      ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-black shadow-glow'
+                      ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-black'
                       : 'glass-card text-gray-300 hover:text-white border-2 border-white/20 hover:border-amber-500'
                   }`}
                 >
@@ -359,7 +359,7 @@ export default function Films() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-20 h-20 rounded-full bg-amber-500 flex items-center justify-center shadow-glow animate-pulse">
+                    <div className="w-20 h-20 rounded-full bg-amber-500 flex items-center justify-center">
                       <Play className="w-10 h-10 text-black ml-1" fill="black" />
                     </div>
                   </div>
@@ -417,7 +417,7 @@ export default function Films() {
               <span className="text-purple-400 font-bold">Opportunités Créées</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Talents <span className="gradient-text">Repérés</span>
+              Talents <span className="text-amber-500">Repérés</span>
             </h2>
             <p className="text-xl text-gray-400">Certains jeunes ont trouvé des agents artistiques après nos films</p>
           </div>
@@ -441,7 +441,7 @@ export default function Films() {
               }
             ].map((talent, i) => (
               <div key={i} className="glass-strong rounded-2xl p-8 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6 shadow-glow">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6">
                   <span className="text-white font-bold text-xl">{talent.name.charAt(0)}</span>
                 </div>
                 <div className="glass-card px-3 py-1 rounded-full inline-block mb-4 border border-purple-500/30">
@@ -464,10 +464,10 @@ export default function Films() {
       {/* CTA */}
       <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-5xl mx-auto">
-          <div className="glass-strong rounded-3xl p-12 md:p-16 text-center border-2 border-amber-500/30">
-            <Sparkles className="w-16 h-16 text-amber-500 mx-auto mb-6 animate-float" />
+          <div className="rounded-2xl border border-gray-800 bg-gray-900 p-8 md:p-12 text-center">
+            <Sparkles className="w-16 h-16 text-amber-500 mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Crée ton <span className="gradient-text">Film</span>
+              Crée ton <span className="text-amber-500">Film</span>
             </h2>
             <p className="text-2xl text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto">
               Tous ces films ont été créés par des jeunes comme toi. Rejoins un atelier et fais le prochain.
@@ -475,7 +475,7 @@ export default function Films() {
 
             <Link
               to="/programme"
-              className="btn-primary text-xl py-5 px-8 shadow-glow-primary inline-flex items-center gap-3"
+              className="btn-primary text-xl py-5 px-8 inline-flex items-center gap-3"
             >
               <Clapperboard className="w-6 h-6" />
               Rejoindre un Atelier

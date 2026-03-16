@@ -75,7 +75,7 @@ export default function Ateliers() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight animate-fade-in stagger-delay-1">
-            Crée Ton <span className="gradient-text">Film</span>
+            Crée Ton <span className="text-amber-500">Film</span>
           </h1>
 
           <p className="text-2xl md:text-3xl text-gray-300 mb-6 max-w-4xl leading-relaxed animate-fade-in stagger-delay-2">
@@ -93,7 +93,7 @@ export default function Ateliers() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Le Parcours en <span className="gradient-text">8 Modules</span>
+              Le Parcours en <span className="text-amber-500">8 Modules</span>
             </h2>
             <p className="text-xl text-gray-400">Chaque module construit sur le précédent</p>
           </div>
@@ -102,7 +102,7 @@ export default function Ateliers() {
             {modules.map((mod, i) => (
               <div key={i} className="glass-strong rounded-2xl p-8 hover-lift border-t-4 border-amber-500 animate-scale-in relative" style={{ animationDelay: `${i * 0.05}s` }}>
                 <div className="text-6xl font-bold text-white/10 absolute top-4 right-4">{String(mod.number).padStart(2, '0')}</div>
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${mod.color} flex items-center justify-center mb-6 shadow-glow`}>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${mod.color} flex items-center justify-center mb-6`}>
                   <mod.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold mb-1">{mod.title}</h3>
@@ -125,7 +125,7 @@ export default function Ateliers() {
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                L'Outil <span className="gradient-text">Numérique</span>
+                L'Outil <span className="text-amber-500">Numérique</span>
               </h2>
 
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
@@ -198,7 +198,7 @@ export default function Ateliers() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              3 <span className="gradient-text">Formules</span>
+              3 <span className="text-amber-500">Formules</span>
             </h2>
             <p className="text-xl text-gray-400">Adaptées à votre contexte et votre temps</p>
           </div>
@@ -208,7 +208,7 @@ export default function Ateliers() {
               <div key={i} className="glass-strong rounded-3xl p-8 hover-lift border-2 border-white/10 hover:border-amber-500 transition-all animate-scale-in relative overflow-hidden" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${formule.color}`}></div>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${formule.color} flex items-center justify-center shadow-glow`}>
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${formule.color} flex items-center justify-center`}>
                     <formule.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                   </div>
                   <div>
@@ -248,7 +248,7 @@ export default function Ateliers() {
               <span className="text-amber-400 font-bold">Gamification</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              La Carte <span className="gradient-text">Talent</span>
+              La Carte <span className="text-amber-500">Talent</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               À la fin du parcours, chaque élève reçoit une carte personnalisée qui met en valeur ses forces créatives.
@@ -278,7 +278,7 @@ export default function Ateliers() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Pourquoi <span className="gradient-text">Rejoindre</span> ?
+              Pourquoi <span className="text-amber-500">Rejoindre</span> ?
             </h2>
           </div>
 
@@ -310,7 +310,7 @@ export default function Ateliers() {
               }
             ].map((reason, i) => (
               <div key={i} className="glass-strong rounded-2xl p-8 hover-lift animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${reason.color} flex items-center justify-center mb-6 shadow-glow`}>
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${reason.color} flex items-center justify-center mb-6`}>
                   <reason.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{reason.title}</h3>
@@ -326,7 +326,7 @@ export default function Ateliers() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Comment <span className="gradient-text">S'inscrire</span> ?
+              Comment <span className="text-amber-500">S'inscrire</span> ?
             </h2>
           </div>
 
@@ -337,7 +337,7 @@ export default function Ateliers() {
               { icon: Clapperboard, number: '3', title: 'Tu crées ton film', desc: 'Tu rejoins un groupe et tu commences le parcours. C\'est tout.' },
             ].map((step, i) => (
               <div key={i} className="text-center animate-scale-in" style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-glow">
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
                   <span className="text-black font-bold text-2xl">{step.number}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
@@ -346,7 +346,7 @@ export default function Ateliers() {
             ))}
           </div>
 
-          <div className="glass-strong rounded-2xl p-8 md:p-12 border-2 border-amber-500/30 text-center">
+          <div className="rounded-2xl border border-gray-800 bg-gray-900 p-8 md:p-12 text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Prêt à commencer ?
             </h3>
@@ -357,7 +357,7 @@ export default function Ateliers() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
-                className="btn-primary text-lg py-4 px-8 shadow-glow-primary flex items-center gap-3"
+                className="btn-primary text-lg py-4 px-8 flex items-center gap-3"
               >
                 Demander les prochaines dates
                 <ArrowRight className="w-5 h-5" />
