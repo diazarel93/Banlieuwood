@@ -48,6 +48,11 @@ const pageMetadata: Record<string, { title: string; description: string; keyword
     title: 'Contact — Inscription Atelier Cinéma | Banlieuwood',
     description: 'Contactez Banlieuwood pour inscription, partenariat ou organiser un programme cinéma dans votre école. Réponse sous 48h. Saint-Denis (93).',
     keywords: 'contacter Banlieuwood, inscription atelier cinéma gratuit, organiser atelier cinéma école, Saint-Denis 93'
+  },
+  '/soutenir': {
+    title: 'Soutenir Banlieuwood — Don Déductible | Mécénat',
+    description: 'Soutenez Banlieuwood : don déductible 66%, mécénat entreprise 60% IS, bénévolat, don en nature. Association 100% bénévole.',
+    keywords: 'don association cinéma, mécénat entreprise, soutenir association jeunesse, don déductible impôts, bénévolat cinéma, reçu fiscal'
   }
 };
 
@@ -117,41 +122,35 @@ export default function EnhancedSEO({ title, description, image, type = 'website
     }
   } : null;
 
-  const faqStructuredData = location.pathname === '/etablissements' ? {
+  const etablissementsFaq = [
+    { name: "Les élèves ont-ils besoin d'expérience en cinéma ?", text: "Non, le programme est conçu pour des débutants complets. Aucun prérequis technique ou artistique." },
+    { name: "Quel matériel est nécessaire pour l'atelier cinéma ?", text: "Léger et accessible. L'essentiel est fourni par Banlieuwood : tablettes avec outil numérique dédié, caméra, matériel son." },
+    { name: "Quelle durée prévoir pour un programme cinéma en classe ?", text: "Modulable. De quelques séances avec la Formule Découverte (modules 1 à 5) à un programme complet avec tournage avec la Formule Création ou Production (modules 1 à 8)." },
+    { name: "Le programme est-il éligible à l'EAC et au PEAC ?", text: "Oui. Le programme couvre les 3 piliers du PEAC : Rencontres avec des professionnels du cinéma, Pratiques artistiques (écriture, tournage, montage) et Connaissances (analyse d'image, grammaire cinématographique). Il est également éligible au Pass Culture (part collective), aux Contrats de Ville et aux dispositifs Cité Éducative." },
+    { name: "Comment financer un atelier cinéma dans un établissement scolaire ?", text: "Plusieurs dispositifs sont mobilisables : EAC/PEAC, Pass Culture (part collective), Politique de la Ville, Conseil Départemental, Conseil Régional Île-de-France, DRAC, FDVA, CAF/CLAS, Programme de Réussite Éducative. Nous accompagnons les établissements dans le montage des dossiers." },
+    { name: "Pourquoi choisir Banlieuwood pour un atelier cinéma ?", text: "Un programme structuré en 8 modules, testés depuis 2015. Un outil numérique interactif sur tablettes. Des intervenants professionnels du cinéma. Plus de 500 jeunes formés et 30 films produits." },
+  ];
+
+  const soutenirFaq = [
+    { name: "Mon don à Banlieuwood est-il déductible des impôts ?", text: "En tant qu'association d'intérêt général à gestion désintéressée, Banlieuwood est éligible à la déduction fiscale. Votre don est déductible à 66% de l'impôt sur le revenu (dans la limite de 20% du revenu imposable). Un reçu fiscal (Cerfa n°11580*04) vous est délivré." },
+    { name: "Comment faire un don à Banlieuwood ?", text: "Contactez-nous à contact@banlieuwood.fr. Nous vous transmettrons les coordonnées pour effectuer votre don par virement ou chèque. Un reçu fiscal vous sera envoyé automatiquement." },
+    { name: "Mon entreprise peut-elle soutenir Banlieuwood via le mécénat ?", text: "Oui, via le mécénat d'entreprise. Déduction de 60% de l'impôt sur les sociétés (dans la limite de 0,5% du CA HT). Partenariats sur-mesure : financement d'ateliers, mise à disposition de matériel ou de locaux, mécénat de compétences." },
+    { name: "À quoi sert mon don concrètement ?", text: "L'association est 100% bénévole — aucun salarié, aucune rémunération des dirigeants. Chaque euro finance directement les ateliers : matériel, transport des jeunes vers les lieux de tournage, logistique des séances." },
+    { name: "Puis-je faire un don en nature à Banlieuwood ?", text: "Oui. Nous acceptons les dons de matériel audiovisuel (caméras, micros, éclairages, tablettes), de locaux pour les ateliers, ou de compétences (bénévolat de compétences)." },
+  ];
+
+  const faqItems = location.pathname === '/etablissements' ? etablissementsFaq
+    : location.pathname === '/soutenir' ? soutenirFaq
+    : null;
+
+  const faqStructuredData = faqItems ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Les élèves ont-ils besoin d'expérience en cinéma ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Non, le programme est conçu pour des débutants complets. Aucun prérequis technique ou artistique." }
-      },
-      {
-        "@type": "Question",
-        "name": "Quel matériel est nécessaire pour l'atelier cinéma ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Léger et accessible. L'essentiel est fourni par Banlieuwood : tablettes avec outil numérique dédié, caméra, matériel son." }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelle durée prévoir pour un programme cinéma en classe ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Modulable. De quelques séances avec la Formule Découverte (modules 1 à 5) à un programme complet avec tournage avec la Formule Création ou Production (modules 1 à 8)." }
-      },
-      {
-        "@type": "Question",
-        "name": "Le programme est-il éligible à l'EAC et au PEAC ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le programme couvre les 3 piliers du PEAC : Rencontres avec des professionnels du cinéma, Pratiques artistiques (écriture, tournage, montage) et Connaissances (analyse d'image, grammaire cinématographique). Il est également éligible au Pass Culture (part collective), aux Contrats de Ville et aux dispositifs Cité Éducative." }
-      },
-      {
-        "@type": "Question",
-        "name": "Comment financer un atelier cinéma dans un établissement scolaire ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Plusieurs dispositifs sont mobilisables : EAC/PEAC, Pass Culture (part collective), Politique de la Ville, Conseil Départemental, Conseil Régional Île-de-France, DRAC, FDVA, CAF/CLAS, Programme de Réussite Éducative. Nous accompagnons les établissements dans le montage des dossiers." }
-      },
-      {
-        "@type": "Question",
-        "name": "Pourquoi choisir Banlieuwood pour un atelier cinéma ?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Un programme structuré en 8 modules, testés depuis 2015. Un outil numérique interactif sur tablettes. Des intervenants professionnels du cinéma. Plus de 500 jeunes formés et 30 films produits." }
-      }
-    ]
+    "mainEntity": faqItems.map(q => ({
+      "@type": "Question",
+      "name": q.name,
+      "acceptedAnswer": { "@type": "Answer", "text": q.text }
+    }))
   } : null;
 
   return (

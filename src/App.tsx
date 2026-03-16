@@ -12,6 +12,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Etablissements = lazy(() => import('./pages/Institutions'));
 const Admin = lazy(() => import('./pages/Admin'));
 const MediaManager = lazy(() => import('./pages/MediaManager'));
+const Soutenir = lazy(() => import('./pages/Soutenir'));
 const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -40,6 +41,8 @@ function App() {
           <Route path="/etablissements" element={<Etablissements />} />
           <Route path="/institutions" element={<Navigate to="/etablissements" replace />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/soutenir" element={<Soutenir />} />
+          <Route path="/dons" element={<Navigate to="/soutenir" replace />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/media-manager" element={<MediaManager />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />

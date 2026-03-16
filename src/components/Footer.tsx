@@ -8,6 +8,7 @@ export default function Footer() {
     { path: '/films', label: 'Films' },
     { path: '/etablissements', label: 'Établissements' },
     { path: '/about', label: 'À Propos' },
+    { path: '/soutenir', label: 'Soutenir' },
     { path: '/contact', label: 'Contact' },
   ];
 

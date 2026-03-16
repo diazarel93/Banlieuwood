@@ -219,8 +219,38 @@ export default function About() {
         </div>
       </section>
 
+      {/* SOUTENIR — résumé avec renvoi */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" data-reveal>Soutenir Banlieuwood</h2>
+          <p className="text-gray-400 mb-8" data-reveal>Association 100% bénévole — chaque euro va aux ateliers</p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              { title: 'Don financier', desc: 'Déductible à 66% de l\'IR. Reçu fiscal délivré.' },
+              { title: 'Mécénat entreprise', desc: 'Déduction 60% de l\'IS. Partenariats sur-mesure.' },
+              { title: 'Bénévolat & dons en nature', desc: 'Matériel, compétences, locaux, logistique.' },
+            ].map((item, i) => (
+              <div key={i} className="border border-gray-800 rounded-xl p-6" data-reveal data-reveal-delay={String(i * 80)}>
+                <h3 className="text-white font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center" data-reveal>
+            <Link
+              to="/soutenir"
+              className="text-amber-500 font-bold inline-flex items-center gap-2 hover:gap-3 transition-all text-lg"
+            >
+              Toutes les façons de nous soutenir <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA — minimal */}
-      <section className="py-32 px-4 bg-black">
+      <section className="py-32 px-4 bg-gray-950 border-t border-gray-800/50">
         <div className="max-w-3xl mx-auto text-center" data-reveal>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Vous voulez participer ?

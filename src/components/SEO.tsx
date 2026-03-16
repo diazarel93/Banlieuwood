@@ -44,6 +44,11 @@ const PAGE_SEO_DATA: Record<string, SEOProps> = {
     description: 'Contactez Banlieuwood : inscription atelier cinéma, organiser un programme dans votre école, devenir partenaire. Réponse sous 48h. Saint-Denis (93).',
     keywords: 'contacter Banlieuwood, inscription atelier cinéma gratuit, organiser atelier cinéma école, partenariat cinéma jeunesse, Saint-Denis Seine-Saint-Denis 93, contact association cinéma',
   },
+  '/soutenir': {
+    title: 'Soutenir Banlieuwood | Don Déductible d\'Impôts | Mécénat',
+    description: 'Soutenez Banlieuwood : don déductible à 66%, mécénat entreprise (60% IS), bénévolat, don en nature. Association 100% bénévole, chaque euro va aux ateliers.',
+    keywords: 'don association cinéma, mécénat entreprise audiovisuel, soutenir association jeunesse, don déductible impôts, bénévolat cinéma, don matériel audiovisuel, financer association loi 1901, Banlieuwood don, reçu fiscal association',
+  },
 };
 
 export default function SEO({ title, description, keywords, ogImage, canonicalPath }: SEOProps) {
