@@ -3,4 +3,26 @@ Allow: /
 Disallow: /admin
 Disallow: /media-manager
 
+# AI Search Crawlers — autoriser l'indexation pour citation
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
 Sitemap: https://banlieuwood.fr/sitemap.xml

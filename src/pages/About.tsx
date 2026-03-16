@@ -68,9 +68,11 @@ export default function About() {
         <div className="max-w-6xl mx-auto" data-reveal>
           <div className="aspect-[21/9] rounded-xl overflow-hidden">
             <img
-              src="/images/equipe-toit.png"
-              alt="L'équipe Banlieuwood — Saint-Denis"
+              src="/images/equipe-toit.webp"
+              alt="L'équipe Banlieuwood sur un toit à Saint-Denis (93) — professionnels du cinéma encadrant les ateliers gratuits pour les jeunes"
               className="w-full h-full object-cover object-[50%_30%]"
+              width={960}
+              height={540}
               loading="lazy"
             />
           </div>

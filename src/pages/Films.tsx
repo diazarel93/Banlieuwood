@@ -55,6 +55,8 @@ export default function Films() {
             src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
             alt="Tic Tac - Long métrage Banlieuwood"
             className="w-full h-full object-cover"
+            width={1280}
+            height={720}
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
@@ -130,8 +132,10 @@ export default function Films() {
                 <div className="relative aspect-video overflow-hidden">
                   <img
                     src={film.thumbnail}
-                    alt={film.title}
+                    alt={`${film.title} — ${film.description}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    width={640}
+                    height={360}
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300"></div>

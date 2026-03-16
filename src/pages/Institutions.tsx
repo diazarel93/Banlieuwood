@@ -73,10 +73,10 @@ export default function Institutions() {
         <div className="max-w-6xl mx-auto" data-reveal>
           <div className="grid md:grid-cols-2 gap-3">
             <div className="aspect-[4/3] rounded-xl overflow-hidden">
-              <img src="/images/groupe-jeunes.png" alt="Groupe de jeunes participants Banlieuwood" className="w-full h-full object-cover object-[100%_20%]" loading="lazy" />
+              <img src="/images/groupe-jeunes.webp" alt="Groupe de jeunes participants Banlieuwood" className="w-full h-full object-cover object-[100%_20%]" loading="lazy" />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden">
-              <img src="/images/atelier-camera.png" alt="Intervenant apprenant la caméra à un jeune" className="w-full h-full object-cover object-[100%_30%]" loading="lazy" />
+              <img src="/images/atelier-camera.webp" alt="Intervenant apprenant la caméra à un jeune" className="w-full h-full object-cover object-[100%_30%]" loading="lazy" />
             </div>
           </div>
         </div>

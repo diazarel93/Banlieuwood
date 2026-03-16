@@ -64,10 +64,10 @@ export default function Ateliers() {
         <div className="max-w-6xl mx-auto" data-reveal>
           <div className="grid md:grid-cols-2 gap-3">
             <div className="aspect-[4/3] rounded-xl overflow-hidden">
-              <img src="/images/tournage-plage.png" alt="Tournage en extérieur — équipe avec perche son" className="w-full h-full object-cover object-[0%_30%]" loading="lazy" />
+              <img src="/images/tournage-plage.webp" alt="Tournage en extérieur — équipe avec perche son" className="w-full h-full object-cover object-[0%_30%]" loading="lazy" />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden">
-              <img src="/images/atelier-clap.png" alt="Jeune avec clap de tournage" className="w-full h-full object-cover object-[0%_20%]" loading="lazy" />
+              <img src="/images/atelier-clap.webp" alt="Jeune avec clap de tournage" className="w-full h-full object-cover object-[0%_20%]" loading="lazy" />
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function Ateliers() {
             <div className="relative">
               <div className="bg-gray-900 rounded-2xl p-2 border border-gray-800 shadow-2xl">
                 <img
-                  src="/images/app-pilot.png"
+                  src="/images/app-pilot.webp"
                   alt="Interface cockpit Banlieuwood — vue enseignant avec votes en temps réel"
                   className="rounded-xl w-full"
                   loading="lazy"

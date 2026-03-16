@@ -184,9 +184,11 @@ export default function Home() {
             </div>
             <div className="bg-gray-900 rounded-2xl p-2 border border-gray-800 shadow-2xl">
               <img
-                src="/images/app-pilot.png"
-                alt="Interface cockpit Banlieuwood — votes en temps réel"
+                src="/images/app-pilot.webp"
+                alt="Interface cockpit Banlieuwood — outil numérique interactif avec votes en temps réel, utilisé dans les ateliers cinéma pour les jeunes de 12 à 25 ans"
                 className="rounded-xl w-full"
+                width={960}
+                height={540}
                 loading="lazy"
               />
             </div>
@@ -251,9 +253,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center" data-reveal>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <img
-                src="/images/atelier-cover.png"
-                alt="Tournage Banlieuwood — jeunes filmées en extérieur"
+                src="/images/atelier-cover.webp"
+                alt="Tournage Banlieuwood à Saint-Denis — jeunes des quartiers populaires filmant en extérieur lors d'un atelier cinéma gratuit"
                 className="w-full h-full object-cover object-center"
+                width={960}
+                height={540}
                 loading="lazy"
               />
             </div>
