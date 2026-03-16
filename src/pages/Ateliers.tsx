@@ -91,28 +91,15 @@ export default function Ateliers() {
               </div>
             </div>
 
-            {/* Tablette mockup simplifié */}
+            {/* Vraie capture de l'app */}
             <div className="relative">
-              <div className="bg-gray-900 rounded-2xl p-3 border border-gray-800">
-                <div className="bg-black rounded-xl overflow-hidden">
-                  <div className="bg-amber-500 px-5 py-3 flex items-center justify-between">
-                    <span className="text-black font-bold text-sm">Module 3 — Imaginer</span>
-                    <span className="text-black/60 text-xs">Séance 2/4</span>
-                  </div>
-                  <div className="p-5 space-y-4">
-                    <p className="text-white font-bold text-sm">Et si cette image racontait...</p>
-                    <div className="bg-gray-900 rounded-lg p-4 border border-gray-800">
-                      <div className="h-20 bg-gray-800 rounded-lg mb-3"></div>
-                      <div className="h-2 bg-gray-800 rounded w-3/4 mb-2"></div>
-                      <div className="h-2 bg-gray-800 rounded w-1/2"></div>
-                    </div>
-                    <div className="flex gap-2 text-xs font-bold">
-                      <span className="flex-1 text-center py-2 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">Écrire</span>
-                      <span className="flex-1 text-center py-2 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20">Voter</span>
-                      <span className="flex-1 text-center py-2 rounded-lg bg-green-500/10 text-green-400 border border-green-500/20">Discuter</span>
-                    </div>
-                  </div>
-                </div>
+              <div className="bg-gray-900 rounded-2xl p-2 border border-gray-800 shadow-2xl">
+                <img
+                  src="/images/app-pilot.png"
+                  alt="Interface cockpit Banlieuwood — vue enseignant avec votes en temps réel"
+                  className="rounded-xl w-full"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
