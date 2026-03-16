@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center text-gray-400 text-sm">
-            <p>&copy; 2025 Banlieuwood — Tous droits réservés.</p>
+            <p>&copy; 2026 Banlieuwood — Tous droits réservés.</p>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Play, Award, Users, Clapperboard, Sparkles, ExternalLink, Star, ArrowRight } from 'lucide-react';
+import { Play, Award, Clapperboard, ExternalLink, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import VideoPlayer from '../components/VideoPlayer';
@@ -24,17 +24,17 @@ const films: FilmData[] = [
   { title: 'ODEULC', vimeoId: '1161231322', thumbnail: 'https://i.vimeocdn.com/video/2116516973-cfb43c14c607375cdf6b6affb594a3c73e1dad808cf204d1b616bab81093da52-d_1280?region=us', category: 'Fiction', description: 'Réalisé avec 15 jeunes', crew: '15 jeunes', location: 'Roissy-en-Brie' },
   { title: 'La Belle Saison', vimeoId: '1161234053', thumbnail: 'https://i.vimeocdn.com/video/2116521612-e85659aaed322b96282e7645b11f02d215acc4f2200760c5f61e4c07658922d7-d_1280?region=us', category: 'Fiction', description: 'Réalisé avec 18 jeunes à Créteil', crew: '18 jeunes', location: 'Créteil' },
   { title: 'Snap peut nuire à votre santé', vimeoId: '1161231894', thumbnail: 'https://i.vimeocdn.com/video/2116517155-3fd5d47899ca88918810fff00f7c39cf6e0a14fb987d07678fe8d6d690a8095a-d_1280?region=us', category: 'Fiction', description: 'Court-métrage réalisé avec 30 élèves', crew: '30 élèves', location: 'Aubervilliers' },
-  { title: 'Silence, Moteur, Action', youtubeId: 'eo_qVvsWRwM', thumbnail: 'https://img.youtube.com/vi/eo_qVvsWRwM/hqdefault.jpg', category: 'Fiction', description: 'Sur le thème du harcèlement scolaire', crew: 'Poissy', location: 'Poissy' },
+  { title: 'Silence, Moteur, Action', youtubeId: 'eo_qVvsWRwM', thumbnail: 'https://img.youtube.com/vi/eo_qVvsWRwM/maxresdefault.jpg', category: 'Fiction', description: 'Sur le thème du harcèlement scolaire', crew: 'Poissy', location: 'Poissy' },
   { title: 'Tic Tac', vimeoId: '1161235536', thumbnail: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us', category: 'Fiction', description: 'Long-métrage réalisé avec 22 jeunes. Disponible sur Amazon Prime Video.', crew: '22 jeunes', award: 'Amazon Prime' },
   { title: 'La Petite Princesse', vimeoId: '1160858372', thumbnail: 'https://i.vimeocdn.com/video/2116005228-afff924899569cad1567ca9a9867ad510c4082ae51f1a4c44510c3c4179c0e51-d_1280?region=us', category: 'Fiction', description: 'Court-métrage de fiction' },
   { title: "Making Of L'Interrogatoire", vimeoId: '1161232067', thumbnail: 'https://i.vimeocdn.com/video/2116519419-d83037aaf8c61f2523f1c8f7cb552e9a6bfd7be13175e404fcb6cd918e5c58dc-d_1280?region=us', category: 'Making-of', description: 'Les coulisses du tournage' },
-  { title: 'Making Of Le Passage', youtubeId: 'a0Px84_uZnQ', thumbnail: 'https://img.youtube.com/vi/a0Px84_uZnQ/hqdefault.jpg', category: 'Making-of', description: 'Les coulisses du tournage avec les CM2' },
+  { title: 'Making Of Le Passage', youtubeId: 'a0Px84_uZnQ', thumbnail: 'https://img.youtube.com/vi/a0Px84_uZnQ/maxresdefault.jpg', category: 'Making-of', description: 'Les coulisses du tournage avec les CM2' },
   { title: 'Making Of Délégué des Tas', vimeoId: '1161234440', thumbnail: 'https://i.vimeocdn.com/video/2116520904-5e3353b05fab87db8e5abcb07c99f9f10f8515949107668c990d10bb9a1e6f29-d_1280?region=us', category: 'Making-of', description: 'En coulisses au collège Blaise Pascal' },
   { title: 'Making Of Perdue', vimeoId: '1161234268', thumbnail: 'https://i.vimeocdn.com/video/2116520406-2e129c5503261820b0c95915d8fee6cc5ccb20bb7fb11984c2b9bd0780b0ba7b-d_1280?region=us', category: 'Making-of', description: 'Les coulisses du film Perdue' },
   { title: 'Making Of Tic Tac', vimeoId: '1161234232', thumbnail: 'https://i.vimeocdn.com/video/2116520146-9109d1f6fd8e73d5b9531879f7d8b01192a0d6f4485c391c9136a335d3799d8b-d_1280?region=us', category: 'Making-of', description: 'Les coulisses du long-métrage Tic Tac' },
   { title: 'Teaser Banlieuwood', vimeoId: '1161231299', thumbnail: 'https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us', category: 'Documentaire', description: 'Découvre qui on est et ce qu\'on fait' },
-  { title: 'Grand Pari Citoyen', youtubeId: 'k2t-cjl4Fgg', thumbnail: 'https://img.youtube.com/vi/k2t-cjl4Fgg/hqdefault.jpg', category: 'Documentaire', description: 'Documentaire sur l\'engagement citoyen' },
-  { title: 'Reportage Blaise Pascal', youtubeId: 'Ep1LQcSP57Y', thumbnail: 'https://img.youtube.com/vi/Ep1LQcSP57Y/hqdefault.jpg', category: 'Documentaire', description: 'Reportage au collège Blaise Pascal' }
+  { title: 'Grand Pari Citoyen', youtubeId: 'k2t-cjl4Fgg', thumbnail: 'https://img.youtube.com/vi/k2t-cjl4Fgg/maxresdefault.jpg', category: 'Documentaire', description: 'Documentaire sur l\'engagement citoyen' },
+  { title: 'Reportage Blaise Pascal', youtubeId: 'Ep1LQcSP57Y', thumbnail: 'https://img.youtube.com/vi/Ep1LQcSP57Y/maxresdefault.jpg', category: 'Documentaire', description: 'Reportage au collège Blaise Pascal' }
 ];
 
 export default function Films() {
@@ -55,6 +55,7 @@ export default function Films() {
             src="https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"
             alt="Tic Tac - Long métrage Banlieuwood"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         </div>
@@ -119,10 +120,10 @@ export default function Films() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {filteredFilms.map((film, i) => (
-              <div
+              <button
                 key={i}
                 onClick={() => setSelectedFilmIndex(films.findIndex(f => f.title === film.title))}
-                className="group cursor-pointer rounded-xl overflow-hidden"
+                className="group text-left rounded-xl overflow-hidden"
                 data-reveal
                 data-reveal-delay={String(Math.min(i, 5) * 80)}
               >
@@ -158,7 +159,7 @@ export default function Films() {
                   </div>
                   <p className="text-gray-500 text-sm">{film.description}</p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>

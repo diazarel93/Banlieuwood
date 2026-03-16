@@ -77,7 +77,6 @@ export default function VideoHeroBackground({
           <iframe
             ref={iframeRef}
             src={`https://player.vimeo.com/video/${vimeoId}?background=1&autoplay=1&loop=1&byline=0&title=0&muted=${isMuted ? 1 : 0}`}
-            className="w-full h-full object-cover"
             style={{
               position: 'absolute',
               top: '50%',
@@ -88,13 +87,13 @@ export default function VideoHeroBackground({
               minWidth: '177.77vh',
               transform: 'translate(-50%, -50%)',
             }}
-            frameBorder="0"
+            className="w-full h-full object-cover border-0"
             allow="autoplay; fullscreen"
             onLoad={() => setIsVideoLoaded(true)}
           ></iframe>
         ) : (
           <img
-            src={posterImage || "http://banlieuwood.fr/wp-content/uploads/2021/03/vintage-film-projector-and-film-screening-1.jpg"}
+            src={posterImage || "https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"}
             alt="Background"
             className="w-full h-full object-cover"
           />
@@ -111,7 +110,7 @@ export default function VideoHeroBackground({
         <div className="absolute bottom-24 left-6 z-20 flex gap-3">
           <button
             onClick={togglePlay}
-            className="glass-strong p-3 rounded-full hover:bg-white/20 transition-all duration-300 group"
+            className="bg-black/50 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-all duration-300 group"
             aria-label={isPlaying ? 'Pause' : 'Play'}
           >
             {isPlaying ? (
@@ -123,7 +122,7 @@ export default function VideoHeroBackground({
 
           <button
             onClick={toggleMute}
-            className="glass-strong p-3 rounded-full hover:bg-white/20 transition-all duration-300 group"
+            className="bg-black/50 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-all duration-300 group"
             aria-label={isMuted ? 'Unmute' : 'Mute'}
           >
             {isMuted ? (

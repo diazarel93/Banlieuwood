@@ -1,7 +1,7 @@
 {
   "name": "Banlieuwood - Ateliers Cinéma Gratuits",
   "short_name": "Banlieuwood",
-  "description": "Apprends le cinéma gratuitement avec Banlieuwood ! Ateliers pour les 12-25 ans.",
+  "description": "Apprends le cinéma gratuitement avec Banlieuwood. Ateliers pour les 12-25 ans.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -9,23 +9,9 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshot1.png",
-      "sizes": "1280x720",
-      "type": "image/png"
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
   "categories": ["education", "entertainment"],
@@ -33,25 +19,16 @@
   "dir": "ltr",
   "shortcuts": [
     {
-      "name": "Nos Ateliers",
-      "short_name": "Ateliers",
+      "name": "Le Programme",
+      "short_name": "Programme",
       "description": "Découvre nos ateliers cinéma",
-      "url": "/ateliers",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+      "url": "/programme"
     },
     {
       "name": "Nos Films",
       "short_name": "Films",
       "description": "Regarde nos créations",
-      "url": "/films",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Blog",
-      "short_name": "Blog",
-      "description": "Articles et tutoriels",
-      "url": "/blog",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+      "url": "/films"
     }
   ]
 }

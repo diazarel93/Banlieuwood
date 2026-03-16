@@ -12,10 +12,10 @@ interface SEOProps {
 const defaultMeta = {
   title: 'Banlieuwood - Programme Cinéma en 8 Modules pour les 12-25 ans',
   description: 'Programme pédagogique cinéma en 8 modules avec outil numérique. De spectateur à créateur. Ateliers gratuits pour les jeunes de 12 à 25 ans.',
-  image: 'http://banlieuwood.fr/wp-content/uploads/2021/03/TEASER.png',
+  image: 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us',
   keywords: 'programme cinéma, 8 modules, formation gratuite, jeunes banlieue, outil numérique, plateforme edtech, court métrage, long métrage',
   siteName: 'Banlieuwood',
-  url: 'https://banlieuwood.vercel.app'
+  url: 'https://banlieuwood.fr'
 };
 
 const pageMetadata: Record<string, { title: string; description: string; keywords?: string }> = {
@@ -68,7 +68,7 @@ export default function EnhancedSEO({ title, description, image, type = 'website
     "url": defaultMeta.url,
     "logo": defaultMeta.image,
     "description": defaultMeta.description,
-    "foundingDate": "2010",
+    "foundingDate": "2015",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Saint-Denis",

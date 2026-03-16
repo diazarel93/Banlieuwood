@@ -1,6 +1,7 @@
-import { Film, Mail, Phone, User, MessageSquare, CheckCircle, XCircle, Building2, Users, Briefcase } from 'lucide-react';
+import { Mail, Phone, User, CheckCircle, XCircle, Building2, Users, Briefcase } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 import { supabase } from '../lib/supabase';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 type ProfileType = 'jeune' | 'etablissement' | 'autre';
 
@@ -117,16 +118,18 @@ export default function Contact() {
     });
   };
 
+  const scrollRef = useScrollReveal();
+
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
-      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-6 flex justify-center animate-fade-in">
-            <Mail className="w-12 h-12 text-amber-500" strokeWidth={1.5} />
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in stagger-delay-1">Contactez-nous</h1>
-          <p className="text-xl text-gray-300 font-light animate-fade-in stagger-delay-2">
-            Rejoindre le programme, organiser un atelier dans votre école ou devenir partenaire ? Écrivez-nous.
+    <div className="min-h-screen bg-black text-white pt-20" ref={scrollRef}>
+      <section className="py-32 px-4">
+        <div className="max-w-4xl mx-auto" data-reveal>
+          <p className="text-amber-500 font-bold text-sm uppercase tracking-widest mb-6">Contact</p>
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-8 leading-[1.05]">
+            Écrivez-nous
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
+            Rejoindre le programme, organiser un atelier dans votre école ou devenir partenaire.
           </p>
         </div>
       </section>
@@ -135,20 +138,18 @@ export default function Contact() {
         <div className="max-w-3xl mx-auto">
           {/* PROFILE SELECTOR */}
           {!profile && (
-            <div className="mb-12 animate-fade-in">
-              <p className="text-center text-lg text-gray-300 mb-8">Vous êtes :</p>
+            <div className="mb-12" data-reveal>
+              <p className="text-lg text-gray-300 mb-8">Vous êtes :</p>
               <div className="grid md:grid-cols-3 gap-4">
                 {profiles.map((p) => (
                   <button
                     key={p.type}
                     onClick={() => setProfile(p.type)}
-                    className="bg-gray-900 rounded-2xl p-6 text-center hover-lift border border-gray-800 hover:border-amber-500/50 transition-all group"
+                    className="p-6 text-left rounded-xl border border-gray-800 hover:border-amber-500/30 transition-all group"
                   >
-                    <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <p.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
-                    </div>
+                    <p.icon className="w-6 h-6 text-amber-500 mb-4" strokeWidth={1.5} />
                     <h3 className="font-bold text-white mb-1 text-sm">{p.label}</h3>
-                    <p className="text-gray-400 text-xs">{p.desc}</p>
+                    <p className="text-gray-500 text-xs">{p.desc}</p>
                   </button>
                 ))}
               </div>
@@ -170,7 +171,7 @@ export default function Contact() {
                 </span>
               </div>
 
-              <form onSubmit={handleSubmit} className="bg-gray-900 p-8 md:p-12 space-y-6 rounded-2xl animate-scale-in">
+              <form onSubmit={handleSubmit} className="space-y-6" data-reveal>
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2 text-gray-300">
                     <User className="w-4 h-4 inline mr-2" />
@@ -327,27 +328,19 @@ export default function Contact() {
             </>
           )}
 
-          <div className="mt-12 bg-gray-900 p-8 text-center rounded-2xl">
-            <div className="mb-4">
-              <Film className="w-10 h-10 text-amber-500 mx-auto mb-2" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-xl font-bold mb-4">Coordonnées directes</h3>
-            <div className="space-y-2 text-gray-300">
+          <div className="mt-12 py-8 border-t border-gray-800/50" data-reveal>
+            <h3 className="font-bold mb-4">Coordonnées directes</h3>
+            <div className="space-y-2 text-gray-400 text-sm">
               <p>
-                <Mail className="w-4 h-4 inline mr-2 text-amber-500" />
-                <a href="mailto:contact@banlieuwood.fr" className="hover:text-amber-500 transition-colors">
+                <a href="mailto:contact@banlieuwood.fr" className="text-white hover:text-amber-500 transition-colors">
                   contact@banlieuwood.fr
                 </a>
               </p>
-              <p className="text-sm mt-4">
-                Banlieuwood<br />
-                10 rue Frazier, Saint-Denis<br />
-                Association loi 1901
-              </p>
-              <div className="flex gap-4 mt-4 justify-center">
-                <a href="https://vimeo.com/user95348584" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500 transition-colors text-sm">Vimeo</a>
-                <a href="https://www.instagram.com/banlieuwood/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500 transition-colors text-sm">Instagram</a>
-                <a href="https://www.facebook.com/banlieuwood" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-amber-500 transition-colors text-sm">Facebook</a>
+              <p>10 rue Frazier, Saint-Denis — Association loi 1901</p>
+              <div className="flex gap-4 mt-4">
+                <a href="https://vimeo.com/user95348584" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Vimeo</a>
+                <a href="https://www.instagram.com/banlieuwood/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Instagram</a>
+                <a href="https://www.facebook.com/banlieuwood" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Facebook</a>
               </div>
             </div>
           </div>

@@ -36,7 +36,7 @@ export default function Home() {
     {
       title: 'Teaser Banlieuwood',
       vimeoId: '1161231299',
-      thumbnail: 'http://banlieuwood.fr/wp-content/uploads/2021/03/TEASER.png'
+      thumbnail: 'https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us'
     }
   ];
 
@@ -45,7 +45,7 @@ export default function Home() {
       {/* HERO — cinématique, pas SaaS */}
       <VideoHeroBackground
         vimeoId="1161231299"
-        posterImage={heroBackground || "http://banlieuwood.fr/wp-content/uploads/2021/03/vintage-film-projector-and-film-screening-1.jpg"}
+        posterImage={heroBackground || "https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us"}
       >
         <div className="flex items-center justify-center h-full">
           <div className="text-center px-4 max-w-5xl mx-auto">
@@ -219,7 +219,7 @@ export default function Home() {
             onClick={() => setShowTeaser(true)}
           >
             <img
-              src="http://banlieuwood.fr/wp-content/uploads/2021/03/TEASER.png"
+              src="https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us"
               alt="Teaser Banlieuwood"
               className="w-full h-full object-cover"
               loading="lazy"

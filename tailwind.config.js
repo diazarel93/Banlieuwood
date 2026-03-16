@@ -1,6 +1,5 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -11,7 +10,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
+        display: ['Bebas Neue', 'sans-serif'],
         body: ["Inter", "ui-sans-serif", "system-ui"]
       },
       animation: {

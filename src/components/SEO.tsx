@@ -10,7 +10,8 @@ interface SEOProps {
 }
 
 const BASE_URL = 'https://banlieuwood.fr';
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
+const OG_IMAGE = 'https://i.vimeocdn.com/video/2116522126-c1af68ec6fd856b8cd6eed98aa5bb3515ca7d7dcb6a6dd2d083e9b8855387fc7-d_1280?region=us';
+const DEFAULT_OG_IMAGE = OG_IMAGE;
 
 const PAGE_SEO_DATA: Record<string, SEOProps> = {
   '/': {

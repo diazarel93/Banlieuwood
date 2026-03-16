@@ -1,86 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://banlieuwood.com/</loc>
-    <lastmod>2025-10-22</lastmod>
+    <loc>https://banlieuwood.fr/</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Le Projet / About -->
   <url>
-    <loc>https://banlieuwood.com/about</loc>
-    <lastmod>2025-10-22</lastmod>
+    <loc>https://banlieuwood.fr/programme</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Ateliers (HIGH PRIORITY - Main CTA) -->
   <url>
-    <loc>https://banlieuwood.com/ateliers</loc>
-    <lastmod>2025-10-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Méthode / Déroulement -->
-  <url>
-    <loc>https://banlieuwood.com/deroulement</loc>
-    <lastmod>2025-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Films -->
-  <url>
-    <loc>https://banlieuwood.com/films</loc>
-    <lastmod>2025-10-22</lastmod>
+    <loc>https://banlieuwood.fr/films</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Impact / Réussites -->
   <url>
-    <loc>https://banlieuwood.com/reussites</loc>
-    <lastmod>2025-10-22</lastmod>
+    <loc>https://banlieuwood.fr/about</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Partenaires -->
   <url>
-    <loc>https://banlieuwood.com/partenaires</loc>
-    <lastmod>2025-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- FAQ (Important for long-tail keywords) -->
-  <url>
-    <loc>https://banlieuwood.com/faq</loc>
-    <lastmod>2025-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Dons / Soutenir -->
-  <url>
-    <loc>https://banlieuwood.com/dons</loc>
-    <lastmod>2025-10-22</lastmod>
+    <loc>https://banlieuwood.fr/etablissements</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Contact -->
   <url>
-    <loc>https://banlieuwood.com/contact</loc>
-    <lastmod>2025-10-22</lastmod>
+    <loc>https://banlieuwood.fr/contact</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
 </urlset>
