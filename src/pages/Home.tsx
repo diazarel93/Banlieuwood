@@ -152,7 +152,8 @@ export default function Home() {
             <Link to="/etablissements" className="group p-10 rounded-2xl border border-gray-800 hover:border-blue-500/30 transition-all" data-reveal data-reveal-delay="100">
               <Building2 className="w-8 h-8 text-blue-400 mb-6" strokeWidth={1.5} />
               <h3 className="text-2xl font-bold mb-3">Vous êtes un établissement ?</h3>
-              <p className="text-gray-400 mb-6">Un programme cinéma clé en main pour vos élèves.</p>
+              <p className="text-gray-400 mb-4">Un programme cinéma clé en main pour vos élèves. Compatible PEAC, Pass Culture, Politique de la Ville.</p>
+              <p className="text-gray-600 text-xs mb-4">Déjà déployé : collège Grands Champs (78), collège Blaise Pascal (78), établissements en 93, 94, 77...</p>
               <span className="text-blue-400 font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all text-sm">
                 En savoir plus <ArrowRight className="w-4 h-4" />
               </span>

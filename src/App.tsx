@@ -3,6 +3,7 @@ import { useEffect, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import SEO from './components/SEO';
+import EnhancedSEO from './components/EnhancedSEO';
 import Home from './pages/Home';
 
 const Films = lazy(() => import('./pages/Films'));
@@ -26,6 +27,7 @@ function App() {
   return (
     <>
       <SEO />
+      <EnhancedSEO />
       <Navigation />
       <Suspense fallback={
         <div className="min-h-screen bg-black flex items-center justify-center">
