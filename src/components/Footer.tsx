@@ -43,7 +43,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-900 hover:bg-amber-500 rounded-full flex items-center justify-center text-gray-400 hover:text-black transition-all"
+                className="w-10 h-10 bg-gray-800 hover:bg-amber-500 rounded-full flex items-center justify-center text-gray-400 hover:text-black transition-all"
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" strokeWidth={1.5} />
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center text-gray-400 text-sm">
-            <p>&copy; 2026 Banlieuwood — Tous droits réservés.</p>
+            <p>&copy; {new Date().getFullYear()} Banlieuwood — Tous droits réservés.</p>
           </div>
         </div>
       </div>

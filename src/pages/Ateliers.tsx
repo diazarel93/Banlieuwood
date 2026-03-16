@@ -46,7 +46,7 @@ export default function Ateliers() {
                 data-reveal
                 data-reveal-delay={String(i * 50)}
               >
-                <span className="text-amber-500/40 font-bold text-sm w-8 flex-shrink-0 pt-1">
+                <span className="text-amber-500/60 font-bold text-sm w-8 flex-shrink-0 pt-1">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div>
@@ -140,7 +140,7 @@ export default function Ateliers() {
                 data-reveal-delay={String(i * 80)}
               >
                 <div className="md:col-span-3">
-                  <span className="text-amber-500/40 font-bold text-xs">Formule {i + 1}</span>
+                  <span className="text-amber-500/60 font-bold text-xs">Formule {i + 1}</span>
                   <h3 className="text-xl font-bold text-white">{f.title}</h3>
                 </div>
                 <div className="md:col-span-5">
@@ -180,7 +180,7 @@ export default function Ateliers() {
               { n: '3', title: 'Tu crées ton film', desc: 'Tu rejoins un groupe et tu commences le parcours. C\'est tout.' },
             ].map((step, i) => (
               <div key={i} data-reveal data-reveal-delay={String(i * 80)}>
-                <span className="text-amber-500/40 font-bold text-4xl logo-font">{step.n}</span>
+                <span className="text-amber-500/60 font-bold text-4xl logo-font">{step.n}</span>
                 <h3 className="text-lg font-bold mt-2 mb-2">{step.title}</h3>
                 <p className="text-gray-400">{step.desc}</p>
               </div>

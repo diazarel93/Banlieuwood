@@ -1,9 +1,11 @@
 import { Building2, Shield, Users, ArrowRight, CheckCircle, Lightbulb, Award, ChevronDown, Tablet, Camera, MessageSquare, Heart, Mic, Eye, Puzzle } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Institutions() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const scrollRef = useScrollReveal();
 
   const competences = [
     { icon: Lightbulb, title: 'Créativité & Imagination', desc: 'Inventer des histoires, générer des idées' },
@@ -26,7 +28,7 @@ export default function Institutions() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="min-h-screen bg-black text-white pt-20" ref={scrollRef}>
       {/* HERO — style sobre, fond uni */}
       <section className="relative py-32 px-4 bg-gradient-to-b from-gray-900 via-gray-900 to-black overflow-hidden">
         <div className="absolute inset-0 opacity-10">

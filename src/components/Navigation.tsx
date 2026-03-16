@@ -50,6 +50,12 @@ export default function Navigation() {
                   }`}></span>
                 </Link>
               ))}
+              <Link
+                to="/contact"
+                className="btn-primary px-5 py-2.5 text-sm font-semibold rounded-lg"
+              >
+                Nous rejoindre
+              </Link>
             </div>
 
             <button
@@ -77,6 +83,13 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-center btn-primary font-semibold py-4 px-5 rounded-xl mt-2"
+              >
+                Nous rejoindre
+              </Link>
             </div>
           )}
         </div>

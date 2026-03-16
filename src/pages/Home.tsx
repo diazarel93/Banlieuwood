@@ -124,7 +124,7 @@ export default function Home() {
               {['Observer', 'Comprendre', 'Imaginer', 'Clarifier', 'Construire', 'Écrire', 'Visualiser', 'Produire'].map((step, i) => (
                 <div key={i} className="flex items-center" data-reveal data-reveal-delay={String(i * 60)}>
                   <div className="text-center px-6 py-4">
-                    <span className="text-amber-500/40 font-bold text-xs block mb-1">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="text-amber-500/60 font-bold text-xs block mb-1">{String(i + 1).padStart(2, '0')}</span>
                     <span className="text-white font-semibold text-sm whitespace-nowrap">{step}</span>
                   </div>
                   {i < 7 && <div className="w-8 h-px bg-gray-700 flex-shrink-0"></div>}
@@ -136,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* POUR QUI — 2 blocs distincts */}
-      <section className="py-20 px-4 bg-black">
+      <section className="py-20 px-4 bg-gray-950 border-y border-gray-800/50">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4">
             <Link to="/programme" className="group p-10 rounded-2xl border border-gray-800 hover:border-amber-500/30 transition-all" data-reveal>
