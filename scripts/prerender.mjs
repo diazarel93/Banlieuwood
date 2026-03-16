@@ -39,7 +39,12 @@ const pages = {
       </ul>
       <h2>Ils nous ont fait confiance</h2>
       <p>Collège Grands Champs (78), Collège Blaise Pascal (78), Ville de Saint-Denis (93), Ville de Rosny-sous-Bois (93), Collège Albert Camus (93), Collège Jean Moulin (93)</p>
-      <p>Association loi 1901 basée à Saint-Denis (93). Contact : contact@banlieuwood.fr</p>
+      <h2>Banlieuwood : association cinéma à Saint-Denis depuis 2015</h2>
+      <p>Banlieuwood est une association loi 1901 fondée en 2015 à Saint-Denis (Seine-Saint-Denis, 93), en Île-de-France. Notre mission : rendre le cinéma accessible aux jeunes de 12 à 25 ans issus des quartiers populaires, à travers des ateliers cinéma 100% gratuits.</p>
+      <p>Notre programme pédagogique en 8 modules couvre l'ensemble du processus de création cinématographique : observation, écriture de scénario, jeu d'acteur, tournage, montage et diffusion. Chaque participant utilise un outil numérique interactif sur tablette.</p>
+      <p>Depuis 2015, plus de 500 jeunes ont été formés et 30 films ont été produits, dont le long-métrage Tic Tac (Amazon Prime Video) et Voir la Mer (3 prix en festivals). 85% des participants poursuivent dans l'audiovisuel.</p>
+      <p>Nous intervenons dans les établissements scolaires (collèges, lycées) et structures jeunesse d'Île-de-France. Programme éligible EAC, PEAC, Pass Culture, Politique de la Ville, Cité Éducative.</p>
+      <p>Association 100% bénévole. Dons déductibles à 66%. Contact : contact@banlieuwood.fr</p>
     `
   },
   '/films': {
@@ -177,6 +182,12 @@ const pages = {
         <li>Adresse : Saint-Denis (93200), Île-de-France</li>
       </ul>
       <p>Réponse sous 48h. Association loi 1901.</p>
+      <h2>Questions fréquentes</h2>
+      <p><strong>C'est vraiment gratuit ?</strong> Oui, 100% gratuit. Les ateliers, le matériel et l'encadrement sont entièrement pris en charge par l'association.</p>
+      <p><strong>Qui peut participer ?</strong> Les jeunes de 12 à 25 ans, sans aucun prérequis. Pas besoin d'expérience en cinéma.</p>
+      <p><strong>Comment s'inscrire ?</strong> Remplissez le formulaire ou envoyez un email à contact@banlieuwood.fr. On vous recontacte sous 48h.</p>
+      <p><strong>Où se déroulent les ateliers ?</strong> À Saint-Denis (93) et dans les établissements scolaires partenaires en Île-de-France.</p>
+      <p><strong>Je suis enseignant ?</strong> Notre programme est éligible EAC, PEAC, Pass Culture. Contactez-nous pour organiser un atelier dans votre établissement.</p>
     `
   },
   '/soutenir': {

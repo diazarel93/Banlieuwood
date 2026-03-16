@@ -50,9 +50,12 @@ export default function Home() {
         <div className="flex items-center justify-center h-full">
           <div className="text-center px-4 max-w-5xl mx-auto">
 
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-6 tracking-tight animate-fade-in stagger-delay-1 logo-font">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-4 tracking-tight animate-fade-in stagger-delay-1 logo-font">
             BANLIEUWOOD
           </h1>
+          <p className="text-sm sm:text-base text-gray-400 mb-6 animate-fade-in stagger-delay-1 tracking-wide">
+            Atelier cinéma gratuit pour jeunes de 12 à 25 ans — Saint-Denis (93)
+          </p>
 
           <p className="text-xl sm:text-2xl md:text-3xl mb-12 font-light animate-fade-in stagger-delay-2 px-4 max-w-2xl mx-auto">
             Amener le cinéma <span className="text-amber-500 font-medium">en bas de chez vous</span>
@@ -227,7 +230,7 @@ export default function Home() {
               </h2>
             </div>
             <Link to="/films" className="text-amber-500 font-bold inline-flex items-center gap-2 hover:gap-3 transition-all text-lg">
-              Tous les films <ArrowRight className="w-5 h-5" />
+              Voir les 30+ films réalisés par les jeunes <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
 
@@ -246,8 +249,10 @@ export default function Home() {
               >
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} — film réalisé par les jeunes de Banlieuwood`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  width={640}
+                  height={854}
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -303,8 +308,10 @@ export default function Home() {
           >
             <img
               src="https://i.vimeocdn.com/video/2116516023-020e736245f88de16250ab86d1f772ca9b2ce7f0db5fb138e9f031b5c92b98d8-d_1280?region=us"
-              alt="Teaser Banlieuwood"
+              alt="Teaser vidéo Banlieuwood — présentation des ateliers cinéma gratuits pour jeunes à Saint-Denis (93)"
               className="w-full h-full object-cover"
+              width={1280}
+              height={720}
               loading="lazy"
             />
             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
@@ -316,6 +323,32 @@ export default function Home() {
             <div className="absolute bottom-8 left-8">
               <p className="text-white font-bold text-2xl">Banlieuwood en images</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* À PROPOS — contenu SEO riche */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-4xl mx-auto" data-reveal>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            Banlieuwood : association cinéma à Saint-Denis depuis 2015
+          </h2>
+          <div className="space-y-4 text-gray-400 leading-relaxed">
+            <p>
+              <strong className="text-white">Banlieuwood</strong> est une association loi 1901 fondée en 2015 à Saint-Denis (Seine-Saint-Denis, 93), en Île-de-France. Notre mission : rendre le cinéma accessible aux jeunes de 12 à 25 ans issus des quartiers populaires, à travers des <strong className="text-white">ateliers cinéma 100% gratuits</strong>.
+            </p>
+            <p>
+              Notre <Link to="/programme" className="text-amber-500 hover:underline">programme pédagogique en 8 modules</Link> couvre l'ensemble du processus de création cinématographique : observation, écriture de scénario, jeu d'acteur, tournage, montage et diffusion. Chaque participant utilise un outil numérique interactif sur tablette, développé spécifiquement pour nos ateliers.
+            </p>
+            <p>
+              Depuis 2015, plus de <strong className="text-white">500 jeunes ont été formés</strong> et <strong className="text-white">30 films ont été produits</strong>, dont le long-métrage <em>Tic Tac</em>, distribué sur Amazon Prime Video, et le court-métrage <em>Voir la Mer</em>, primé 3 fois en festivals. 85% des participants poursuivent dans l'audiovisuel après nos ateliers.
+            </p>
+            <p>
+              Nous intervenons directement dans les <Link to="/etablissements" className="text-amber-500 hover:underline">établissements scolaires</Link> (collèges, lycées) et les structures jeunesse d'Île-de-France. Notre programme est éligible aux dispositifs EAC, PEAC, Pass Culture, Politique de la Ville, et Cité Éducative.
+            </p>
+            <p>
+              Association 100% bénévole, Banlieuwood est encadrée par des professionnels du cinéma. <Link to="/soutenir" className="text-amber-500 hover:underline">Soutenez-nous</Link> par un don déductible à 66% de vos impôts.
+            </p>
           </div>
         </div>
       </section>

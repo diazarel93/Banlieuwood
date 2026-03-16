@@ -2,7 +2,6 @@ import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useEffect, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import SEO from './components/SEO';
 import EnhancedSEO from './components/EnhancedSEO';
 import Home from './pages/Home';
 
@@ -26,7 +25,6 @@ function App() {
 
   return (
     <>
-      <SEO />
       <EnhancedSEO />
       <Navigation />
       <Suspense fallback={

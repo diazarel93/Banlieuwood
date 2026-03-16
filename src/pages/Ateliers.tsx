@@ -64,10 +64,10 @@ export default function Ateliers() {
         <div className="max-w-6xl mx-auto" data-reveal>
           <div className="grid md:grid-cols-2 gap-3">
             <div className="aspect-[4/3] rounded-xl overflow-hidden">
-              <img src="/images/tournage-plage.webp" alt="Tournage en extérieur — équipe avec perche son" className="w-full h-full object-cover object-[0%_30%]" loading="lazy" />
+              <img src="/images/tournage-plage.webp" alt="Tournage en extérieur à Saint-Denis — équipe de jeunes avec perche son lors d'un atelier cinéma Banlieuwood" className="w-full h-full object-cover object-[0%_30%]" width={640} height={480} loading="lazy" />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden">
-              <img src="/images/atelier-clap.webp" alt="Jeune avec clap de tournage" className="w-full h-full object-cover object-[0%_20%]" loading="lazy" />
+              <img src="/images/atelier-clap.webp" alt="Jeune participant avec clap de tournage — atelier réalisation film gratuit Banlieuwood" className="w-full h-full object-cover object-[0%_20%]" width={640} height={480} loading="lazy" />
             </div>
           </div>
         </div>
@@ -110,8 +110,10 @@ export default function Ateliers() {
               <div className="bg-gray-900 rounded-2xl p-2 border border-gray-800 shadow-2xl">
                 <img
                   src="/images/app-pilot.webp"
-                  alt="Interface cockpit Banlieuwood — vue enseignant avec votes en temps réel"
+                  alt="Interface outil numérique Banlieuwood — vue enseignant avec votes en temps réel, utilisé dans les ateliers cinéma en collège et lycée"
                   className="rounded-xl w-full"
+                  width={960}
+                  height={540}
                   loading="lazy"
                 />
               </div>

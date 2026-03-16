@@ -1,5 +1,6 @@
-import { Mail, Phone, User, CheckCircle, XCircle, Building2, Users, Briefcase } from 'lucide-react';
+import { Mail, Phone, User, CheckCircle, XCircle, Building2, Users, Briefcase, ArrowRight } from 'lucide-react';
 import { useState, FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
@@ -337,13 +338,45 @@ export default function Contact() {
                   contact@banlieuwood.fr
                 </a>
               </p>
-              <p>10 rue Frazier, Saint-Denis — Association loi 1901</p>
+              <p>10 rue Frazier, Saint-Denis (93200) — Association loi 1901</p>
               <div className="flex gap-4 mt-4">
                 <a href="https://vimeo.com/user95348584" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Vimeo</a>
                 <a href="https://www.instagram.com/banlieuwood/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Instagram</a>
                 <a href="https://www.facebook.com/banlieuwood" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">Facebook</a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ INSCRIPTION */}
+      <section className="py-20 px-4 bg-gray-950 border-t border-gray-800/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12" data-reveal>Questions fréquentes</h2>
+
+          <div className="space-y-0">
+            {[
+              { q: 'C\'est vraiment gratuit ?', a: 'Oui, 100% gratuit. Les ateliers, le matériel et l\'encadrement sont entièrement pris en charge par l\'association. Banlieuwood est une association loi 1901 à gestion désintéressée.' },
+              { q: 'Qui peut participer aux ateliers cinéma ?', a: 'Les jeunes de 12 à 25 ans, sans aucun prérequis. Pas besoin d\'expérience en cinéma, pas besoin de matériel. On accueille tous les niveaux, tous les profils.' },
+              { q: 'Comment s\'inscrire à un atelier ?', a: 'Remplissez le formulaire ci-dessus ou envoyez un email à contact@banlieuwood.fr. On vous recontacte sous 48h pour discuter des prochaines dates.' },
+              { q: 'J\'ai besoin d\'apporter du matériel ?', a: 'Non, tout est fourni par Banlieuwood : tablettes avec outil numérique, caméras, matériel son, éclairages. Vous venez les mains dans les poches.' },
+              { q: 'Où se déroulent les ateliers ?', a: 'À Saint-Denis (93) et dans les établissements scolaires partenaires en Île-de-France. Nous intervenons directement dans les collèges, lycées et structures jeunesse.' },
+              { q: 'Je suis enseignant, comment organiser un atelier dans mon établissement ?', a: 'Contactez-nous via le formulaire en sélectionnant "Établissement". Notre programme est éligible EAC, PEAC, Pass Culture (part collective), Politique de la Ville. Nous vous accompagnons dans le montage du dossier.' },
+            ].map((item, i) => (
+              <div key={i} className="py-6 border-b border-gray-800/50 last:border-0" data-reveal data-reveal-delay={String(i * 50)}>
+                <h3 className="text-white font-semibold text-lg mb-2">{item.q}</h3>
+                <p className="text-gray-400 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-col sm:flex-row gap-4" data-reveal>
+            <Link to="/programme" className="text-amber-500 font-bold inline-flex items-center gap-2 hover:gap-3 transition-all">
+              Découvrir le programme en 8 modules <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link to="/about" className="text-gray-400 font-bold inline-flex items-center gap-2 hover:gap-3 hover:text-white transition-all">
+              En savoir plus sur l'association <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
