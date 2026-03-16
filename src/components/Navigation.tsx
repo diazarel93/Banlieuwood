@@ -1,4 +1,4 @@
-import { Film, Menu, X } from 'lucide-react';
+import { Film, Menu, X, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -51,10 +51,11 @@ export default function Navigation() {
                 </Link>
               ))}
               <Link
-                to="/contact"
-                className="btn-primary px-5 py-2.5 text-sm font-semibold rounded-lg"
+                to="/soutenir"
+                className="btn-primary px-5 py-2.5 text-sm font-semibold rounded-lg inline-flex items-center gap-2"
               >
-                Nous rejoindre
+                <Heart className="w-4 h-4" />
+                Soutenir
               </Link>
             </div>
 
@@ -84,11 +85,12 @@ export default function Navigation() {
                 </Link>
               ))}
               <Link
-                to="/contact"
+                to="/soutenir"
                 onClick={() => setIsMenuOpen(false)}
                 className="block w-full text-center btn-primary font-semibold py-4 px-5 rounded-xl mt-2"
               >
-                Nous rejoindre
+                <Heart className="w-4 h-4 inline mr-2" />
+                Soutenir
               </Link>
             </div>
           )}
